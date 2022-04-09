@@ -5,8 +5,6 @@ import React from "react";
 interface LabelProps {
   value: InternationalString;
 }
-const Value: React.FC<LabelProps> = ({ value }) => {
-  return <>{useGetLabel(value)}</>;
-};
+const Value: React.FC<LabelProps> = ({ value }) => <>{useGetLabel(value)}</>;
 
 export default Value;

@@ -3,22 +3,22 @@ import Label from "components/Label/Label";
 import Value from "components/Value/Value";
 import React from "react";
 
-interface PairProps {
+interface GroupProps {
   item: MetadataItem;
 }
 
-const Pair: React.FC<PairProps> = ({ item }) => {
+const Group: React.FC<GroupProps> = ({ item }) => {
   const { label, value } = item;
   return (
-    <>
+    <div role="group">
       <dt>
         <Label label={label} />
       </dt>
       <dd>
         <Value value={value} />
       </dd>
-    </>
+    </div>
   );
 };
 
-export default Pair;
+export default Group;

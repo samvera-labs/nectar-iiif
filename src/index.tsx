@@ -6,8 +6,6 @@ interface Props {
   metadata: MetadataItem[];
 }
 
-const App: React.FC<Props> = ({ metadata }) => {
-  return <Metadata metadata={metadata} />;
-};
+const App: React.FC<Props> = ({ metadata }) => <Metadata metadata={metadata} />;
 
 export default App;
