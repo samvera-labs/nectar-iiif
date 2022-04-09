@@ -1,0 +1,45 @@
+{
+  "name": "@samvera/nectar-iiif",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "npm run clean && node build.js",
+    "build:static": "NODE_ENV=static OUT_DIR=static node build-static.js",
+    "clean": "rimraf dist",
+    "dev": "NODE_ENV=development node serve.js",
+    "test": "jest --watch",
+    "prepublishOnly": "npm run build",
+    "ts-lint": "tsc --noEmit --incremental --watch"
+  },
+  "keywords": [
+    "IIIF"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mathewjordan/nectar-iiif.git"
+  },
+  "author": "Northwestern University Libraries",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mathewjordan/nectar-iiif/issues"
+  },
+  "homepage": "https://github.com/mathewjordan/nectar-iiif#readme",
+  "devDependencies": {
+    "chokidar": "^3.5.3",
+    "esbuild": "^0.14.34",
+    "esbuild-envfile-plugin": "^1.0.2",
+    "live-server": "^1.2.1",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "@iiif/presentation-3": "^1.0.4",
+    "@types/react": "^18.0.1",
+    "@types/react-dom": "^18.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  }
+}
