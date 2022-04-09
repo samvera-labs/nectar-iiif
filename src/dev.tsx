@@ -9,6 +9,10 @@ const Wrapper = () => {
       label: { en: ["Creator"] },
       value: { en: ["Anne Artist (1776-1824)"] },
     },
+    {
+      label: { en: ["Genre"] },
+      value: { en: ["portrait"] },
+    },
   ];
 
   return (

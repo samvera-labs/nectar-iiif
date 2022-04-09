@@ -7,12 +7,18 @@ interface MetadataProps {
 }
 
 const Metadata: React.FC<MetadataProps> = ({ metadata }) => {
+  if (!Array.isArray(metadata)) return <></>;
+
   return (
-    <dd>
-      {metadata.map((item) => {
-        return <Pair item={item} />;
-      })}
-    </dd>
+    <>
+      {metadata.length > 0 && (
+        <dl>
+          {metadata.map((item, index) => {
+            return <Pair item={item} key={index} />;
+          })}
+        </dl>
+      )}
+    </>
   );
 };
 
