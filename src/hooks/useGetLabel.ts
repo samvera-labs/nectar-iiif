@@ -26,5 +26,10 @@ export const useGetLabel = (
   /*
    * Return label value for InternationalString code `en`
    */
-  return label[language];
+  if (!label[language]) return null;
+  if (!Array.isArray(label[language])) return null;
+
+  const entries = label[language] as string[];
+
+  return entries.join(", ");
 };

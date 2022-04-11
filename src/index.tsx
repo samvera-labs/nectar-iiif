@@ -1,11 +1,5 @@
-import { MetadataItem } from "@iiif/presentation-3";
+import Label from "components/Label/Label";
+import Value from "components/Value/Value";
 import Metadata from "components/Metadata/Metadata";
-import React from "react";
 
-interface Props {
-  metadata: MetadataItem[];
-}
-
-const App: React.FC<Props> = ({ metadata }) => <Metadata metadata={metadata} />;
-
-export default App;
+export { Metadata, Label, Value };
