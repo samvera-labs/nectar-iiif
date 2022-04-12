@@ -1,7 +1,7 @@
 # Nectar IIIF
 ReactJS UI component library of IIIF Presentation API 3.0 property fluent primitives.
 
-[**Demo**](https://codesandbox.io/s/iiif-presentation-ecosystem-forked-clmnc9?file=/src/App.jsx)
+[**Demo**](https://codesandbox.io/s/nectar-vault-4dzc7l?file=/src/App.js)
 
 ---
 
