@@ -1,10 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { InternationalString, MetadataItem } from "@iiif/presentation-3";
-import { Label, Metadata, RequiredStatement } from "./index";
+import { Label, Metadata, RequiredStatement, Summary } from "./index";
 
 const Wrapper = () => {
   const label: InternationalString = { none: ["Alternate Title"] };
+
+  const summary: InternationalString = {
+    none: [
+      '"Magnifico" - that is, great, grand, generous - means the exact opposite in this character, since the Commedia dell\'Arte Magnifico is decidedly avaricious. But besides this extremely human defect, the Magnifico represents the highest authority in the family. He is the one who is in charge of not only the economy and finances, but also the destiny of the household and all who live there. He decides whether or not...',
+    ],
+  };
 
   const metadata: MetadataItem[] = [
     {
@@ -73,6 +79,7 @@ const Wrapper = () => {
   return (
     <>
       <Label label={label} as="h1" />
+      <Summary summary={summary} />
       <Metadata metadata={metadata} />
       <RequiredStatement requiredStatement={requiredStatement} />
     </>
