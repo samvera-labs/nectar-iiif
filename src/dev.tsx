@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { InternationalString, MetadataItem } from "@iiif/presentation-3";
-import { Label, Metadata } from "./index";
+import { Label, Metadata, RequiredStatement } from "./index";
 
 const Wrapper = () => {
   const label: InternationalString = { none: ["Alternate Title"] };
@@ -58,10 +58,23 @@ const Wrapper = () => {
     },
   ];
 
+  const requiredStatement: MetadataItem = {
+    label: {
+      none: ["Attribution"],
+    },
+    value: {
+      none: [
+        "Courtesy of Northwestern University Libraries",
+        "These images are from material in the collections of the Charles Deering McCormick Library of Special Collections of Northwestern University Libraries, and are provided for use by its students, faculty and staff, and by other researchers visiting this site, for research consultation and scholarly purposes only. Further distribution and/or any commercial use of the images from this site is not permitted.",
+      ],
+    },
+  };
+
   return (
     <>
       <Label label={label} as="h1" />
       <Metadata metadata={metadata} />
+      <RequiredStatement requiredStatement={requiredStatement} />
     </>
   );
 };
