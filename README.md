@@ -1,6 +1,8 @@
 # Nectar IIIF
 ReactJS UI component library of IIIF Presentation API 3.0 property fluent primitives.
 
+[**Demo**](https://codesandbox.io/s/iiif-presentation-ecosystem-forked-clmnc9?file=/src/App.jsx)
+
 ---
 
 <h2 id="installation">Installation</h2>
@@ -34,6 +36,9 @@ import {
 ```
 
 ```jsx
+/**
+ * Some logic may be required to fetch the IIIF Manifest.
+ */
 const manifest = {...};
 
 return (
