@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/mathewjordan/nectar-iiif#readme",
   "devDependencies": {
+    "@iiif/vault": "^0.9.17",
     "chokidar": "^3.5.3",
     "esbuild": "^0.14.34",
     "esbuild-envfile-plugin": "^1.0.2",
