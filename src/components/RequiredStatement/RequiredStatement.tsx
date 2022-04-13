@@ -8,6 +8,10 @@ interface RequiredStatementProps {
 
 const RequiredStatement: React.FC<RequiredStatementProps> = ({
   requiredStatement,
-}) => <Group item={requiredStatement} />;
+}) => {
+  if (!requiredStatement) return <></>;
+
+  return <Group item={requiredStatement} />;
+};
 
 export default RequiredStatement;
