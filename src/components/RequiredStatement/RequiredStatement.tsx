@@ -11,7 +11,11 @@ const RequiredStatement: React.FC<RequiredStatementProps> = ({
 }) => {
   if (!requiredStatement) return <></>;
 
-  return <Group item={requiredStatement} />;
+  return (
+    <dl>
+      <Group item={requiredStatement} />
+    </dl>
+  );
 };
 
 export default RequiredStatement;
