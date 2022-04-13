@@ -1,13 +1,13 @@
 import { InternationalString } from "@iiif/presentation-3";
-import { useGetLabel } from "hooks/useGetLabel";
 import Label from "components/Label/Label";
 import React from "react";
 
 interface LabelProps {
+  as?: "span" | "dd";
   value: InternationalString;
 }
-const Value: React.FC<LabelProps> = ({ value }) => (
-  <Label label={value} as="span" />
+const Value: React.FC<LabelProps> = ({ value, as = "dd" }) => (
+  <Label label={value} as={as} />
 );
 
 export default Value;

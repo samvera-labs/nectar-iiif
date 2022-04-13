@@ -11,12 +11,8 @@ const Group: React.FC<GroupProps> = ({ item }) => {
   const { label, value } = item;
   return (
     <div role="group">
-      <dt>
-        <Label label={label} />
-      </dt>
-      <dd>
-        <Value value={value} />
-      </dd>
+      <Label label={label} as="dt" />
+      <Value value={value} as="dd" />
     </div>
   );
 };
