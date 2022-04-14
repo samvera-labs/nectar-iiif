@@ -24,7 +24,7 @@ yarn add @samvera/nectar-iiif
 
 <h2 id="basic-usage">Basic Usage</h2>
 
-Add the Nectar component to your `jsx` or `tsx` code.
+Add the Nectar component(s) to your `jsx` or `tsx` code.
 
 ```jsx
 import {
