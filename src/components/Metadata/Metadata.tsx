@@ -1,14 +1,8 @@
-import { MetadataItem } from "@iiif/presentation-3";
-import Group from "components/Group/Group";
 import React from "react";
+import Group from "components/Group/Group";
+import { NectarMetadata } from "types/nectar";
 
-interface MetadataProps {
-  language?: string;
-  metadata: MetadataItem[];
-  title?: string;
-}
-
-const Metadata: React.FC<MetadataProps> = ({ language, metadata, title }) => {
+const Metadata: React.FC<NectarMetadata> = ({ language, metadata, title }) => {
   if (!Array.isArray(metadata)) return <></>;
 
   return (

@@ -1,13 +1,8 @@
-import { MetadataItem } from "@iiif/presentation-3";
-import Group from "components/Group/Group";
 import React from "react";
+import Group from "components/Group/Group";
+import { NectarRequiredStatement } from "types/nectar";
 
-interface RequiredStatementProps {
-  language?: string;
-  requiredStatement: MetadataItem;
-}
-
-const RequiredStatement: React.FC<RequiredStatementProps> = ({
+const RequiredStatement: React.FC<NectarRequiredStatement> = ({
   language,
   requiredStatement,
 }) => {

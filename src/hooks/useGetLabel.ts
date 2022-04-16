@@ -10,7 +10,7 @@ export const useGetLabel = (
   if (!label) return null;
 
   /*
-   * If label is not a IIIF Presentation API shape, return the string
+   * If label is not a IIIF Presentation API 3.0 shape, return the string
    */
   if (typeof label === "string") return [label];
 

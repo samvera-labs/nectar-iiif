@@ -3,6 +3,7 @@ import React, { SyntheticEvent } from "react";
 interface LanguageProps {
   handleLanguage: (e: SyntheticEvent) => void;
 }
+
 const Language: React.FC<LanguageProps> = ({ handleLanguage }) => {
   return (
     <form>

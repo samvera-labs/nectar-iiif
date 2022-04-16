@@ -1,14 +1,9 @@
-import { MetadataItem } from "@iiif/presentation-3";
+import React from "react";
 import Label from "components/Label/Label";
 import Value from "components/Value/Value";
-import React from "react";
+import { NectarGroup } from "types/nectar";
 
-interface GroupProps {
-  item: MetadataItem;
-  language?: string;
-}
-
-const Group: React.FC<GroupProps> = ({ item, language }) => {
+const Group: React.FC<NectarGroup> = ({ item, language }) => {
   const { label, value } = item;
   return (
     <div role="group">
