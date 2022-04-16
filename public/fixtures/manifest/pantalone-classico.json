@@ -1,0 +1,299 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "https://acw5dcf49d.execute-api.us-east-1.amazonaws.com/dev/items/iiif-image-manifest-1",
+  "type": "Manifest",
+  "label": {
+    "none": ["Pantalone classico"]
+  },
+  "summary": {
+    "none": [
+      "\"Magnifico\" - that is, great, grand, generous - means the exact opposite in this character, since the Commedia dell'Arte Magnifico is decidedly avaricious. But besides this extremely human defect, the Magnifico represents the highest authority in the family. He is the one who is in charge of not only the economy and finances, but also the destiny of the household and all who live there. He decides whether or not to pay the servants (he generally inclines against it, not without good reason), and he decides where his son or daughter (the Lovers) will marry, when, and whom. He thus sets in play the great drama of the Lovers, whose solution becomes material for the three traditional acts of the comedy. \"Magnifico\" is therefore the technical term that indicates the character. His given name is determined by dialect and geography: Pantalone if he is Venetian; Stefanel Botarga if Milanese; Zanobio da Piombino if Tuscan; Biscegliese if from Puglia; and he can be \"Pep\" and something more if we make him Catalan, or a \"Mc\" and something more if we make him Scottish, and so on, without any change in his character, behavior, or function. The most famous and historically most common Magnifico is the Venetian one, Pantalone. The name is probably a contraction of pianta il leone, he who plants the lion, the symbol of the Venetian republic. Venetian merchants \"planted the lion\" in southern and Mediterranean markets. They conquered the world by opening plants and dominating local economies. Our Pantalone, therefore, is a Venetian merchant, a perfect example of the shrewd, cunning, vulgar, and proud dynamism of the refined, opulent, and marvelous city-state."
+    ]
+  },
+  "homepage": [
+    {
+      "id": "https://dc.library.northwestern.edu/items/7298fdce-adc1-4501-9e14-9e8bd985e149",
+      "type": "Text",
+      "label": { "none": ["Pantalone classico"] },
+      "format": "text/html"
+    }
+  ],
+  "metadata": [
+    {
+      "label": { "none": ["Alternate Title"] },
+      "value": { "none": ["Fava"] }
+    },
+    {
+      "label": { "none": ["Creator"] },
+      "value": { "none": ["Fava, Antonio, 1949-"] }
+    },
+    {
+      "label": { "none": ["Date"] },
+      "value": { "none": ["2012"] }
+    },
+    {
+      "label": { "none": ["Department"] },
+      "value": {
+        "none": ["Charles Deering McCormick Library of Special Collections"]
+      }
+    },
+    {
+      "label": { "none": ["Dimensions"] },
+      "value": { "none": ["18 x 15 x 16 cm"] }
+    },
+    {
+      "label": { "none": ["Genre"] },
+      "value": { "none": ["comic masks"] }
+    },
+    {
+      "label": { "none": ["Location"] },
+      "value": { "none": ["Reggio Emilia"] }
+    },
+    {
+      "label": { "none": ["Materials"] },
+      "value": { "none": ["1 mask : grey leather, elastic, fiber"] }
+    },
+    {
+      "label": { "none": ["Subject"] },
+      "value": {
+        "none": [
+          "Masks",
+          "Commedia dell'arte",
+          "Italian drama (Comedy)",
+          "Pantaloon (Fictitious character)"
+        ]
+      }
+    },
+    {
+      "label": { "none": ["Work Type"] },
+      "value": { "none": ["Image"] }
+    }
+  ],
+  "requiredStatement": {
+    "label": {
+      "none": ["Attribution"]
+    },
+    "value": {
+      "none": [
+        "Courtesy of Northwestern University Libraries",
+        "These images are from material in the collections of the Charles Deering McCormick Library of Special Collections of Northwestern University Libraries, and are provided for use by its students, faculty and staff, and by other researchers visiting this site, for research consultation and scholarly purposes only. Further distribution and/or any commercial use of the images from this site is not permitted."
+      ]
+    }
+  },
+  "rights": "http://rightsstatements.org/vocab/InC/1.0/",
+  "partOf": [
+    {
+      "id": "https://acw5dcf49d.execute-api.us-east-1.amazonaws.com/dev/collections/iiif-image-collection",
+      "type": "Collection",
+      "label": { "none": ["Commedia dell'Arte: The Masks of Antonio Fava"] },
+      "summary": {
+        "none": [
+          "The Commedia dell'Arte, the famous improvisational theatre style born in Renaissance Italy, remains a major influence in today's theatre. Antonio Fava is an actor, comedian, author, director, musician, mask maker and Internationally renowned Maestro of Commedia dell'Arte."
+        ]
+      },
+      "homepage": [
+        {
+          "id": "https://dc.library.northwestern.edu/collections/c373ecd2-2c45-45f2-9f9e-52dc244870bd",
+          "type": "Text",
+          "label": {
+            "none": ["Commedia dell'Arte: The Masks of Antonio Fava"]
+          },
+          "format": "text/html"
+        }
+      ],
+      "thumbnail": [
+        {
+          "id": "https://iiif.stack.rdc.library.northwestern.edu/iiif/2/180682c9-dfaf-4881-b7b6-1f2f21092d4f/full/200,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg",
+          "service": [
+            {
+              "id": "https://iiif.stack.rdc.library.northwestern.edu/iiif/2/180682c9-dfaf-4881-b7b6-1f2f21092d4f",
+              "profile": "http://iiif.io/api/image/2/level2.json",
+              "type": "ImageService2"
+            }
+          ],
+          "width": 200,
+          "height": 200
+        }
+      ]
+    }
+  ],
+  "logo": [
+    {
+      "id": "https://www.northwestern.edu/brand/images/wordmark/wordmark-vert.jpg",
+      "type": "Image",
+      "format": "image/jpeg",
+      "width": 400,
+      "height": 210
+    }
+  ],
+  "provider": [
+    {
+      "id": "https://www.library.northwestern.edu/",
+      "type": "Agent",
+      "label": {
+        "none": ["Northwestern University Libraries"]
+      },
+      "homepage": [
+        {
+          "id": "https://dc.library.northwestern.edu/",
+          "type": "Text",
+          "label": {
+            "none": ["Northwestern University Libraries Digital Collections"]
+          },
+          "format": "text/html"
+        }
+      ],
+      "logo": [
+        {
+          "id": "https://www.northwestern.edu/brand/images/wordmark/wordmark-vert.jpg",
+          "type": "Image",
+          "format": "image/jpeg",
+          "width": 400,
+          "height": 210
+        }
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "id": "https://dc.library.northwestern.edu/api/items/7298fdce-adc1-4501-9e14-9e8bd985e149",
+      "type": "Dataset",
+      "label": {
+        "none": ["Northwestern University Libraries Digital Collections API"]
+      },
+      "format": "application/json",
+      "profile": "https://dc.library.northwestern.edu/api/items/context.json"
+    }
+  ],
+  "thumbnail": [
+    {
+      "id": "https://iiif.stack.rdc.library.northwestern.edu/iiif/2/180682c9-dfaf-4881-b7b6-1f2f21092d4f/full/200,/0/default.jpg",
+      "type": "Image",
+      "format": "image/jpeg",
+      "service": [
+        {
+          "id": "https://iiif.stack.rdc.library.northwestern.edu/iiif/2/180682c9-dfaf-4881-b7b6-1f2f21092d4f",
+          "profile": "http://iiif.io/api/image/2/level2.json",
+          "type": "ImageService2"
+        }
+      ],
+      "width": 200,
+      "height": 200
+    }
+  ],
+  "items": [
+    {
+      "id": "https://acw5dcf49d.execute-api.us-east-1.amazonaws.com/dev/items/iiif-image-manifest-1/canvas/0",
+      "type": "Canvas",
+      "width": 3780,
+      "height": 4440,
+      "label": {
+        "none": ["Front"]
+      },
+      "items": [
+        {
+          "id": "https://acw5dcf49d.execute-api.us-east-1.amazonaws.com/dev/items/iiif-image-manifest-1/canvas/0/page/0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://acw5dcf49d.execute-api.us-east-1.amazonaws.com/dev/items/iiif-image-manifest-1/canvas/0/page/0/annotation/0",
+              "type": "Annotation",
+              "motivation": "painting",
+              "target": "https://acw5dcf49d.execute-api.us-east-1.amazonaws.com/dev/items/iiif-image-manifest-1/canvas/0",
+              "body": {
+                "id": "https://iiif.stack.rdc.library.northwestern.edu/iiif/2/180682c9-dfaf-4881-b7b6-1f2f21092d4f/full/600,/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "service": [
+                  {
+                    "id": "https://iiif.stack.rdc.library.northwestern.edu/iiif/2/180682c9-dfaf-4881-b7b6-1f2f21092d4f",
+                    "profile": "http://iiif.io/api/image/2/level2.json",
+                    "type": "ImageService2"
+                  }
+                ],
+                "width": 3780,
+                "height": 4440
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://acw5dcf49d.execute-api.us-east-1.amazonaws.com/dev/items/iiif-image-manifest-1/canvas/1",
+      "type": "Canvas",
+      "width": 5010,
+      "height": 4396,
+      "label": {
+        "none": ["Left"]
+      },
+      "items": [
+        {
+          "id": "https://acw5dcf49d.execute-api.us-east-1.amazonaws.com/dev/items/iiif-image-manifest-1/canvas/1/page/0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://acw5dcf49d.execute-api.us-east-1.amazonaws.com/dev/items/iiif-image-manifest-1/canvas/1/page/0/annotation/0",
+              "type": "Annotation",
+              "motivation": "painting",
+              "target": "https://acw5dcf49d.execute-api.us-east-1.amazonaws.com/dev/items/iiif-image-manifest-1/canvas/1",
+              "body": {
+                "id": "https://iiif.stack.rdc.library.northwestern.edu/iiif/2/b6359e7f-070c-4c86-aee1-515e5b6604e2/full/600,/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "service": [
+                  {
+                    "id": "https://iiif.stack.rdc.library.northwestern.edu/iiif/2/b6359e7f-070c-4c86-aee1-515e5b6604e2",
+                    "profile": "http://iiif.io/api/image/2/level2.json",
+                    "type": "ImageService2"
+                  }
+                ],
+                "width": 5010,
+                "height": 4396
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://acw5dcf49d.execute-api.us-east-1.amazonaws.com/dev/items/iiif-image-manifest-1/canvas/2",
+      "type": "Canvas",
+      "width": 7230,
+      "height": 5428,
+      "label": {
+        "none": ["Right"]
+      },
+      "items": [
+        {
+          "id": "https://acw5dcf49d.execute-api.us-east-1.amazonaws.com/dev/items/iiif-image-manifest-1/canvas/2/page/0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://acw5dcf49d.execute-api.us-east-1.amazonaws.com/dev/items/iiif-image-manifest-1/canvas/2/page/0/annotation/0",
+              "type": "Annotation",
+              "motivation": "painting",
+              "target": "https://acw5dcf49d.execute-api.us-east-1.amazonaws.com/dev/items/iiif-image-manifest-1/canvas/2",
+              "body": {
+                "id": "https://iiif.stack.rdc.library.northwestern.edu/iiif/2/ca2acc2b-df00-4c6d-8373-ab6d5af17714/full/600,/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "service": [
+                  {
+                    "id": "https://iiif.stack.rdc.library.northwestern.edu/iiif/2/ca2acc2b-df00-4c6d-8373-ab6d5af17714",
+                    "profile": "http://iiif.io/api/image/2/level2.json",
+                    "type": "ImageService2"
+                  }
+                ],
+                "width": 7230,
+                "height": 5428
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

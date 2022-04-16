@@ -5,14 +5,15 @@ import React from "react";
 
 interface GroupProps {
   item: MetadataItem;
+  language?: string;
 }
 
-const Group: React.FC<GroupProps> = ({ item }) => {
+const Group: React.FC<GroupProps> = ({ item, language }) => {
   const { label, value } = item;
   return (
     <div role="group">
-      <Label label={label} as="dt" />
-      <Value value={value} as="dd" />
+      <Label as="dt" label={label} language={language} />
+      <Value as="dd" value={value} language={language} />
     </div>
   );
 };

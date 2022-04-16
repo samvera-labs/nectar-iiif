@@ -17,12 +17,15 @@ interface LabelProps {
     | "h5"
     | "h6";
   label: InternationalString;
+  language?: string;
 }
 
 const StyledLabel = styled("span", {});
 
-const Label: React.FC<LabelProps> = ({ as = "span", label }) => (
-  <StyledLabel as={as}>{useGetLabel(label)}</StyledLabel>
-);
+const Label: React.FC<LabelProps> = ({
+  as = "span",
+  label,
+  language = "none",
+}) => <StyledLabel as={as}>{useGetLabel(label, language)}</StyledLabel>;
 
 export default Label;
