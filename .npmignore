@@ -1,0 +1,13 @@
+# Ignore every file in the repo
+/*
+
+# Then unignore the dist folder
+!/dist
+
+# Then re-ignore the compiled test files
+*.test.js
+*.test.js.map
+*.test.d.ts
+
+# Ignore typescript build info
+tsconfig.tsbuildinfo
