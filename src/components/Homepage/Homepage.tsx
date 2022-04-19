@@ -18,13 +18,16 @@ const Homepage: React.FC<NectarHomepage> = ({
 
   return (
     <StyledHomepage as={as}>
-      {homepage.map((resource: NectarResource) => (
-        <Resource as={resourceAs} key={resource.id}>
-          <a href={resource.id}>
-            {children ? children : useGetLabel(resource.label, language)}
-          </a>
-        </Resource>
-      ))}
+      {homepage.map((resource: NectarResource) => {
+        const label = useGetLabel(resource.label, language) as string;
+        return (
+          <Resource as={resourceAs} key={resource.id}>
+            <a href={resource.id} aria-label={label}>
+              {children ? children : label}
+            </a>
+          </Resource>
+        );
+      })}
     </StyledHomepage>
   );
 };
