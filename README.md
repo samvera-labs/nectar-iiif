@@ -1,4 +1,5 @@
 # Nectar IIIF
+
 ReactJS UI component library of IIIF Presentation API 3.0 property fluent primitives.
 
 [**Demo**](https://codesandbox.io/s/nectar-vault-4dzc7l?file=/src/App.js)
@@ -21,16 +22,12 @@ yarn add @samvera/nectar-iiif
 
 ---
 
-
 <h2 id="basic-usage">Basic Usage</h2>
 
 Add the Nectar component(s) to your `jsx` or `tsx` code.
 
 ```jsx
-import {
-  Label,
-  Summary
-} from "@samvera/nectar-iiif";
+import { Label, Summary } from "@samvera/nectar-iiif";
 ```
 
 ```jsx
@@ -51,28 +48,47 @@ return (
 
 ## Primitives
 
-### Label 
+### Label
 
+#### Reference
+
+| Prop       | Type                                                                                                              | Default | Required           |
+| ---------- | ----------------------------------------------------------------------------------------------------------------- | ------- | ------------------ |
+| `as`       | ` span`, `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `p`, `label`, `dt`, `dd`                                             | `span`  | --                 |
+| `language` | string                                                                                                            | `none`  | --                 |
+| `label`    | [InternationalString](https://github.com/IIIF-Commons/presentation-3-types/blob/main/iiif/descriptive.d.ts#L6-L8) | --      | :white_check_mark: |
+
+#### Usage
 
 ```jsx
 import { Label } from "@samvera/nectar-iiif";
 ```
 
 ```jsx
-return <Label label={manifest.label} as="h1" />;
+return <Label label={manifest.label} as="h1" language="en" />;
 ```
 
-### Summary 
+### Summary
+
+#### Reference
+
+| Prop       | Type                                                                                                              | Default | Required           |
+| ---------- | ----------------------------------------------------------------------------------------------------------------- | ------- | ------------------ |
+| `as`       | ` span`, `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `p`                                                                  | `p`     | --                 |
+| `language` | string                                                                                                            | `none`  | --                 |
+| `summary`  | [InternationalString](https://github.com/IIIF-Commons/presentation-3-types/blob/main/iiif/descriptive.d.ts#L6-L8) | --      | :white_check_mark: |
+
+#### Usage
 
 ```jsx
 import { Summary } from "@samvera/nectar-iiif";
 ```
 
 ```jsx
-return <Summary label={manifest.summary} as="p" />;
+return <Summary summary={manifest.summary} as="p" />;
 ```
 
-### Metadata 
+### Metadata
 
 ```jsx
 import { Metadata } from "@samvera/nectar-iiif";
@@ -82,8 +98,7 @@ import { Metadata } from "@samvera/nectar-iiif";
 return <Metadata metadata={manifest.metadata} />;
 ```
 
-
-### Required Statement 
+### Required Statement
 
 ```jsx
 import { RequiredStatement } from "@samvera/nectar-iiif";
@@ -100,11 +115,13 @@ import { Homepage } from "@samvera/nectar-iiif";
 ```
 
 Wrap resource label with homepage id.
+
 ```jsx
 return <Homepage homepage={manifest.homepage} />;
 ```
 
 Wrap React children with homepage id.
+
 ```jsx
 return (
   <Homepage homepage={manifest.homepage}>
