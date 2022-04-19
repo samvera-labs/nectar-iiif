@@ -34,7 +34,8 @@ const Wrapper = () => {
     <>
       <Language handleLanguage={handleLanguage} />
       <div>
-        <Label label={label} as="h1" language={language} />
+        <Label label={{ none: ["the", "color", "of", "honey"] }} />
+        <Label label={label} language={language} />
         <Summary summary={summary} language={language} />
         <Metadata metadata={metadata} language={language} />
         <RequiredStatement
