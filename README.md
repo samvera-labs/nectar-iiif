@@ -62,7 +62,7 @@ import { Label } from "@samvera/nectar-iiif";
 return <Label label={manifest.label} as="h1" />;
 ```
 
-### Label 
+### Summary 
 
 ```jsx
 import { Summary } from "@samvera/nectar-iiif";
