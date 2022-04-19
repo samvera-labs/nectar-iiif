@@ -29,8 +29,6 @@ Add the Nectar component(s) to your `jsx` or `tsx` code.
 ```jsx
 import {
   Label,
-  Metadata,
-  RequiredStatement,
   Summary
 } from "@samvera/nectar-iiif";
 ```
@@ -45,10 +43,72 @@ return (
   <>
     <Label label={manifest.label} as="h1" />
     <Summary summary={manifest.summary} as="p" />
-    <Metadata metadata={manifest.metadata} />
-    <RequiredStatement requiredStatement={manifest.requiredStatement} />
   </>
 );
 ```
 
 ---
+
+## Primitives
+
+### Label 
+
+
+```jsx
+import { Label } from "@samvera/nectar-iiif";
+```
+
+```jsx
+return <Label label={manifest.label} as="h1" />;
+```
+
+### Label 
+
+```jsx
+import { Summary } from "@samvera/nectar-iiif";
+```
+
+```jsx
+return <Summary label={manifest.summary} as="p" />;
+```
+
+### Metadata 
+
+```jsx
+import { Metadata } from "@samvera/nectar-iiif";
+```
+
+```jsx
+return <Metadata metadata={manifest.metadata} />;
+```
+
+
+### Required Statement 
+
+```jsx
+import { RequiredStatement } from "@samvera/nectar-iiif";
+```
+
+```jsx
+return <RequiredStatement requiredStatement={manifest.requiredStatement} />;
+```
+
+### Homepage
+
+```jsx
+import { Homepage } from "@samvera/nectar-iiif";
+```
+
+Wrap resource label with homepage id.
+```jsx
+return <Homepage homepage={manifest.homepage} />;
+```
+
+Wrap React children with homepage id.
+```jsx
+return (
+  <Homepage homepage={manifest.homepage}>
+    <figure>...</figure>
+  </Homepage>
+);
+```
