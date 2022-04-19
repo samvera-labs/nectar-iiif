@@ -17,7 +17,7 @@ const Homepage: React.FC<NectarHomepage> = ({
   if (as !== "div") resourceAs = "li";
 
   return (
-    <StyledHomepage as={as}>
+    <StyledHomepage as={as} data-testid="nectar-homepage">
       {homepage.map((resource: NectarResource) => {
         const label = useGetLabel(resource.label, language) as string;
         return (
