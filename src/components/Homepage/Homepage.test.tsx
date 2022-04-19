@@ -25,7 +25,6 @@ describe("homepage primitive", () => {
     );
     const el = getByTestId("nectar-homepage");
     expect(el.tagName).toBe("UL");
-    a;
     expect(el).toHaveTextContent("Western honey bee");
     expect(el).toBeInTheDocument();
   });
