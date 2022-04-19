@@ -48,4 +48,16 @@ describe("label primitive", () => {
     expect(el).toBeInTheDocument();
     expect(el).toHaveTextContent("the, color, of, honey");
   });
+
+  /**
+   * test multiple value join
+   */
+  it("Renders 3.0 label if set language code does not exist", async () => {
+    const { getByRole } = render(
+      <Label label={multipleValueLabel} as="h5" language="ja" />
+    );
+    const el = getByRole("heading", { level: 5 });
+    expect(el).toBeInTheDocument();
+    expect(el).toHaveTextContent("the, color, of, honey");
+  });
 });

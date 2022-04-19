@@ -20,7 +20,7 @@ export const useGetLabel = (
    */
   if (!label[language]) {
     const codes: Array<string> = Object.getOwnPropertyNames(label);
-    if (codes.length > 0) return label[codes[0]];
+    if (codes.length > 0) return label[codes[0]]?.join(", ");
   }
 
   /*
