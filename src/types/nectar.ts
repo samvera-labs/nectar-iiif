@@ -1,8 +1,24 @@
 import { InternationalString, MetadataItem } from "@iiif/presentation-3";
+import { ReactNode } from "react";
 
 export interface NectarGroup {
   item: MetadataItem;
   language?: string;
+}
+export interface NectarHomepage {
+  as?: "div" | "ol" | "ul";
+  children?: ReactNode | ReactNode[];
+  homepage: Array<NectarResource>;
+  language?: string;
+}
+
+export interface NectarResource {
+  as?: "span" | "li";
+  format?: string;
+  id: string;
+  label: InternationalString;
+  language?: string[];
+  type: string;
 }
 
 export interface NectarLabel {
