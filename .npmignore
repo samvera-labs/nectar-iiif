@@ -11,3 +11,5 @@
 
 # Ignore typescript build info
 tsconfig.tsbuildinfo
+index.cjs.js.map
+index.esm.js.map
