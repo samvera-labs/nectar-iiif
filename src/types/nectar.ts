@@ -6,6 +6,7 @@ import {
 import { ReactNode } from "react";
 
 export interface NectarExternalWebResource {
+  alt: string | undefined;
   resource: IIIFExternalWebResource;
   objectFit: "contain" | "cover" | "fill" | "none" | "scale-down";
 }
@@ -60,6 +61,8 @@ export interface NectarRequiredStatement {
 }
 
 export interface NectarThumbnail {
+  altAsLabel: InternationalString;
+  language: string;
   thumbnail: IIIFExternalWebResource[];
   objectFit?: "contain" | "cover" | "fill" | "none" | "scale-down";
 }

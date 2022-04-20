@@ -49,6 +49,8 @@ const Wrapper = () => {
           language={language}
         />
         <Thumbnail
+          altAsLabel={{ none: ["color"], en: ["colour"], fr: ["couleur"] }}
+          language={language}
           thumbnail={[
             {
               id: "https://iiif.stack.rdc.library.northwestern.edu/iiif/2/180682c9-dfaf-4881-b7b6-1f2f21092d4f/full/200,/0/default.jpg",

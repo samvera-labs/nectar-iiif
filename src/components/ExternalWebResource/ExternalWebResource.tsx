@@ -7,8 +7,7 @@ import { NectarExternalWebResource } from "types/nectar";
 const StyledResource = styled("img", {
   width: "100%",
   height: "100%",
-  backgroundColor: "#f6f6f6",
-  transition: "all 1.25s cubic-bezier(0.16, 1, 0.3, 1)",
+  transition: "all 1s cubic-bezier(0.16, 1, 0.3, 1)",
   opacity: 0,
 
   [`&.loaded`]: {
@@ -17,6 +16,7 @@ const StyledResource = styled("img", {
 });
 
 const ExternalWebResource: React.FC<NectarExternalWebResource> = ({
+  alt,
   resource,
   objectFit,
 }) => {
@@ -35,6 +35,7 @@ const ExternalWebResource: React.FC<NectarExternalWebResource> = ({
       const src = useGetImageResource(resource);
       return (
         <StyledResource
+          alt={alt}
           src={src}
           ref={imgRef}
           as="img"
