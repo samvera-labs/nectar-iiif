@@ -1,10 +1,19 @@
-import { InternationalString, MetadataItem } from "@iiif/presentation-3";
+import {
+  IIIFExternalWebResource,
+  InternationalString,
+  MetadataItem,
+} from "@iiif/presentation-3";
 import { ReactNode } from "react";
+
+export interface NectarExternalWebResource {
+  resource: IIIFExternalWebResource;
+}
 
 export interface NectarGroup {
   item: MetadataItem;
   language?: string;
 }
+
 export interface NectarHomepage {
   as?: "div" | "ol" | "ul";
   children?: ReactNode | ReactNode[];
@@ -47,6 +56,10 @@ export interface NectarMetadata {
 export interface NectarRequiredStatement {
   language?: string;
   requiredStatement: MetadataItem;
+}
+
+export interface NectarThumbnail {
+  thumbnail: IIIFExternalWebResource[];
 }
 
 export interface NectarSummary {

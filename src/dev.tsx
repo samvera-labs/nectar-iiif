@@ -2,7 +2,14 @@ import React, { useEffect, useState } from "react";
 import { Vault } from "@iiif/vault";
 import ReactDOM from "react-dom";
 import { ManifestNormalized } from "@iiif/presentation-3";
-import { Homepage, Label, Metadata, RequiredStatement, Summary } from "./index";
+import {
+  Homepage,
+  Label,
+  Metadata,
+  RequiredStatement,
+  Summary,
+  Thumbnail,
+} from "./index";
 import Language from "./dev/Language";
 
 const Wrapper = () => {
@@ -28,7 +35,7 @@ const Wrapper = () => {
   const handleLanguage = (e) =>
     setLanguage(e.target.value !== "--" ? e.target.value : undefined);
 
-  const { homepage, label, summary, metadata, requiredStatement } = manifest;
+  const { label, summary, metadata, requiredStatement, thumbnail } = manifest;
 
   return (
     <>
@@ -41,20 +48,24 @@ const Wrapper = () => {
           requiredStatement={requiredStatement}
           language={language}
         />
-        <Homepage
-          homepage={[
+        <Thumbnail
+          thumbnail={[
             {
-              id: "https://dc.library.northwestern.edu/items/7298fdce-adc1-4501-9e14-9e8bd985e149",
-              type: "Text",
-              label: { none: ["Pantalone classico"] },
-              format: "text/html",
+              id: "https://iiif.stack.rdc.library.northwestern.edu/iiif/2/180682c9-dfaf-4881-b7b6-1f2f21092d4f/full/200,/0/default.jpg",
+              type: "Image",
+              format: "image/jpeg",
+              service: [
+                {
+                  id: "https://iiif.stack.rdc.library.northwestern.edu/iiif/2/180682c9-dfaf-4881-b7b6-1f2f21092d4f",
+                  profile: "http://iiif.io/api/image/2/level2.json",
+                  type: "ImageService2",
+                },
+              ],
+              width: 100,
+              height: 100,
             },
           ]}
-          language={language}
         />
-        <Homepage homepage={homepage} language={language}>
-          Wrap this garbage
-        </Homepage>
       </div>
     </>
   );
