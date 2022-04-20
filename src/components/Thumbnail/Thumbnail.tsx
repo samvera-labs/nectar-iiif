@@ -18,9 +18,10 @@ const Thumbnail: React.FC<NectarThumbnail> = ({
   return (
     <>
       {thumbnail.map((resource: IIIFExternalWebResource) => {
-        const { width, height } = resource;
+        const { width = "200", height } = resource;
         return (
           <StyledThumbnail
+            key={resource.id}
             style={{
               width: `${width}px`,
               height: `${height}px`,

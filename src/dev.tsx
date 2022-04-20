@@ -13,18 +13,22 @@ import {
 import Language from "./dev/Language";
 
 const Wrapper = () => {
+  const [thumbnail, setThumbnail] = useState();
   const [manifest, setManifest] = useState<ManifestNormalized>();
   const [language, setLanguage] = useState<String | undefined>();
 
   const manifestId =
-    "https://acw5dcf49d.execute-api.us-east-1.amazonaws.com/dev/items/iiif-image-manifest-1";
+    "https://iiif.harvardartmuseums.org/manifests/object/307976";
 
   useEffect(() => {
     const vault = new Vault();
     if (manifestId)
       vault
         .loadManifest(manifestId)
-        .then((data) => setManifest(data))
+        .then((data) => {
+          setManifest(data);
+          setThumbnail(vault.get(data.thumbnail));
+        })
         .catch((error) => {
           console.error(`Manifest ${manifestId} failed to load: ${error}`);
         });
@@ -35,7 +39,7 @@ const Wrapper = () => {
   const handleLanguage = (e) =>
     setLanguage(e.target.value !== "--" ? e.target.value : undefined);
 
-  const { label, summary, metadata, requiredStatement, thumbnail } = manifest;
+  const { label, summary, metadata, requiredStatement } = manifest;
 
   return (
     <>
@@ -48,26 +52,13 @@ const Wrapper = () => {
           requiredStatement={requiredStatement}
           language={language}
         />
-        <Thumbnail
-          altAsLabel={{ none: ["color"], en: ["colour"], fr: ["couleur"] }}
-          language={language}
-          thumbnail={[
-            {
-              id: "https://iiif.stack.rdc.library.northwestern.edu/iiif/2/180682c9-dfaf-4881-b7b6-1f2f21092d4f/full/200,/0/default.jpg",
-              type: "Image",
-              format: "image/jpeg",
-              service: [
-                {
-                  id: "https://iiif.stack.rdc.library.northwestern.edu/iiif/2/180682c9-dfaf-4881-b7b6-1f2f21092d4f",
-                  profile: "http://iiif.io/api/image/2/level2.json",
-                  type: "ImageService2",
-                },
-              ],
-              width: 200,
-              height: 200,
-            },
-          ]}
-        />
+        {thumbnail && (
+          <Thumbnail
+            altAsLabel={label}
+            language={language}
+            thumbnail={thumbnail}
+          />
+        )}
       </div>
     </>
   );
