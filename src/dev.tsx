@@ -3,7 +3,6 @@ import { Vault } from "@iiif/vault";
 import ReactDOM from "react-dom";
 import { ManifestNormalized } from "@iiif/presentation-3";
 import {
-  Homepage,
   Label,
   Metadata,
   RequiredStatement,
@@ -45,7 +44,13 @@ const Wrapper = () => {
     <>
       <Language handleLanguage={handleLanguage} />
       <div>
-        <Label label={label} language={language} />
+        <Label
+          as="h1"
+          label={label}
+          language={language}
+          className="custom-class"
+          style={{ color: "red" }}
+        />
         <Summary summary={summary} language={language} />
         <Metadata metadata={metadata} language={language} />
         <RequiredStatement

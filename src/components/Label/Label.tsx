@@ -5,10 +5,9 @@ import { NectarLabel } from "types/nectar";
 
 const StyledLabel = styled("span", {});
 
-const Label: React.FC<NectarLabel> = ({
-  as = "span",
-  label,
-  language = "none",
-}) => <StyledLabel as={as}>{useGetLabel(label, language)}</StyledLabel>;
+const Label: React.FC<NectarLabel> = (props) => {
+  const { label, language } = props;
+  return <StyledLabel {...props}>{useGetLabel(label, language)}</StyledLabel>;
+};
 
 export default Label;

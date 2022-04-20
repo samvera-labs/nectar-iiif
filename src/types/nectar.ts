@@ -3,7 +3,9 @@ import {
   InternationalString,
   MetadataItem,
 } from "@iiif/presentation-3";
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
+
+export interface NectarPrimitive extends React.HTMLAttributes<HTMLElement> {}
 
 export interface NectarExternalWebResource {
   alt: string | undefined;
@@ -11,19 +13,19 @@ export interface NectarExternalWebResource {
   objectFit: "contain" | "cover" | "fill" | "none" | "scale-down";
 }
 
-export interface NectarGroup {
+export interface NectarGroup extends NectarPrimitive {
   item: MetadataItem;
   language?: string;
 }
 
-export interface NectarHomepage {
+export interface NectarHomepage extends NectarPrimitive {
   as?: "div" | "ol" | "ul";
   children?: ReactNode | ReactNode[];
   homepage: Array<NectarResource>;
   language?: string;
 }
 
-export interface NectarResource {
+export interface NectarResource extends NectarPrimitive {
   as?: "span" | "li";
   format?: string;
   id: string;
@@ -32,7 +34,7 @@ export interface NectarResource {
   type: string;
 }
 
-export interface NectarLabel {
+export interface NectarLabel extends NectarPrimitive {
   as?:
     | "span"
     | "p"
@@ -49,31 +51,31 @@ export interface NectarLabel {
   language?: string;
 }
 
-export interface NectarMetadata {
+export interface NectarMetadata extends NectarPrimitive {
   language?: string;
   metadata: MetadataItem[];
   title?: string;
 }
 
-export interface NectarRequiredStatement {
+export interface NectarRequiredStatement extends NectarPrimitive {
   language?: string;
   requiredStatement: MetadataItem;
 }
 
-export interface NectarThumbnail {
+export interface NectarThumbnail extends NectarPrimitive {
   altAsLabel: InternationalString;
   language: string;
   thumbnail: IIIFExternalWebResource[];
   objectFit?: "contain" | "cover" | "fill" | "none" | "scale-down";
 }
 
-export interface NectarSummary {
+export interface NectarSummary extends NectarPrimitive {
   as?: "span" | "p" | "label" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   language?: string;
   summary: InternationalString;
 }
 
-export interface NectarValue {
+export interface NectarValue extends NectarPrimitive {
   as?: "span" | "dd";
   language?: string;
   value: InternationalString;
