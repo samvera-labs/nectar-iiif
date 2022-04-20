@@ -23,7 +23,9 @@ const ExternalWebResource: React.FC<NectarExternalWebResource> = ({
     case "Sound":
       return <StyledResource src={id} as="video" key={id} />;
     default:
-      console.warn(`Resource type: ${type} is not valid.`);
+      console.warn(
+        `Resource type: ${type} is not valid or not yet supported in Nectar.`
+      );
       return <></>;
   }
 };
