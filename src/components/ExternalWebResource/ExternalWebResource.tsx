@@ -24,9 +24,8 @@ const ExternalWebResource: React.FC<NectarExternalWebResource> = ({
   const imgRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
-    if (imgRef.current && imgRef.current.complete) {
-      setLoaded(true);
-    }
+    if (imgRef)
+      if (imgRef.current) if (imgRef.current.complete) setLoaded(true);
   }, []);
 
   const { type, id } = resource;
