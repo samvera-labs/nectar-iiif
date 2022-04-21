@@ -13,7 +13,7 @@ export interface NectarExternalWebResource {
   objectFit: "contain" | "cover" | "fill" | "none" | "scale-down";
 }
 
-export interface NectarGroup extends NectarPrimitive {
+export interface NectarMetadataItem extends NectarPrimitive {
   item: MetadataItem;
   language?: string;
 }

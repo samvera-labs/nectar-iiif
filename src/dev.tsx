@@ -49,7 +49,7 @@ const Wrapper = () => {
           label={label}
           language={language}
           className="custom-class"
-          style={{ color: "red" }}
+          css={{ color: "red" }}
         />
         <Summary summary={summary} language={language} />
         <Metadata metadata={metadata} language={language} />

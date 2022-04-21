@@ -1,5 +1,5 @@
 import React from "react";
-import Group from "components/Group/Group";
+import MetadataItem from "components/Metadata/Item";
 import { NectarRequiredStatement } from "types/nectar";
 
 const RequiredStatement: React.FC<NectarRequiredStatement> = ({
@@ -10,7 +10,7 @@ const RequiredStatement: React.FC<NectarRequiredStatement> = ({
 
   return (
     <dl>
-      <Group item={requiredStatement} language={language} />
+      <MetadataItem item={requiredStatement} language={language} />
     </dl>
   );
 };
