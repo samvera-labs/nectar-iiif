@@ -17,7 +17,7 @@ const Wrapper = () => {
   const [language, setLanguage] = useState<String | undefined>();
 
   const manifestId =
-    "https://iiif.harvardartmuseums.org/manifests/object/307976";
+    "https://acw5dcf49d.execute-api.us-east-1.amazonaws.com/dev/items/iiif-image-manifest-2";
 
   useEffect(() => {
     const vault = new Vault();
@@ -51,7 +51,13 @@ const Wrapper = () => {
           className="custom-class"
           css={{ color: "red" }}
         />
-        <Summary summary={summary} language={language} />
+        <Summary
+          as="p"
+          summary={summary}
+          language={language}
+          className="custom-class-2"
+          style={{ color: "blue" }}
+        />
         <Metadata metadata={metadata} language={language} />
         <RequiredStatement
           requiredStatement={requiredStatement}

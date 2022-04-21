@@ -6,8 +6,18 @@ import { NectarLabel } from "types/nectar";
 const StyledLabel = styled("span", {});
 
 const Label: React.FC<NectarLabel> = (props) => {
-  const { label, language } = props;
-  return <StyledLabel {...props}>{useGetLabel(label, language)}</StyledLabel>;
+  const { as, label, language } = props;
+
+  /**
+   * @todo create hook/service for tidying HTMLElement attributes
+   */
+  const attributes = props;
+
+  return (
+    <StyledLabel as={as} {...attributes}>
+      {useGetLabel(label, language)}
+    </StyledLabel>
+  );
 };
 
 export default Label;
