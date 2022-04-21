@@ -21,7 +21,7 @@ describe("homepage primitive", () => {
   });
   it("Renders 3.0 homepage as unordered list wrapping resources", async () => {
     const { getByTestId } = render(
-      <Homepage homepage={homepageResource} as="ul" language="en" />
+      <Homepage homepage={homepageResource} as="ul" lang="en" />
     );
     const el = getByTestId("nectar-homepage");
     expect(el.tagName).toBe("UL");

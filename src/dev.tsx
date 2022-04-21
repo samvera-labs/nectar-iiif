@@ -14,10 +14,10 @@ import Language from "./dev/Language";
 const Wrapper = () => {
   const [thumbnail, setThumbnail] = useState();
   const [manifest, setManifest] = useState<ManifestNormalized>();
-  const [language, setLanguage] = useState<String | undefined>();
+  const [lang, setLanguage] = useState<String | undefined>();
 
   const manifestId =
-    "https://acw5dcf49d.execute-api.us-east-1.amazonaws.com/dev/items/iiif-image-manifest-2";
+    "https://iiif.io/api/cookbook/recipe/0006-text-language/manifest.json";
 
   useEffect(() => {
     const vault = new Vault();
@@ -47,35 +47,31 @@ const Wrapper = () => {
         <Label
           as="h1"
           label={label}
-          language={language}
+          lang={lang}
           className="custom-class-1"
           css={{ color: "red" }}
         />
         <Summary
           as="p"
           summary={summary}
-          language={language}
+          lang={lang}
           className="custom-class-2"
           style={{ color: "blue" }}
         />
         <Metadata
           metadata={metadata}
-          language={language}
+          lang={lang}
           className="custom-class-3"
           style={{ backgroundColor: "gray" }}
         />
         <RequiredStatement
           requiredStatement={requiredStatement}
-          language={language}
+          lang={lang}
           className="custom-class-4"
           style={{ backgroundColor: "purple" }}
         />
         {thumbnail && (
-          <Thumbnail
-            altAsLabel={label}
-            language={language}
-            thumbnail={thumbnail}
-          />
+          <Thumbnail altAsLabel={label} lang={lang} thumbnail={thumbnail} />
         )}
       </div>
     </>

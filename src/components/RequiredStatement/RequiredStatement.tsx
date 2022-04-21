@@ -6,7 +6,7 @@ import { NectarRequiredStatement } from "types/nectar";
 const StyledRequiredStatement = styled("dl", {});
 
 const RequiredStatement: React.FC<NectarRequiredStatement> = (props) => {
-  const { as, language, requiredStatement } = props;
+  const { as, requiredStatement } = props;
 
   if (!requiredStatement) return <></>;
 
@@ -17,7 +17,7 @@ const RequiredStatement: React.FC<NectarRequiredStatement> = (props) => {
 
   return (
     <StyledRequiredStatement as={as} {...attributes}>
-      <MetadataItem item={requiredStatement} language={language} />
+      <MetadataItem item={requiredStatement} lang={attributes.lang} />
     </StyledRequiredStatement>
   );
 };

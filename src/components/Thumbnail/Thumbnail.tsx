@@ -10,11 +10,11 @@ const StyledThumbnail = styled("div", {});
 
 const Thumbnail: React.FC<NectarThumbnail> = ({
   altAsLabel,
-  language,
+  lang,
   objectFit = "cover",
   thumbnail,
 }) => {
-  const alt = useGetLabel(altAsLabel, language);
+  const alt = useGetLabel(altAsLabel, lang);
   return (
     <>
       {thumbnail.map((resource: IIIFExternalWebResource) => {

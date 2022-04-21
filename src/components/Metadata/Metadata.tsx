@@ -6,7 +6,7 @@ import { NectarMetadata } from "types/nectar";
 const StyledMetadata = styled("dl", {});
 
 const Metadata: React.FC<NectarMetadata> = (props) => {
-  const { as, metadata, language } = props;
+  const { as, metadata } = props;
 
   if (!Array.isArray(metadata)) return <></>;
 
@@ -20,7 +20,9 @@ const Metadata: React.FC<NectarMetadata> = (props) => {
       {metadata.length > 0 && (
         <StyledMetadata as={as} {...attributes}>
           {metadata.map((item, index) => {
-            return <MetadataItem item={item} key={index} language={language} />;
+            return (
+              <MetadataItem item={item} key={index} lang={attributes.lang} />
+            );
           })}
         </StyledMetadata>
       )}

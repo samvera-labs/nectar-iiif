@@ -7,8 +7,8 @@ interface LanguageProps {
 const Language: React.FC<LanguageProps> = ({ handleLanguage }) => {
   return (
     <form>
-      <label htmlFor="language-code">Language Code</label>
-      <select id="language-code" name="language-code" onChange={handleLanguage}>
+      <label htmlFor="lang-code">Language Code</label>
+      <select id="lang-code" name="lang-code" onChange={handleLanguage}>
         <option>--</option>
         <option value="none">none</option>
         <option value="en">en</option>
