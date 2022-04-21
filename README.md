@@ -48,15 +48,26 @@ return (
 
 ## Primitives
 
+All primitives accept HTMLElement attributes in a JSX flavor.
+
+| Prop        | Type                         | Default     |
+| ----------- | ---------------------------- | ----------- |
+| `className` | `string`, `undefined`        | `undefined` |
+| `style`     | `CSSProperties`, `undefined` | `undefined` |
+| `lang`      | `string`, `undefined`        | `undefined` |
+| `data-*`    | `string`, `undefined`        | --          |
+| `aria-*`    | `AriaAttributes`             | --          |
+
+The value of `lang` will couple with [InternationalString](https://github.com/IIIF-Commons/presentation-3-types/blob/main/iiif/descriptive.d.ts#L6-L8) props to output the denoted `label`, `value`, `summary` entries. If lang is undefined, entries will default to the first entry in the array index.
+
 ### Label
 
 #### Reference
 
-| Prop       | Type                                                                                                              | Default | Required           |
-| ---------- | ----------------------------------------------------------------------------------------------------------------- | ------- | ------------------ |
-| `as`       | ` span`, `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `p`, `label`, `dt`, `dd`                                             | `span`  | --                 |
-| `language` | string                                                                                                            | `none`  | --                 |
-| `label`    | [InternationalString](https://github.com/IIIF-Commons/presentation-3-types/blob/main/iiif/descriptive.d.ts#L6-L8) | --      | :white_check_mark: |
+| Prop    | Type                                                                  | Default | Required           |
+| ------- | --------------------------------------------------------------------- | ------- | ------------------ |
+| `as`    | ` span`, `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `p`, `label`, `dt`, `dd` | `span`  | --                 |
+| `label` | `InternationalString`                                                 | --      | :white_check_mark: |
 
 #### Usage
 
@@ -72,11 +83,10 @@ return <Label label={manifest.label} as="h1" language="en" />;
 
 #### Reference
 
-| Prop       | Type                                                                                                              | Default | Required           |
-| ---------- | ----------------------------------------------------------------------------------------------------------------- | ------- | ------------------ |
-| `as`       | ` span`, `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `p`                                                                  | `p`     | --                 |
-| `language` | string                                                                                                            | `none`  | --                 |
-| `summary`  | [InternationalString](https://github.com/IIIF-Commons/presentation-3-types/blob/main/iiif/descriptive.d.ts#L6-L8) | --      | :white_check_mark: |
+| Prop      | Type                                             | Default | Required           |
+| --------- | ------------------------------------------------ | ------- | ------------------ |
+| `as`      | ` span`, `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `p` | `span`  | --                 |
+| `summary` | `InternationalString                             | --      | :white_check_mark: |
 
 #### Usage
 
