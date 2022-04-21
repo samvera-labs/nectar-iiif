@@ -1,17 +1,28 @@
 import React from "react";
+import { styled } from "@stitches/react";
 import MetadataItem from "components/Metadata/Item";
 import { NectarRequiredStatement } from "types/nectar";
 
-const RequiredStatement: React.FC<NectarRequiredStatement> = ({
-  language,
-  requiredStatement,
-}) => {
+const StyledRequiredStatement = styled("dl", {});
+
+const RequiredStatement: React.FC<NectarRequiredStatement> = (props) => {
+  const { as, language, requiredStatement } = props;
+
   if (!requiredStatement) return <></>;
 
+  /**
+   * @todo create hook/service for tidying HTMLElement attributes
+   */
+  const attributes = props;
+
   return (
-    <dl>
-      <MetadataItem item={requiredStatement} language={language} />
-    </dl>
+    <StyledRequiredStatement as={as} {...attributes}>
+      <MetadataItem
+        item={requiredStatement}
+        language={language}
+        {...attributes}
+      />
+    </StyledRequiredStatement>
   );
 };
 

@@ -48,7 +48,7 @@ const Wrapper = () => {
           as="h1"
           label={label}
           language={language}
-          className="custom-class"
+          className="custom-class-1"
           css={{ color: "red" }}
         />
         <Summary
@@ -58,10 +58,17 @@ const Wrapper = () => {
           className="custom-class-2"
           style={{ color: "blue" }}
         />
-        <Metadata metadata={metadata} language={language} />
+        <Metadata
+          metadata={metadata}
+          language={language}
+          className="custom-class-3"
+          style={{ backgroundColor: "gray" }}
+        />
         <RequiredStatement
           requiredStatement={requiredStatement}
           language={language}
+          className="custom-class-4"
+          style={{ backgroundColor: "purple" }}
         />
         {thumbnail && (
           <Thumbnail

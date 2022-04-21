@@ -52,12 +52,13 @@ export interface NectarLabel extends NectarPrimitive {
 }
 
 export interface NectarMetadata extends NectarPrimitive {
+  as?: "dl";
   language?: string;
   metadata: MetadataItem[];
-  title?: string;
 }
 
 export interface NectarRequiredStatement extends NectarPrimitive {
+  as?: "dl";
   language?: string;
   requiredStatement: MetadataItem;
 }

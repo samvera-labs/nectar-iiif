@@ -3,7 +3,8 @@ import Label from "components/Label/Label";
 import Value from "components/Value/Value";
 import { NectarMetadataItem } from "types/nectar";
 
-const MetadataItem: React.FC<NectarMetadataItem> = ({ item, language }) => {
+const MetadataItem: React.FC<NectarMetadataItem> = (props) => {
+  const { item, language } = props;
   const { label, value } = item;
   return (
     <div role="group">
