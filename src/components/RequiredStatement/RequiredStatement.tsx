@@ -17,11 +17,7 @@ const RequiredStatement: React.FC<NectarRequiredStatement> = (props) => {
 
   return (
     <StyledRequiredStatement as={as} {...attributes}>
-      <MetadataItem
-        item={requiredStatement}
-        language={language}
-        {...attributes}
-      />
+      <MetadataItem item={requiredStatement} language={language} />
     </StyledRequiredStatement>
   );
 };
