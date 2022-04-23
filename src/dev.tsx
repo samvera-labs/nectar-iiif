@@ -9,29 +9,29 @@ import {
   Summary,
   Thumbnail,
 } from "./index";
-import Language from "./dev/Language";
+import DynamicUrl from "./dev/DynamicUrl";
+import { manifests } from "./dev/manifests";
 
 const Wrapper = () => {
+  const defaultUrl: string = manifests[0].url;
   const [thumbnail, setThumbnail] = useState();
   const [manifest, setManifest] = useState<ManifestNormalized>();
   const [lang, setLanguage] = useState<String | undefined>();
-
-  const manifestId =
-    "https://iiif.io/api/cookbook/recipe/0006-text-language/manifest.json";
+  const [url, setUrl] = React.useState(defaultUrl);
 
   useEffect(() => {
     const vault = new Vault();
-    if (manifestId)
+    if (url)
       vault
-        .loadManifest(manifestId)
+        .loadManifest(url)
         .then((data) => {
           setManifest(data);
           setThumbnail(vault.get(data.thumbnail));
         })
         .catch((error) => {
-          console.error(`Manifest ${manifestId} failed to load: ${error}`);
+          console.error(`Manifest ${url} failed to load: ${error}`);
         });
-  }, [manifestId]);
+  }, [url]);
 
   if (!manifest) return <>Loading...</>;
 
@@ -42,7 +42,6 @@ const Wrapper = () => {
 
   return (
     <>
-      <Language handleLanguage={handleLanguage} />
       <div>
         <Label as="h1" label={label} lang={lang} />
         <Summary as="p" summary={summary} lang={lang} />
@@ -52,6 +51,7 @@ const Wrapper = () => {
           <Thumbnail altAsLabel={label} lang={lang} thumbnail={thumbnail} />
         )}
       </div>
+      <DynamicUrl url={url} setUrl={setUrl} handleLanguage={handleLanguage} />
     </>
   );
 };
