@@ -48,15 +48,16 @@ return (
 
 ## Primitives
 
-All primitives accept HTMLElement attributes in a JSX flavor.
+All primitives accept HTMLElement attributes.
 
-| Prop        | Type                         | Default     |
-| ----------- | ---------------------------- | ----------- |
-| `className` | `string`, `undefined`        | `undefined` |
-| `style`     | `CSSProperties`, `undefined` | `undefined` |
-| `lang`      | `string`, `undefined`        | `undefined` |
-| `data-*`    | `string`, `undefined`        | --          |
-| `aria-*`    | `AriaAttributes`             | --          |
+| Prop        | Type                          | Default     |
+| ----------- | ----------------------------- | ----------- |
+| `className` | `string`, `undefined`         | `undefined` |
+| `style`     | `CSSProperties`, `undefined`  | `undefined` |
+| `lang`      | `string`, `undefined`         | `undefined` |
+| `title`     | `string`, `undefined`         | `undefined` |
+| `data-*`    | `string`, `undefined`         | `undefined` |
+| `aria-*`    | `AriaAttributes`, `undefined` | `undefined` |
 
 The value of `lang` will couple with [InternationalString](https://github.com/IIIF-Commons/presentation-3-types/blob/main/iiif/descriptive.d.ts#L6-L8) props to output the denoted `label`, `value`, `summary` entries. If lang is undefined, entries will default to the first entry in the array index.
 
