@@ -1013,11 +1013,11 @@
             var dispatcher = resolveDispatcher();
             return dispatcher.useReducer(reducer, initialArg, init);
           }
-          function useRef2(initialValue) {
+          function useRef3(initialValue) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useRef(initialValue);
           }
-          function useEffect3(create, deps) {
+          function useEffect4(create, deps) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useEffect(create, deps);
           }
@@ -1797,14 +1797,14 @@
           exports.useContext = useContext;
           exports.useDebugValue = useDebugValue;
           exports.useDeferredValue = useDeferredValue;
-          exports.useEffect = useEffect3;
+          exports.useEffect = useEffect4;
           exports.useId = useId;
           exports.useImperativeHandle = useImperativeHandle;
           exports.useInsertionEffect = useInsertionEffect;
           exports.useLayoutEffect = useLayoutEffect;
           exports.useMemo = useMemo;
           exports.useReducer = useReducer;
-          exports.useRef = useRef2;
+          exports.useRef = useRef3;
           exports.useState = useState3;
           exports.useSyncExternalStore = useSyncExternalStore;
           exports.useTransition = useTransition;
@@ -7302,7 +7302,7 @@
             defaultPrevented: 0,
             isTrusted: 0
           };
-          var SyntheticEvent2 = createSyntheticEvent(EventInterface);
+          var SyntheticEvent = createSyntheticEvent(EventInterface);
           var UIEventInterface = assign({}, EventInterface, {
             view: 0,
             detail: 0
@@ -7763,7 +7763,7 @@
             enqueueStateRestore(target);
             var listeners = accumulateTwoPhaseListeners(inst, "onChange");
             if (listeners.length > 0) {
-              var event = new SyntheticEvent2("onChange", "change", null, nativeEvent, target);
+              var event = new SyntheticEvent("onChange", "change", null, nativeEvent, target);
               dispatchQueue.push({
                 event,
                 listeners
@@ -8267,7 +8267,7 @@
               lastSelection = currentSelection;
               var listeners = accumulateTwoPhaseListeners(activeElementInst$1, "onSelect");
               if (listeners.length > 0) {
-                var event = new SyntheticEvent2("onSelect", "select", null, nativeEvent, nativeEventTarget);
+                var event = new SyntheticEvent("onSelect", "select", null, nativeEvent, nativeEventTarget);
                 dispatchQueue.push({
                   event,
                   listeners
@@ -8379,7 +8379,7 @@
             if (reactName === void 0) {
               return;
             }
-            var SyntheticEventCtor = SyntheticEvent2;
+            var SyntheticEventCtor = SyntheticEvent;
             var reactEventType = domEventName;
             switch (domEventName) {
               case "keypress":
@@ -22594,7 +22594,7 @@
   });
 
   // src/dev.tsx
-  var import_react18 = __toESM(require_react());
+  var import_react19 = __toESM(require_react());
 
   // node_modules/@iiif/parser/dist/esm/index.mjs
   var k = { id: "https://iiif-parser/annotation-page", type: "AnnotationPage", behavior: [], motivation: null, label: null, thumbnail: [], summary: null, requiredStatement: null, metadata: [], rights: null, provider: [], items: [], seeAlso: [], homepage: [], logo: [], rendering: [], service: [] };
@@ -25122,68 +25122,253 @@
   };
   var Thumbnail_default = Thumbnail;
 
-  // src/dev/Language.tsx
-  var import_react17 = __toESM(require_react());
-  var Language = ({ handleLanguage }) => {
-    return /* @__PURE__ */ import_react17.default.createElement("form", null, /* @__PURE__ */ import_react17.default.createElement("label", {
-      htmlFor: "lang-code"
-    }, "Language Code"), /* @__PURE__ */ import_react17.default.createElement("select", {
+  // src/dev/DynamicUrl.tsx
+  var import_react18 = __toESM(require_react());
+
+  // src/stitches.tsx
+  var theme = {
+    colors: {
+      white: "#ffffff",
+      primary: "#1a1d1e",
+      primaryMuted: "#26292b",
+      primaryAlt: "#151718",
+      accent: "#006adc",
+      accentMuted: "#5eb0ef",
+      accentAlt: "#00254d",
+      secondary: "#FFFFFF",
+      secondaryMuted: "#e6e8eb",
+      secondaryAlt: "#c1c8cd"
+    }
+  };
+  var media = {
+    xxs: "(max-width: 349px)",
+    xs: "(max-width: 575px)",
+    sm: "(max-width: 767px)",
+    md: "(max-width: 991px)",
+    xl: "(max-width: 1199px)",
+    lg: "(min-width: 1200px)"
+  };
+  var { styled, css, keyframes, createTheme } = q2({
+    theme,
+    media
+  });
+
+  // src/dev/DynamicUrl.styled.tsx
+  var DynamicUrlStyled = styled("section", {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    padding: "2rem"
+  });
+  var ManualForm = styled("form", {
+    display: "flex",
+    justifyContent: "center",
+    flexDirection: "column",
+    alignItems: "center",
+    width: "61.8%",
+    label: {
+      display: "block",
+      marginBottom: "1rem",
+      fontSize: "1.25rem",
+      color: "$primary",
+      fontWeight: "400",
+      fontFamily: "$display"
+    },
+    "> div": {
+      display: "flex",
+      backgroundColor: "$secondaryMuted",
+      position: "relative",
+      width: "100%",
+      borderRadius: "3px",
+      select: {
+        padding: "0.382rem 0 0.382rem 0.618rem",
+        cursor: "pointer",
+        marginRight: "0.382rem",
+        alignSelf: "center",
+        background: "$secondary",
+        border: "none",
+        fontSize: "0.7222rem",
+        fontFamily: "$sans",
+        fontWeight: "400",
+        borderRadius: "3px",
+        backgroundColor: "$secondary",
+        color: "$primary"
+      },
+      input: {
+        padding: "0.618rem 1rem",
+        background: "transparent",
+        color: "$primary",
+        border: "none",
+        fontFamily: "$sans",
+        width: "100%"
+      },
+      button: {
+        padding: "0.382rem 0.618rem",
+        cursor: "pointer",
+        marginRight: "0.382rem",
+        alignSelf: "center",
+        background: "$secondary",
+        border: "none",
+        fontSize: "0.7222rem",
+        fontFamily: "$sans",
+        fontWeight: "700",
+        borderRadius: "3px",
+        backgroundColor: "$secondary",
+        color: "$primary"
+      }
+    }
+  });
+  var Curated = styled("div", {
+    padding: "2rem",
+    display: "flex",
+    justifyContent: "center",
+    flexWrap: "wrap"
+  });
+  var ButtonForm = styled("form", {
+    button: {
+      backgroundColor: "$transparent",
+      border: "none",
+      outline: "1px solid $secondaryMuted",
+      color: "$primaryMuted",
+      fontFamily: "$sans",
+      fontSize: "0.8333rem",
+      height: "2rem",
+      padding: "0 1rem",
+      borderRadius: "1rem",
+      cursor: "pointer",
+      margin: "0.5rem"
+    },
+    "&[data-active='true']": {
+      button: {
+        color: "$white",
+        fontWeight: "700",
+        backgroundColor: "$accent",
+        outline: "1px solid $accent"
+      }
+    }
+  });
+
+  // src/dev/manifests.ts
+  var manifests = [
+    {
+      url: "https://iiif.harvardartmuseums.org/manifests/object/307976",
+      label: "Milk Pond"
+    },
+    {
+      url: "https://iiif.io/api/cookbook/recipe/0006-text-language/manifest.json",
+      label: "Whistler's Mother"
+    },
+    {
+      url: "https://manifests.collections.yale.edu/ycba/obj/21168",
+      label: "Greenland Falcon"
+    },
+    {
+      url: "https://iiif.bodleian.ox.ac.uk/iiif/manifest/e32a277e-91e2-4a6d-8ba6-cc4bad230410.json",
+      label: "Bodleian Library MS. Ind. Inst. Misc. 22"
+    },
+    {
+      url: "https://acw5dcf49d.execute-api.us-east-1.amazonaws.com/dev/items/iiif-image-manifest-1",
+      label: "Pantalone classico"
+    }
+  ];
+
+  // src/dev/DynamicUrl.tsx
+  var DynamicUrl = ({
+    url,
+    setUrl,
+    handleLanguage
+  }) => {
+    const inputRef = (0, import_react18.useRef)(null);
+    const handleSubmit = (e2) => {
+      var _a;
+      e2.preventDefault();
+      const target = e2.target;
+      setUrl((_a = target.url) == null ? void 0 : _a.value);
+    };
+    (0, import_react18.useEffect)(() => {
+      if (inputRef.current)
+        inputRef.current.value = url;
+    }, [url]);
+    return /* @__PURE__ */ import_react18.default.createElement(DynamicUrlStyled, null, /* @__PURE__ */ import_react18.default.createElement(ManualForm, {
+      onSubmit: handleSubmit
+    }, /* @__PURE__ */ import_react18.default.createElement("label", {
+      htmlFor: "manual-manifest"
+    }, "Provide a IIIF Manifest"), /* @__PURE__ */ import_react18.default.createElement("div", null, /* @__PURE__ */ import_react18.default.createElement("input", {
+      type: "text",
+      name: "url",
+      id: "manual-manifest",
+      placeholder: "IIIF Manifest",
+      ref: inputRef
+    }), /* @__PURE__ */ import_react18.default.createElement("select", {
       id: "lang-code",
       name: "lang-code",
-      onChange: handleLanguage
-    }, /* @__PURE__ */ import_react17.default.createElement("option", null, "--"), /* @__PURE__ */ import_react17.default.createElement("option", {
+      onChange: handleLanguage,
+      "aria-label": "bcp47 language code"
+    }, /* @__PURE__ */ import_react18.default.createElement("option", null, "--"), /* @__PURE__ */ import_react18.default.createElement("option", {
       value: "none"
-    }, "none"), /* @__PURE__ */ import_react17.default.createElement("option", {
+    }, "none"), /* @__PURE__ */ import_react18.default.createElement("option", {
       value: "en"
-    }, "en"), /* @__PURE__ */ import_react17.default.createElement("option", {
+    }, "en"), /* @__PURE__ */ import_react18.default.createElement("option", {
       value: "fr"
-    }, "fr")));
+    }, "fr")), /* @__PURE__ */ import_react18.default.createElement("button", {
+      type: "submit"
+    }, "View"))), manifests.length > 0 && /* @__PURE__ */ import_react18.default.createElement(Curated, null, manifests.map((obj) => /* @__PURE__ */ import_react18.default.createElement(ButtonForm, {
+      key: obj.label,
+      onSubmit: handleSubmit,
+      "data-active": url === obj.url ? true : false
+    }, /* @__PURE__ */ import_react18.default.createElement("button", {
+      name: "url",
+      value: obj.url
+    }, obj.label)))));
   };
-  var Language_default = Language;
+  var DynamicUrl_default = DynamicUrl;
 
   // src/dev.tsx
   var Wrapper = () => {
-    const [thumbnail, setThumbnail] = (0, import_react18.useState)();
-    const [manifest, setManifest] = (0, import_react18.useState)();
-    const [lang, setLanguage] = (0, import_react18.useState)();
-    const manifestId = "https://iiif.io/api/cookbook/recipe/0006-text-language/manifest.json";
-    (0, import_react18.useEffect)(() => {
+    const defaultUrl = manifests[0].url;
+    const [thumbnail, setThumbnail] = (0, import_react19.useState)();
+    const [manifest, setManifest] = (0, import_react19.useState)();
+    const [lang, setLanguage] = (0, import_react19.useState)();
+    const [url, setUrl] = import_react19.default.useState(defaultUrl);
+    (0, import_react19.useEffect)(() => {
       const vault = new Vault();
-      if (manifestId)
-        vault.loadManifest(manifestId).then((data) => {
+      if (url)
+        vault.loadManifest(url).then((data) => {
           setManifest(data);
           setThumbnail(vault.get(data.thumbnail));
         }).catch((error) => {
-          console.error(`Manifest ${manifestId} failed to load: ${error}`);
+          console.error(`Manifest ${url} failed to load: ${error}`);
         });
-    }, [manifestId]);
+    }, [url]);
     if (!manifest)
-      return /* @__PURE__ */ import_react18.default.createElement(import_react18.default.Fragment, null, "Loading...");
+      return /* @__PURE__ */ import_react19.default.createElement(import_react19.default.Fragment, null, "Loading...");
     const handleLanguage = (e2) => setLanguage(e2.target.value !== "--" ? e2.target.value : void 0);
     const { label, summary, metadata, requiredStatement } = manifest;
-    return /* @__PURE__ */ import_react18.default.createElement(import_react18.default.Fragment, null, /* @__PURE__ */ import_react18.default.createElement(Language_default, {
-      handleLanguage
-    }), /* @__PURE__ */ import_react18.default.createElement("div", null, /* @__PURE__ */ import_react18.default.createElement(Label_default, {
+    return /* @__PURE__ */ import_react19.default.createElement(import_react19.default.Fragment, null, /* @__PURE__ */ import_react19.default.createElement("div", null, /* @__PURE__ */ import_react19.default.createElement(Label_default, {
       as: "h1",
       label,
       lang
-    }), /* @__PURE__ */ import_react18.default.createElement(Summary_default, {
+    }), /* @__PURE__ */ import_react19.default.createElement(Summary_default, {
       as: "p",
       summary,
       lang
-    }), /* @__PURE__ */ import_react18.default.createElement(Metadata_default, {
+    }), /* @__PURE__ */ import_react19.default.createElement(Metadata_default, {
       metadata,
       lang
-    }), /* @__PURE__ */ import_react18.default.createElement(RequiredStatement_default, {
+    }), /* @__PURE__ */ import_react19.default.createElement(RequiredStatement_default, {
       requiredStatement,
       lang
-    }), thumbnail && /* @__PURE__ */ import_react18.default.createElement(Thumbnail_default, {
+    }), thumbnail && /* @__PURE__ */ import_react19.default.createElement(Thumbnail_default, {
       altAsLabel: label,
       lang,
       thumbnail
-    })));
+    })), /* @__PURE__ */ import_react19.default.createElement(DynamicUrl_default, {
+      url,
+      setUrl,
+      handleLanguage
+    }));
   };
-  import_react_dom.default.render(/* @__PURE__ */ import_react18.default.createElement(import_react18.StrictMode, null, /* @__PURE__ */ import_react18.default.createElement(Wrapper, null)), document.getElementById("root"));
+  import_react_dom.default.render(/* @__PURE__ */ import_react19.default.createElement(import_react19.StrictMode, null, /* @__PURE__ */ import_react19.default.createElement(Wrapper, null)), document.getElementById("root"));
 })();
 /**
  * @license React
