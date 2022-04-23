@@ -38,6 +38,7 @@
     "chokidar": "^3.5.3",
     "esbuild": "^0.14.36",
     "esbuild-envfile-plugin": "^1.0.2",
+    "fs-extra": "^10.1.0",
     "jest": "^27.5.1",
     "live-server": "^1.1.0",
     "markdown-it": "^13.0.0",
