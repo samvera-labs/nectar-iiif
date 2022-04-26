@@ -18,14 +18,14 @@ const ManualForm = styled("form", {
     display: "block",
     marginBottom: "1rem",
     fontSize: "1.25rem",
-    color: "$primary",
+    color: "#1a1d1e",
     fontWeight: "400",
     fontFamily: "$display",
   },
 
   "> div": {
     display: "flex",
-    backgroundColor: "$secondaryMuted",
+    backgroundColor: "#e6e8eb",
     position: "relative",
     width: "100%",
     borderRadius: "3px",
@@ -35,20 +35,20 @@ const ManualForm = styled("form", {
       cursor: "pointer",
       marginRight: "0.382rem",
       alignSelf: "center",
-      background: "$secondary",
+      background: "#FFFFFF",
       border: "none",
       fontSize: "0.7222rem",
       fontFamily: "$sans",
       fontWeight: "400",
       borderRadius: "3px",
-      backgroundColor: "$secondary",
-      color: "$primary",
+      backgroundColor: "#FFFFFF",
+      color: "#1a1d1e",
     },
 
     input: {
       padding: "0.618rem 1rem",
       background: "transparent",
-      color: "$primary",
+      color: "#1a1d1e",
       border: "none",
       fontFamily: "$sans",
       width: "100%",
@@ -59,14 +59,14 @@ const ManualForm = styled("form", {
       cursor: "pointer",
       marginRight: "0.382rem",
       alignSelf: "center",
-      background: "$secondary",
+      background: "#FFFFFF",
       border: "none",
       fontSize: "0.7222rem",
       fontFamily: "$sans",
       fontWeight: "700",
       borderRadius: "3px",
-      backgroundColor: "$secondary",
-      color: "$primary",
+      backgroundColor: "#FFFFFF",
+      color: "#1a1d1e",
     },
   },
 });
@@ -80,10 +80,10 @@ const Curated = styled("div", {
 
 const ButtonForm = styled("form", {
   button: {
-    backgroundColor: "$transparent",
+    backgroundColor: "transparent",
     border: "none",
-    outline: "1px solid $secondaryMuted",
-    color: "$primaryMuted",
+    outline: "1px solid #e6e8eb",
+    color: "#1a1d1e",
     fontFamily: "$sans",
     fontSize: "0.8333rem",
     height: "2rem",
@@ -95,10 +95,10 @@ const ButtonForm = styled("form", {
 
   "&[data-active='true']": {
     button: {
-      color: "$white",
+      color: "#FFFFFF",
       fontWeight: "700",
-      backgroundColor: "$accent",
-      outline: "1px solid $accent",
+      backgroundColor: "#006adc",
+      outline: "1px solid #006adc",
     },
   },
 });

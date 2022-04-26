@@ -1,5 +1,9 @@
 export const manifests = [
   {
+    url: "https://iiif.harvardartmuseums.org/manifests/object/307976",
+    label: "Milk Pond",
+  },
+  {
     url: "https://acw5dcf49d.execute-api.us-east-1.amazonaws.com/dev/items/iiif-image-manifest-1",
     label: "Pantalone classico",
   },
@@ -12,11 +16,11 @@ export const manifests = [
     label: "Greenland Falcon",
   },
   {
-    url: "https://iiif.harvardartmuseums.org/manifests/object/307976",
-    label: "Milk Pond",
-  },
-  {
     url: "https://iiif.io/api/cookbook/recipe/0006-text-language/manifest.json",
     label: "Whistler's Mother",
+  },
+  {
+    url: "https://figgy.princeton.edu/concern/scanned_resources/678fb869-c5de-4e5a-a1b7-2cd71ff663ec/manifest",
+    label: "Kolʹka i Lenin",
   },
 ];
