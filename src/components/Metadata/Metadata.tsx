@@ -1,7 +1,8 @@
 import React from "react";
-import { styled } from "@stitches/react";
+import { styled } from "stitches";
 import MetadataItem from "./Item";
 import { NectarMetadata } from "types/nectar";
+import sanitizeAttributes from "services/html-element";
 
 const StyledMetadata = styled("dl", {});
 
@@ -11,9 +12,10 @@ const Metadata: React.FC<NectarMetadata> = (props) => {
   if (!Array.isArray(metadata)) return <></>;
 
   /**
-   * @todo create hook/service for tidying HTMLElement attributes
+   * Create attributes and remove React props
    */
-  const attributes = props;
+  const remove = ["as", "metadata"];
+  let attributes = sanitizeAttributes(props, remove);
 
   return (
     <>

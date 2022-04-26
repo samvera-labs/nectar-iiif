@@ -1,14 +1,16 @@
 import React from "react";
 import Label from "components/Label/Label";
 import { NectarSummary } from "types/nectar";
+import sanitizeAttributes from "services/html-element";
 
 const Summary: React.FC<NectarSummary> = (props) => {
   const { as, summary } = props;
 
   /**
-   * @todo create hook/service for tidying HTMLElement attributes
+   * Create attributes and remove React props
    */
-  const attributes = props;
+  const remove = ["as", "summary"];
+  let attributes = sanitizeAttributes(props, remove);
 
   return <Label as={as} label={summary} {...attributes} />;
 };

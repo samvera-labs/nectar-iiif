@@ -47,9 +47,7 @@ const Wrapper = () => {
         <Summary as="p" summary={summary} lang={lang} />
         <Metadata metadata={metadata} lang={lang} />
         <RequiredStatement requiredStatement={requiredStatement} lang={lang} />
-        {thumbnail && (
-          <Thumbnail altAsLabel={label} lang={lang} thumbnail={thumbnail} />
-        )}
+        {thumbnail && <Thumbnail thumbnail={thumbnail} altAsLabel={label} />}
       </div>
       <DynamicUrl url={url} setUrl={setUrl} handleLanguage={handleLanguage} />
     </>

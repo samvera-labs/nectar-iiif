@@ -7,12 +7,6 @@ import React, { ReactNode } from "react";
 
 export interface NectarPrimitive extends React.HTMLAttributes<HTMLElement> {}
 
-export interface NectarExternalWebResource {
-  alt: string | undefined;
-  resource: IIIFExternalWebResource;
-  objectFit: "contain" | "cover" | "fill" | "none" | "scale-down";
-}
-
 export interface NectarMetadataItem extends NectarPrimitive {
   item: MetadataItem;
 }
@@ -58,9 +52,8 @@ export interface NectarRequiredStatement extends NectarPrimitive {
 }
 
 export interface NectarThumbnail extends NectarPrimitive {
-  altAsLabel: InternationalString;
+  altAsLabel?: InternationalString;
   thumbnail: IIIFExternalWebResource[];
-  objectFit?: "contain" | "cover" | "fill" | "none" | "scale-down";
 }
 
 export interface NectarSummary extends NectarPrimitive {
