@@ -3,12 +3,12 @@ function sanitizeAttributes(props: any, remove: string[]) {
     !remove.includes(key) ? key : null
   );
 
-  let attributes: React.HTMLAttributes<HTMLElement> = new Object();
+  let attributes: any = new Object();
   entries.forEach((key) => {
     attributes[key] = props[key];
   });
 
-  return attributes;
+  return attributes as React.HTMLAttributes<HTMLElement>;
 }
 
 export default sanitizeAttributes;
