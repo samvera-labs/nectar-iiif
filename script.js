@@ -1005,7 +1005,7 @@
             }
             return dispatcher.useContext(Context);
           }
-          function useState3(initialState) {
+          function useState2(initialState) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useState(initialState);
           }
@@ -1013,11 +1013,11 @@
             var dispatcher = resolveDispatcher();
             return dispatcher.useReducer(reducer, initialArg, init);
           }
-          function useRef3(initialValue) {
+          function useRef2(initialValue) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useRef(initialValue);
           }
-          function useEffect4(create, deps) {
+          function useEffect3(create, deps) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useEffect(create, deps);
           }
@@ -1797,15 +1797,15 @@
           exports.useContext = useContext;
           exports.useDebugValue = useDebugValue;
           exports.useDeferredValue = useDeferredValue;
-          exports.useEffect = useEffect4;
+          exports.useEffect = useEffect3;
           exports.useId = useId;
           exports.useImperativeHandle = useImperativeHandle;
           exports.useInsertionEffect = useInsertionEffect;
           exports.useLayoutEffect = useLayoutEffect;
           exports.useMemo = useMemo;
           exports.useReducer = useReducer;
-          exports.useRef = useRef3;
-          exports.useState = useState3;
+          exports.useRef = useRef2;
+          exports.useState = useState2;
           exports.useSyncExternalStore = useSyncExternalStore;
           exports.useTransition = useTransition;
           exports.version = ReactVersion;
@@ -2454,9 +2454,9 @@
           if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
             __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
           }
-          var React12 = require_react();
+          var React11 = require_react();
           var Scheduler = require_scheduler();
-          var ReactSharedInternals = React12.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React11.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           var suppressWarning = false;
           function setSuppressWarning(newSuppressWarning) {
             {
@@ -3852,7 +3852,7 @@
             {
               if (props.value == null) {
                 if (typeof props.children === "object" && props.children !== null) {
-                  React12.Children.forEach(props.children, function(child) {
+                  React11.Children.forEach(props.children, function(child) {
                     if (child == null) {
                       return;
                     }
@@ -11399,7 +11399,7 @@
             }
           }
           var fakeInternalInstance = {};
-          var emptyRefsObject = new React12.Component().refs;
+          var emptyRefsObject = new React11.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -22594,7 +22594,7 @@
   });
 
   // src/dev.tsx
-  var import_react19 = __toESM(require_react());
+  var import_react14 = __toESM(require_react());
 
   // node_modules/@iiif/parser/dist/esm/index.mjs
   var k = { id: "https://iiif-parser/annotation-page", type: "AnnotationPage", behavior: [], motivation: null, label: null, thumbnail: [], summary: null, requiredStatement: null, metadata: [], rights: null, provider: [], items: [], seeAlso: [], homepage: [], logo: [], rendering: [], service: [] };
@@ -24889,10 +24889,24 @@
 
   // src/components/Label/Label.tsx
   var import_react4 = __toESM(require_react());
+
+  // src/services/html-element.ts
+  function sanitizeAttributes(props, remove) {
+    const entries = Object.keys(props).filter((key) => !remove.includes(key) ? key : null);
+    let attributes = new Object();
+    entries.forEach((key) => {
+      attributes[key] = props[key];
+    });
+    return attributes;
+  }
+  var html_element_default = sanitizeAttributes;
+
+  // src/components/Label/Label.tsx
   var StyledLabel = re2("span", {});
   var Label = (props) => {
     const { as, label } = props;
-    const attributes = props;
+    const remove = ["as", "label"];
+    let attributes = html_element_default(props, remove);
     return /* @__PURE__ */ import_react4.default.createElement(StyledLabel, __spreadValues({
       as
     }, attributes), useGetLabel(label, attributes.lang));
@@ -24900,14 +24914,19 @@
   var Label_default = Label;
 
   // src/components/Metadata/Metadata.tsx
-  var import_react8 = __toESM(require_react());
+  var import_react9 = __toESM(require_react());
+
+  // src/stitches.tsx
+  var { styled, css, keyframes } = q2({
+    prefix: "nectar"
+  });
 
   // src/components/Metadata/Item.tsx
-  var import_react7 = __toESM(require_react());
+  var import_react8 = __toESM(require_react());
 
   // src/components/Value/Value.tsx
-  var import_react6 = __toESM(require_react());
-  var Value = ({ as = "dd", lang, value }) => /* @__PURE__ */ import_react6.default.createElement(Label_default, {
+  var import_react7 = __toESM(require_react());
+  var Value = ({ as = "dd", lang, value }) => /* @__PURE__ */ import_react7.default.createElement(Label_default, {
     label: value,
     as,
     lang
@@ -24918,13 +24937,13 @@
   var MetadataItem = (props) => {
     const { item, lang } = props;
     const { label, value } = item;
-    return /* @__PURE__ */ import_react7.default.createElement("div", {
+    return /* @__PURE__ */ import_react8.default.createElement("div", {
       role: "group"
-    }, /* @__PURE__ */ import_react7.default.createElement(Label_default, {
+    }, /* @__PURE__ */ import_react8.default.createElement(Label_default, {
       as: "dt",
       label,
       lang
-    }), /* @__PURE__ */ import_react7.default.createElement(Value_default, {
+    }), /* @__PURE__ */ import_react8.default.createElement(Value_default, {
       as: "dd",
       value,
       lang
@@ -24933,16 +24952,17 @@
   var Item_default = MetadataItem;
 
   // src/components/Metadata/Metadata.tsx
-  var StyledMetadata = re2("dl", {});
+  var StyledMetadata = styled("dl", {});
   var Metadata = (props) => {
     const { as, metadata } = props;
     if (!Array.isArray(metadata))
-      return /* @__PURE__ */ import_react8.default.createElement(import_react8.default.Fragment, null);
-    const attributes = props;
-    return /* @__PURE__ */ import_react8.default.createElement(import_react8.default.Fragment, null, metadata.length > 0 && /* @__PURE__ */ import_react8.default.createElement(StyledMetadata, __spreadValues({
+      return /* @__PURE__ */ import_react9.default.createElement(import_react9.default.Fragment, null);
+    const remove = ["as", "metadata"];
+    let attributes = html_element_default(props, remove);
+    return /* @__PURE__ */ import_react9.default.createElement(import_react9.default.Fragment, null, metadata.length > 0 && /* @__PURE__ */ import_react9.default.createElement(StyledMetadata, __spreadValues({
       as
     }, attributes), metadata.map((item, index) => {
-      return /* @__PURE__ */ import_react8.default.createElement(Item_default, {
+      return /* @__PURE__ */ import_react9.default.createElement(Item_default, {
         item,
         key: index,
         lang: attributes.lang
@@ -24953,12 +24973,13 @@
 
   // src/components/RequiredStatement/RequiredStatement.tsx
   var import_react10 = __toESM(require_react());
-  var StyledRequiredStatement = re2("dl", {});
+  var StyledRequiredStatement = styled("dl", {});
   var RequiredStatement = (props) => {
     const { as, requiredStatement } = props;
     if (!requiredStatement)
       return /* @__PURE__ */ import_react10.default.createElement(import_react10.default.Fragment, null);
-    const attributes = props;
+    const remove = ["as", "requiredStatement"];
+    let attributes = html_element_default(props, remove);
     return /* @__PURE__ */ import_react10.default.createElement(StyledRequiredStatement, __spreadValues({
       as
     }, attributes), /* @__PURE__ */ import_react10.default.createElement(Item_default, {
@@ -24969,11 +24990,12 @@
   var RequiredStatement_default = RequiredStatement;
 
   // src/components/Summary/Summary.tsx
-  var import_react12 = __toESM(require_react());
+  var import_react11 = __toESM(require_react());
   var Summary = (props) => {
     const { as, summary } = props;
-    const attributes = props;
-    return /* @__PURE__ */ import_react12.default.createElement(Label_default, __spreadValues({
+    const remove = ["as", "summary"];
+    let attributes = html_element_default(props, remove);
+    return /* @__PURE__ */ import_react11.default.createElement(Label_default, __spreadValues({
       as,
       label: summary
     }, attributes));
@@ -24981,49 +25003,7 @@
   var Summary_default = Summary;
 
   // src/components/Thumbnail/Thumbnail.tsx
-  var import_react15 = __toESM(require_react());
-
-  // src/components/ExternalWebResource/ExternalWebResource.tsx
-  var import_react13 = __toESM(require_react());
-
-  // node_modules/clsx/dist/clsx.m.js
-  function toVal(mix) {
-    var k3, y3, str = "";
-    if (typeof mix === "string" || typeof mix === "number") {
-      str += mix;
-    } else if (typeof mix === "object") {
-      if (Array.isArray(mix)) {
-        for (k3 = 0; k3 < mix.length; k3++) {
-          if (mix[k3]) {
-            if (y3 = toVal(mix[k3])) {
-              str && (str += " ");
-              str += y3;
-            }
-          }
-        }
-      } else {
-        for (k3 in mix) {
-          if (mix[k3]) {
-            str && (str += " ");
-            str += k3;
-          }
-        }
-      }
-    }
-    return str;
-  }
-  function clsx_m_default() {
-    var i2 = 0, tmp, x3, str = "";
-    while (i2 < arguments.length) {
-      if (tmp = arguments[i2++]) {
-        if (x3 = toVal(tmp)) {
-          str && (str += " ");
-          str += x3;
-        }
-      }
-    }
-    return str;
-  }
+  var import_react12 = __toESM(require_react());
 
   // src/hooks/useGetImageResource.ts
   var useGetImageResource = (resource, size = "200,", region = "full") => {
@@ -25043,115 +25023,49 @@
     }
   };
 
-  // src/components/ExternalWebResource/ExternalWebResource.tsx
-  var StyledResource = re2("img", {
-    width: "100%",
-    height: "100%",
-    transition: "all 1s cubic-bezier(0.16, 1, 0.3, 1)",
-    opacity: 0,
-    [`&.loaded`]: {
-      opacity: 1
-    }
-  });
-  var ExternalWebResource = ({
-    alt,
-    resource,
-    objectFit
-  }) => {
-    const [loaded, setLoaded] = (0, import_react13.useState)(false);
-    const imgRef = (0, import_react13.useRef)(null);
-    (0, import_react13.useEffect)(() => {
-      if (imgRef) {
-        if (imgRef.current) {
-          if (imgRef.current.complete)
-            setLoaded(true);
-        }
-      }
-    }, []);
-    const { type, id } = resource;
-    switch (type) {
-      case "Image":
-        const src = useGetImageResource(resource);
-        return /* @__PURE__ */ import_react13.default.createElement(StyledResource, {
-          alt,
-          src,
-          ref: imgRef,
-          as: "img",
-          key: id,
-          style: { objectFit },
-          onLoad: () => setLoaded(true),
-          className: clsx_m_default("source", loaded && "loaded")
-        });
-      case "Sound":
-        return /* @__PURE__ */ import_react13.default.createElement(StyledResource, {
-          src: id,
-          as: "video",
-          key: id
-        });
-      default:
-        console.warn(`Resource type: ${type} is not valid or not yet supported in Nectar.`);
-        return /* @__PURE__ */ import_react13.default.createElement(import_react13.default.Fragment, null);
-    }
-  };
-  var ExternalWebResource_default = ExternalWebResource;
-
   // src/components/Thumbnail/Thumbnail.tsx
-  var StyledThumbnail = re2("div", {});
-  var Thumbnail = ({
-    altAsLabel,
-    lang,
-    objectFit = "cover",
-    thumbnail
-  }) => {
-    const alt = useGetLabel(altAsLabel, lang);
-    return /* @__PURE__ */ import_react15.default.createElement(import_react15.default.Fragment, null, thumbnail.map((resource) => {
-      const { width = "200", height } = resource;
-      return /* @__PURE__ */ import_react15.default.createElement(StyledThumbnail, {
-        key: resource.id,
-        style: {
-          width: `${width}px`,
-          height: `${height}px`,
-          backgroundColor: "#c1c8cd"
-        }
-      }, /* @__PURE__ */ import_react15.default.createElement(ExternalWebResource_default, {
-        alt,
-        resource,
-        objectFit
-      }));
+  var StyledResource = styled("img", {});
+  var Thumbnail = (props) => {
+    const { thumbnail, altAsLabel } = props;
+    let alt;
+    if (altAsLabel)
+      alt = useGetLabel(altAsLabel);
+    const remove = ["thumbnail", "altAsLabel"];
+    const attributes = html_element_default(props, remove);
+    return /* @__PURE__ */ import_react12.default.createElement(import_react12.default.Fragment, null, thumbnail && thumbnail.map((resource) => {
+      const { type, id, width = 200, height } = resource;
+      switch (type) {
+        case "Image":
+          const src = useGetImageResource(resource);
+          return /* @__PURE__ */ import_react12.default.createElement(StyledResource, __spreadValues({
+            as: "img",
+            alt,
+            src,
+            key: id,
+            css: { width, height }
+          }, attributes));
+        case "Sound":
+          return /* @__PURE__ */ import_react12.default.createElement(StyledResource, {
+            as: "video",
+            key: id,
+            src: id
+          });
+        case "Video":
+          return /* @__PURE__ */ import_react12.default.createElement(StyledResource, {
+            as: "video",
+            key: id,
+            src: id
+          });
+        default:
+          console.warn(`Resource type: ${type} is not valid or not yet supported in Nectar.`);
+          return /* @__PURE__ */ import_react12.default.createElement(import_react12.default.Fragment, null);
+      }
     }));
   };
   var Thumbnail_default = Thumbnail;
 
   // src/dev/DynamicUrl.tsx
-  var import_react18 = __toESM(require_react());
-
-  // src/stitches.tsx
-  var theme = {
-    colors: {
-      white: "#ffffff",
-      primary: "#1a1d1e",
-      primaryMuted: "#26292b",
-      primaryAlt: "#151718",
-      accent: "#006adc",
-      accentMuted: "#5eb0ef",
-      accentAlt: "#00254d",
-      secondary: "#FFFFFF",
-      secondaryMuted: "#e6e8eb",
-      secondaryAlt: "#c1c8cd"
-    }
-  };
-  var media = {
-    xxs: "(max-width: 349px)",
-    xs: "(max-width: 575px)",
-    sm: "(max-width: 767px)",
-    md: "(max-width: 991px)",
-    xl: "(max-width: 1199px)",
-    lg: "(min-width: 1200px)"
-  };
-  var { styled, css, keyframes, createTheme } = q2({
-    theme,
-    media
-  });
+  var import_react13 = __toESM(require_react());
 
   // src/dev/DynamicUrl.styled.tsx
   var DynamicUrlStyled = styled("section", {
@@ -25251,24 +25165,24 @@
   // src/dev/manifests.ts
   var manifests = [
     {
-      url: "https://iiif.harvardartmuseums.org/manifests/object/307976",
-      label: "Milk Pond"
-    },
-    {
-      url: "https://iiif.io/api/cookbook/recipe/0006-text-language/manifest.json",
-      label: "Whistler's Mother"
-    },
-    {
-      url: "https://manifests.collections.yale.edu/ycba/obj/21168",
-      label: "Greenland Falcon"
+      url: "https://acw5dcf49d.execute-api.us-east-1.amazonaws.com/dev/items/iiif-image-manifest-1",
+      label: "Pantalone classico"
     },
     {
       url: "https://iiif.bodleian.ox.ac.uk/iiif/manifest/e32a277e-91e2-4a6d-8ba6-cc4bad230410.json",
       label: "Bodleian Library MS. Ind. Inst. Misc. 22"
     },
     {
-      url: "https://acw5dcf49d.execute-api.us-east-1.amazonaws.com/dev/items/iiif-image-manifest-1",
-      label: "Pantalone classico"
+      url: "https://manifests.collections.yale.edu/ycba/obj/21168",
+      label: "Greenland Falcon"
+    },
+    {
+      url: "https://iiif.harvardartmuseums.org/manifests/object/307976",
+      label: "Milk Pond"
+    },
+    {
+      url: "https://iiif.io/api/cookbook/recipe/0006-text-language/manifest.json",
+      label: "Whistler's Mother"
     }
   ];
 
@@ -25278,45 +25192,45 @@
     setUrl,
     handleLanguage
   }) => {
-    const inputRef = (0, import_react18.useRef)(null);
+    const inputRef = (0, import_react13.useRef)(null);
     const handleSubmit = (e2) => {
       var _a;
       e2.preventDefault();
       const target = e2.target;
       setUrl((_a = target.url) == null ? void 0 : _a.value);
     };
-    (0, import_react18.useEffect)(() => {
+    (0, import_react13.useEffect)(() => {
       if (inputRef.current)
         inputRef.current.value = url;
     }, [url]);
-    return /* @__PURE__ */ import_react18.default.createElement(DynamicUrlStyled, null, /* @__PURE__ */ import_react18.default.createElement(ManualForm, {
+    return /* @__PURE__ */ import_react13.default.createElement(DynamicUrlStyled, null, /* @__PURE__ */ import_react13.default.createElement(ManualForm, {
       onSubmit: handleSubmit
-    }, /* @__PURE__ */ import_react18.default.createElement("label", {
+    }, /* @__PURE__ */ import_react13.default.createElement("label", {
       htmlFor: "manual-manifest"
-    }, "Provide a IIIF Manifest"), /* @__PURE__ */ import_react18.default.createElement("div", null, /* @__PURE__ */ import_react18.default.createElement("input", {
+    }, "Provide a IIIF Manifest"), /* @__PURE__ */ import_react13.default.createElement("div", null, /* @__PURE__ */ import_react13.default.createElement("input", {
       type: "text",
       name: "url",
       id: "manual-manifest",
       placeholder: "IIIF Manifest",
       ref: inputRef
-    }), /* @__PURE__ */ import_react18.default.createElement("select", {
+    }), /* @__PURE__ */ import_react13.default.createElement("select", {
       id: "lang-code",
       name: "lang-code",
       onChange: handleLanguage,
       "aria-label": "bcp47 language code"
-    }, /* @__PURE__ */ import_react18.default.createElement("option", null, "--"), /* @__PURE__ */ import_react18.default.createElement("option", {
+    }, /* @__PURE__ */ import_react13.default.createElement("option", null, "--"), /* @__PURE__ */ import_react13.default.createElement("option", {
       value: "none"
-    }, "none"), /* @__PURE__ */ import_react18.default.createElement("option", {
+    }, "none"), /* @__PURE__ */ import_react13.default.createElement("option", {
       value: "en"
-    }, "en"), /* @__PURE__ */ import_react18.default.createElement("option", {
+    }, "en"), /* @__PURE__ */ import_react13.default.createElement("option", {
       value: "fr"
-    }, "fr")), /* @__PURE__ */ import_react18.default.createElement("button", {
+    }, "fr")), /* @__PURE__ */ import_react13.default.createElement("button", {
       type: "submit"
-    }, "View"))), manifests.length > 0 && /* @__PURE__ */ import_react18.default.createElement(Curated, null, manifests.map((obj) => /* @__PURE__ */ import_react18.default.createElement(ButtonForm, {
+    }, "View"))), manifests.length > 0 && /* @__PURE__ */ import_react13.default.createElement(Curated, null, manifests.map((obj) => /* @__PURE__ */ import_react13.default.createElement(ButtonForm, {
       key: obj.label,
       onSubmit: handleSubmit,
       "data-active": url === obj.url ? true : false
-    }, /* @__PURE__ */ import_react18.default.createElement("button", {
+    }, /* @__PURE__ */ import_react13.default.createElement("button", {
       name: "url",
       value: obj.url
     }, obj.label)))));
@@ -25326,11 +25240,11 @@
   // src/dev.tsx
   var Wrapper = () => {
     const defaultUrl = manifests[0].url;
-    const [thumbnail, setThumbnail] = (0, import_react19.useState)();
-    const [manifest, setManifest] = (0, import_react19.useState)();
-    const [lang, setLanguage] = (0, import_react19.useState)();
-    const [url, setUrl] = import_react19.default.useState(defaultUrl);
-    (0, import_react19.useEffect)(() => {
+    const [thumbnail, setThumbnail] = (0, import_react14.useState)();
+    const [manifest, setManifest] = (0, import_react14.useState)();
+    const [lang, setLanguage] = (0, import_react14.useState)();
+    const [url, setUrl] = import_react14.default.useState(defaultUrl);
+    (0, import_react14.useEffect)(() => {
       const vault = new Vault();
       if (url)
         vault.loadManifest(url).then((data) => {
@@ -25341,34 +25255,33 @@
         });
     }, [url]);
     if (!manifest)
-      return /* @__PURE__ */ import_react19.default.createElement(import_react19.default.Fragment, null, "Loading...");
+      return /* @__PURE__ */ import_react14.default.createElement(import_react14.default.Fragment, null, "Loading...");
     const handleLanguage = (e2) => setLanguage(e2.target.value !== "--" ? e2.target.value : void 0);
     const { label, summary, metadata, requiredStatement } = manifest;
-    return /* @__PURE__ */ import_react19.default.createElement(import_react19.default.Fragment, null, /* @__PURE__ */ import_react19.default.createElement("div", null, /* @__PURE__ */ import_react19.default.createElement(Label_default, {
+    return /* @__PURE__ */ import_react14.default.createElement(import_react14.default.Fragment, null, /* @__PURE__ */ import_react14.default.createElement("div", null, /* @__PURE__ */ import_react14.default.createElement(Label_default, {
       as: "h1",
       label,
       lang
-    }), /* @__PURE__ */ import_react19.default.createElement(Summary_default, {
+    }), /* @__PURE__ */ import_react14.default.createElement(Summary_default, {
       as: "p",
       summary,
       lang
-    }), /* @__PURE__ */ import_react19.default.createElement(Metadata_default, {
+    }), /* @__PURE__ */ import_react14.default.createElement(Metadata_default, {
       metadata,
       lang
-    }), /* @__PURE__ */ import_react19.default.createElement(RequiredStatement_default, {
+    }), /* @__PURE__ */ import_react14.default.createElement(RequiredStatement_default, {
       requiredStatement,
       lang
-    }), thumbnail && /* @__PURE__ */ import_react19.default.createElement(Thumbnail_default, {
-      altAsLabel: label,
-      lang,
-      thumbnail
-    })), /* @__PURE__ */ import_react19.default.createElement(DynamicUrl_default, {
+    }), thumbnail && /* @__PURE__ */ import_react14.default.createElement(Thumbnail_default, {
+      thumbnail,
+      altAsLabel: label
+    })), /* @__PURE__ */ import_react14.default.createElement(DynamicUrl_default, {
       url,
       setUrl,
       handleLanguage
     }));
   };
-  import_react_dom.default.render(/* @__PURE__ */ import_react19.default.createElement(import_react19.StrictMode, null, /* @__PURE__ */ import_react19.default.createElement(Wrapper, null)), document.getElementById("root"));
+  import_react_dom.default.render(/* @__PURE__ */ import_react14.default.createElement(import_react14.StrictMode, null, /* @__PURE__ */ import_react14.default.createElement(Wrapper, null)), document.getElementById("root"));
 })();
 /**
  * @license React
