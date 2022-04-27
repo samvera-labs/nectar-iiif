@@ -24885,13 +24885,6 @@
     return entries.join(", ");
   };
 
-  // src/components/Homepage/Homepage.tsx
-  var StyledHomepage = styled("div", {});
-  var Resource = styled("span", {});
-
-  // src/components/Label/Label.tsx
-  var import_react4 = __toESM(require_react());
-
   // src/services/html-element.ts
   function sanitizeAttributes(props, remove) {
     const entries = Object.keys(props).filter((key) => !remove.includes(key) ? key : null);
@@ -24903,7 +24896,25 @@
   }
   var html_element_default = sanitizeAttributes;
 
+  // src/components/Homepage/Homepage.tsx
+  var StyledHomepage = styled("a", {});
+  var Homepage = (props) => {
+    const { children, homepage } = props;
+    const remove = ["as", "children"];
+    const attributes = html_element_default(props, remove);
+    return /* @__PURE__ */ import_react3.default.createElement(import_react3.default.Fragment, null, homepage && homepage.map((resource) => {
+      const label = useGetLabel(resource.label, attributes.lang);
+      return /* @__PURE__ */ import_react3.default.createElement(StyledHomepage, __spreadValues({
+        "aria-label": children ? label : void 0,
+        href: resource.id,
+        key: resource.id
+      }, attributes), children ? children : label);
+    }));
+  };
+  var Homepage_default = Homepage;
+
   // src/components/Label/Label.tsx
+  var import_react4 = __toESM(require_react());
   var StyledLabel = styled("span", {});
   var Label = (props) => {
     const { as, label } = props;
@@ -25242,6 +25253,7 @@
   var Wrapper = () => {
     const defaultUrl = manifests[0].url;
     const [thumbnail, setThumbnail] = (0, import_react12.useState)();
+    const [homepage, setHomepage] = (0, import_react12.useState)();
     const [manifest, setManifest] = (0, import_react12.useState)();
     const [lang, setLanguage] = (0, import_react12.useState)();
     const [url, setUrl] = import_react12.default.useState(defaultUrl);
@@ -25251,6 +25263,7 @@
         vault.loadManifest(url).then((data) => {
           setManifest(data);
           setThumbnail(vault.get(data.thumbnail));
+          setHomepage(vault.get(data.homepage));
         }).catch((error) => {
           console.error(`Manifest ${url} failed to load: ${error}`);
         });
@@ -25260,10 +25273,14 @@
     const handleLanguage = (e2) => setLanguage(e2.target.value !== "--" ? e2.target.value : void 0);
     const { label, summary, metadata, requiredStatement } = manifest;
     return /* @__PURE__ */ import_react12.default.createElement(import_react12.default.Fragment, null, /* @__PURE__ */ import_react12.default.createElement("div", null, /* @__PURE__ */ import_react12.default.createElement(Label_default, {
-      as: "h1",
+      as: "h3",
       label,
       lang
-    }), /* @__PURE__ */ import_react12.default.createElement(Summary_default, {
+    }), /* @__PURE__ */ import_react12.default.createElement(Homepage_default, {
+      homepage
+    }), /* @__PURE__ */ import_react12.default.createElement(Homepage_default, {
+      homepage
+    }, "More Details"), /* @__PURE__ */ import_react12.default.createElement(Summary_default, {
       as: "p",
       summary,
       lang
@@ -25275,7 +25292,7 @@
       lang
     }), thumbnail && /* @__PURE__ */ import_react12.default.createElement(Thumbnail_default, {
       thumbnail,
-      altAsLabel: label
+      alt: "random"
     })), /* @__PURE__ */ import_react12.default.createElement(DynamicUrl_default, {
       url,
       setUrl,
