@@ -11,18 +11,16 @@ export interface NectarMetadataItem extends NectarPrimitive {
   item: MetadataItem;
 }
 
-export interface NectarHomepage extends NectarPrimitive {
-  as?: "div" | "ol" | "ul";
-  children?: ReactNode | ReactNode[];
-  homepage: Array<NectarResource>;
-}
-
-export interface NectarResource extends NectarPrimitive {
-  as?: "span" | "li";
-  format?: string;
+export interface NectarExternalWebResource {
   id: string;
+  type: "Dataset" | "Image" | "Video" | "Sound" | "Text";
+  format?: string;
   label: InternationalString;
-  type: string;
+  language?: string | string[];
+}
+export interface NectarHomepage extends NectarPrimitive {
+  children?: ReactNode | ReactNode[];
+  homepage: NectarExternalWebResource[];
 }
 
 export interface NectarLabel extends NectarPrimitive {

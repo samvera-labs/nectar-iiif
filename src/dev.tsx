@@ -47,7 +47,6 @@ const Wrapper = () => {
     <>
       <div>
         <Label as="h3" label={label} lang={lang} />
-        <Homepage homepage={homepage} />
         <Homepage homepage={homepage}>More Details</Homepage>
         <Summary as="p" summary={summary} lang={lang} />
         <Metadata metadata={metadata} lang={lang} />

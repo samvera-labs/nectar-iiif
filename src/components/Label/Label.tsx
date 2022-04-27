@@ -10,7 +10,7 @@ const Label: React.FC<NectarLabel> = (props) => {
   const { as, label } = props;
 
   /**
-   * r
+   * Create attributes and remove React props
    */
   const remove = ["as", "label"];
   let attributes = sanitizeAttributes(props, remove);

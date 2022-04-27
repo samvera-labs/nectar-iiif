@@ -1,7 +1,7 @@
 import React from "react";
 import { styled } from "stitches";
 import { useGetLabel } from "hooks/useGetLabel";
-import { NectarHomepage, NectarResource } from "types/nectar";
+import { NectarHomepage } from "types/nectar";
 import sanitizeAttributes from "services/html-element";
 
 const StyledHomepage = styled("a", {});
@@ -12,7 +12,7 @@ const Homepage: React.FC<NectarHomepage> = (props) => {
   /**
    * Create attributes and remove React props
    */
-  const remove = ["as", "children"];
+  const remove = ["children", "homepage"];
   const attributes = sanitizeAttributes(props, remove);
 
   return (

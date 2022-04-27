@@ -1,8 +1,9 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import Homepage from "./Homepage";
+import { NectarExternalWebResource } from "../../types/nectar";
 
-const homepageResource = [
+const homepage: NectarExternalWebResource[] = [
   {
     id: "https://en.wikipedia.org/wiki/Western_honey_bee",
     type: "Text",
@@ -14,7 +15,7 @@ const homepageResource = [
 describe("homepage primitive", () => {
   it("Renders 3.0 homepage as div wrapping resources", async () => {
     const { getByTestId } = render(
-      <Homepage data-testid="nectar-homepage" homepage={homepageResource} />
+      <Homepage data-testid="nectar-homepage" homepage={homepage} />
     );
     const el = getByTestId("nectar-homepage");
     expect(el.tagName).toBe("A");
@@ -23,11 +24,7 @@ describe("homepage primitive", () => {
   });
   it("Renders 3.0 homepage text content as expected BCP47 lang", async () => {
     const { getByTestId } = render(
-      <Homepage
-        data-testid="nectar-homepage"
-        homepage={homepageResource}
-        lang="en"
-      />
+      <Homepage data-testid="nectar-homepage" homepage={homepage} lang="en" />
     );
     const el = getByTestId("nectar-homepage");
     expect(el.tagName).toBe("A");
@@ -36,7 +33,7 @@ describe("homepage primitive", () => {
   });
   it("Renders 3.0 homepage with aria label on anchor wrapping child text content", async () => {
     const { getByTestId } = render(
-      <Homepage data-testid="nectar-homepage" homepage={homepageResource}>
+      <Homepage data-testid="nectar-homepage" homepage={homepage}>
         sweet child o' mine
       </Homepage>
     );
