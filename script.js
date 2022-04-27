@@ -24900,7 +24900,7 @@
   var StyledHomepage = styled("a", {});
   var Homepage = (props) => {
     const { children, homepage } = props;
-    const remove = ["as", "children"];
+    const remove = ["children", "homepage"];
     const attributes = html_element_default(props, remove);
     return /* @__PURE__ */ import_react3.default.createElement(import_react3.default.Fragment, null, homepage && homepage.map((resource) => {
       const label = useGetLabel(resource.label, attributes.lang);
@@ -25276,8 +25276,6 @@
       as: "h3",
       label,
       lang
-    }), /* @__PURE__ */ import_react12.default.createElement(Homepage_default, {
-      homepage
     }), /* @__PURE__ */ import_react12.default.createElement(Homepage_default, {
       homepage
     }, "More Details"), /* @__PURE__ */ import_react12.default.createElement(Summary_default, {
