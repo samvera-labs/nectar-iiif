@@ -2,33 +2,36 @@ import React from "react";
 import { styled } from "stitches";
 import { useGetLabel } from "hooks/useGetLabel";
 import { NectarHomepage, NectarResource } from "types/nectar";
+import sanitizeAttributes from "services/html-element";
 
-const StyledHomepage = styled("div", {});
+const StyledHomepage = styled("a", {});
 
-const Resource = styled("span", {});
+const Homepage: React.FC<NectarHomepage> = (props) => {
+  const { children, homepage } = props;
 
-const Homepage: React.FC<NectarHomepage> = ({
-  as = "div",
-  children,
-  homepage,
-  lang = "none",
-}) => {
-  let resourceAs: "span" | "li" = "span";
-  if (as !== "div") resourceAs = "li";
+  /**
+   * Create attributes and remove React props
+   */
+  const remove = ["as", "children"];
+  const attributes = sanitizeAttributes(props, remove);
 
   return (
-    <StyledHomepage as={as} data-testid="nectar-homepage">
-      {homepage.map((resource: NectarResource) => {
-        const label = useGetLabel(resource.label, lang) as string;
-        return (
-          <Resource as={resourceAs} key={resource.id}>
-            <a href={resource.id} aria-label={label}>
+    <>
+      {homepage &&
+        homepage.map((resource) => {
+          const label = useGetLabel(resource.label, attributes.lang) as string;
+          return (
+            <StyledHomepage
+              aria-label={children ? label : undefined}
+              href={resource.id}
+              key={resource.id}
+              {...attributes}
+            >
               {children ? children : label}
-            </a>
-          </Resource>
-        );
-      })}
-    </StyledHomepage>
+            </StyledHomepage>
+          );
+        })}
+    </>
   );
 };
 

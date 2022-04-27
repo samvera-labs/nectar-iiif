@@ -13,35 +13,37 @@ const homepageResource = [
 
 describe("homepage primitive", () => {
   it("Renders 3.0 homepage as div wrapping resources", async () => {
-    const { getByTestId } = render(<Homepage homepage={homepageResource} />);
+    const { getByTestId } = render(
+      <Homepage data-testid="nectar-homepage" homepage={homepageResource} />
+    );
     const el = getByTestId("nectar-homepage");
-    expect(el.tagName).toBe("DIV");
+    expect(el.tagName).toBe("A");
     expect(el).toHaveTextContent("Apis mellifera");
     expect(el).toBeInTheDocument();
   });
-  it("Renders 3.0 homepage as unordered list wrapping resources", async () => {
+  it("Renders 3.0 homepage text content as expected BCP47 lang", async () => {
     const { getByTestId } = render(
-      <Homepage homepage={homepageResource} as="ul" lang="en" />
+      <Homepage
+        data-testid="nectar-homepage"
+        homepage={homepageResource}
+        lang="en"
+      />
     );
     const el = getByTestId("nectar-homepage");
-    expect(el.tagName).toBe("UL");
+    expect(el.tagName).toBe("A");
     expect(el).toHaveTextContent("Western honey bee");
     expect(el).toBeInTheDocument();
   });
-  it("Renders 3.0 homepage with aria label on anchor", async () => {
-    const { getByTestId } = render(<Homepage homepage={homepageResource} />);
-    const el = getByTestId("nectar-homepage");
-    expect(el.querySelectorAll("a")[0]).toHaveAttribute("aria-label");
-    expect(el.querySelectorAll("a")[0].getAttribute("aria-label")).toBe(
-      "Apis mellifera"
-    );
-  });
-  it("Renders 3.0 homepage anchor(s) to wrap children", async () => {
+  it("Renders 3.0 homepage with aria label on anchor wrapping child text content", async () => {
     const { getByTestId } = render(
-      <Homepage homepage={homepageResource}>sweet child o' mine</Homepage>
+      <Homepage data-testid="nectar-homepage" homepage={homepageResource}>
+        sweet child o' mine
+      </Homepage>
     );
     const el = getByTestId("nectar-homepage");
+    expect(el.tagName).toBe("A");
+    expect(el).toHaveAttribute("aria-label");
     expect(el).toHaveTextContent("sweet child o' mine");
-    expect(el).toBeInTheDocument();
+    expect(el.getAttribute("aria-label")).toBe("Apis mellifera");
   });
 });
