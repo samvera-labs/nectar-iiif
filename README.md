@@ -77,7 +77,7 @@ import { Label } from "@samvera/nectar-iiif";
 ```
 
 ```jsx
-return <Label label={manifest.label} as="h1" language="en" />;
+return <Label label={manifest.label} as="h1" lang="en" />;
 ```
 
 ### Summary
