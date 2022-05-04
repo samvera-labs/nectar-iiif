@@ -87,7 +87,7 @@ return <Label label={manifest.label} as="h1" lang="en" />;
 | Prop      | Type                                             | Default | Required           |
 | --------- | ------------------------------------------------ | ------- | ------------------ |
 | `as`      | ` span`, `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `p` | `span`  | --                 |
-| `summary` | `InternationalString                             | --      | :white_check_mark: |
+| `summary` | `InternationalString`                            | --      | :white_check_mark: |
 
 #### Usage
 
