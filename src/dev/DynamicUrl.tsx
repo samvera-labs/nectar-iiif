@@ -56,7 +56,9 @@ const DynamicUrl: React.FC<DynamicUrlProps> = ({
             onChange={handleLanguage}
             aria-label="bcp47 language code"
           >
-            <option>Language Code</option>
+            <option disabled selected>
+              Language Code
+            </option>
             <option value="none">none</option>
             <option value="en">en</option>
             <option value="fr">fr</option>

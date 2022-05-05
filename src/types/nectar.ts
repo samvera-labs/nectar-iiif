@@ -49,6 +49,11 @@ export interface NectarRequiredStatement extends NectarPrimitive {
   requiredStatement: MetadataItem;
 }
 
+export interface NectarRights {
+  rights: string;
+  includeImage?: boolean;
+}
+
 export interface NectarThumbnail extends NectarPrimitive {
   altAsLabel?: InternationalString;
   thumbnail: IIIFExternalWebResource[];

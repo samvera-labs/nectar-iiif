@@ -14,10 +14,12 @@ const envFilePlugin = require("esbuild-envfile-plugin");
     // Defines env variables for bundled JavaScript; here `process.env.NODE_ENV`
     // is propagated with a fallback.
     define: {
+      global: "window",
       "process.env.NODE_ENV": JSON.stringify(
-        process.env.NODE_ENV || "development",
+        process.env.NODE_ENV || "development"
       ),
     },
+    inject: ["esbuild.inject.js"],
     entryPoints: ["src/dev.tsx"],
     // Uses incremental compilation (see `chokidar.on`).
     incremental: true,
