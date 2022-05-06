@@ -1,0 +1,96 @@
+{
+  "id": "https://iiif.stack.rdc.library.northwestern.edu/public/iiif3/72/34/b6/dd/-d/6a/2-/49/54/-8/fc/c-/6c/9f/2d/fb/88/34-manifest.json",
+  "items": [
+    {
+      "duration": 3452.24,
+      "height": 480,
+      "id": "https://iiif.stack.rdc.library.northwestern.edu/public/iiif3/72/34/b6/dd/-d/6a/2-/49/54/-8/fc/c-/6c/9f/2d/fb/88/34-manifest.json/canvas/1682bc0b-e9c0-4bce-b331-d78080b7ec37",
+      "items": [
+        {
+          "id": "https://iiif.stack.rdc.library.northwestern.edu/public/iiif3/72/34/b6/dd/-d/6a/2-/49/54/-8/fc/c-/6c/9f/2d/fb/88/34-manifest.json/canvas/1682bc0b-e9c0-4bce-b331-d78080b7ec37/annotation_page/1",
+          "items": [
+            {
+              "body": {
+                "duration": 3452.24,
+                "format": "video/mp4",
+                "height": 1080,
+                "id": "https://meadow-streaming.rdc.library.northwestern.edu/16/82/bc/0b/-e/9c/0-/4b/ce/-b/33/1-/d7/80/80/b7/ec/37/J0393-Takeover_2019-122A.m3u8",
+                "type": "Video",
+                "width": 1920
+              },
+              "id": "https://iiif.stack.rdc.library.northwestern.edu/public/iiif3/72/34/b6/dd/-d/6a/2-/49/54/-8/fc/c-/6c/9f/2d/fb/88/34-manifest.json/canvas/1682bc0b-e9c0-4bce-b331-d78080b7ec37/annotation_page/1/annotation/1",
+              "motivation": "painting",
+              "target": "https://iiif.stack.rdc.library.northwestern.edu/public/iiif3/72/34/b6/dd/-d/6a/2-/49/54/-8/fc/c-/6c/9f/2d/fb/88/34-manifest.json/canvas/1682bc0b-e9c0-4bce-b331-d78080b7ec37",
+              "type": "Annotation"
+            }
+          ],
+          "type": "AnnotationPage"
+        }
+      ],
+      "label": {
+        "en": ["J0393-Takeover_2019-122A.mp4"]
+      },
+      "thumbnail": [
+        {
+          "format": "image/jpeg",
+          "height": 300,
+          "id": "https://iiif.stack.rdc.library.northwestern.edu/iiif/2/posters/1682bc0b-e9c0-4bce-b331-d78080b7ec37/full/!300,300/0/default.jpg",
+          "service": [
+            {
+              "id": "https://iiif.stack.rdc.library.northwestern.edu/iiif/2/posters/1682bc0b-e9c0-4bce-b331-d78080b7ec37",
+              "profile": "http://iiif.io/api/image/2/level2.json",
+              "type": "ImageService2"
+            }
+          ],
+          "type": "Image",
+          "width": 300
+        }
+      ],
+      "type": "Canvas",
+      "width": 640
+    }
+  ],
+  "label": {
+    "en": ["The Takeover"]
+  },
+  "requiredStatement": {
+    "label": {
+      "en": ["Attribution"]
+    },
+    "value": {
+      "en": ["Courtesy of Northwestern University Libraries"]
+    }
+  },
+  "rights": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
+  "summary": {
+    "en": [
+      "On May 3, 1968, more than 100 Northwestern students peacefully occupied the Bursar’s Office to protest the black student experience. The occupation lasted 38 hours, ending with a negotiated resolution in which the administration responded to a list of eight student demands."
+    ]
+  },
+  "thumbnail": [
+    {
+      "format": "image/jpeg",
+      "height": 300,
+      "id": "https://iiif.stack.rdc.library.northwestern.edu/iiif/2/posters/1682bc0b-e9c0-4bce-b331-d78080b7ec37/full/!300,300/0/default.jpg",
+      "service": [
+        {
+          "id": "https://iiif.stack.rdc.library.northwestern.edu/iiif/2/posters/1682bc0b-e9c0-4bce-b331-d78080b7ec37",
+          "profile": "http://iiif.io/api/image/2/level2.json",
+          "type": "ImageService2"
+        }
+      ],
+      "type": "Image",
+      "width": 300
+    },
+    {
+      "duration": 30,
+      "format": "video/mp4",
+      "height": 300,
+      "id": "https://meadow-streaming.rdc.library.northwestern.edu/16/82/bc/0b/-e/9c/0-/4b/ce/-b/33/1-/d7/80/80/b7/ec/37/J0393-Takeover_2019-122A.m3u8#t=342,372",
+      "type": "Video",
+      "width": 300
+    }
+  ],
+  "type": "Manifest",
+  "@context": "http://iiif.io/api/presentation/3/context.json"
+}

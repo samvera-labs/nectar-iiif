@@ -1,5 +1,9 @@
 export const manifests = [
   {
+    url: "http://127.0.0.1:8080/fixtures/manifest/the-takeover.json",
+    label: "The Takover",
+  },
+  {
     url: "https://iiif.harvardartmuseums.org/manifests/object/307976",
     label: "Milk Pond",
   },
