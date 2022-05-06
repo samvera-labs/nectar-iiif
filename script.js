@@ -46012,7 +46012,7 @@
       label: "Milk Pond"
     },
     {
-      url: "http://127.0.0.1:8080/fixtures/manifest/rfta.json",
+      url: "https://raw.githubusercontent.com/samvera-labs/nectar-iiif/main/public/fixtures/manifest/rfta.json",
       label: "The Takover"
     },
     {
@@ -46032,7 +46032,7 @@
       label: "Whistler's Mother"
     },
     {
-      url: "http://127.0.0.1:8080/fixtures/manifest/the-takeover.json",
+      url: "https://raw.githubusercontent.com/samvera-labs/nectar-iiif/main/public/fixtures/manifest/rfta.json",
       label: "Interview with Paul Wellborn, 2019-10-13"
     },
     {
