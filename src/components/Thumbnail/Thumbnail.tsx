@@ -1,5 +1,5 @@
 import React from "react";
-import { NectarThumbnail } from "types/nectar";
+import { NectarExternalWebResource, NectarThumbnail } from "types/nectar";
 import sanitizeAttributes from "services/html-element";
 import ContentResource from "components/ContentResource/ContentResources";
 
@@ -16,7 +16,10 @@ const Thumbnail: React.FC<NectarThumbnail> = (props) => {
     <>
       {thumbnail &&
         thumbnail.map((contentResource) => (
-          <ContentResource contentResource={contentResource} {...attributes} />
+          <ContentResource
+            contentResource={contentResource as NectarExternalWebResource}
+            {...attributes}
+          />
         ))}
     </>
   );

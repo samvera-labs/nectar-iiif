@@ -11,13 +11,22 @@ export interface NectarMetadataItem extends NectarPrimitive {
   item: MetadataItem;
 }
 
+export interface NectarContentResource extends NectarPrimitive {
+  altAsLabel?: InternationalString;
+  contentResource: NectarExternalWebResource;
+}
+
 export interface NectarExternalWebResource {
   id: string;
   type: "Dataset" | "Image" | "Video" | "Sound" | "Text";
   format?: string;
   label: InternationalString;
   language?: string | string[];
+  duration?: number;
+  width?: number;
+  height?: number;
 }
+
 export interface NectarHomepage extends NectarPrimitive {
   children?: ReactNode | ReactNode[];
   homepage: NectarExternalWebResource[];

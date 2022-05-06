@@ -4,10 +4,11 @@ import Hls from "hls.js";
 import { useGetImageResource } from "hooks/useGetImageResource";
 import sanitizeAttributes from "services/html-element";
 import { useGetLabel } from "hooks/useGetLabel";
+import { NectarContentResource } from "types/nectar";
 
 const StyledResource = styled("img", { objectFit: "cover" });
 
-const ContentResource: React.FC = (props) => {
+const ContentResource: React.FC<NectarContentResource> = (props) => {
   const mediaRef = useRef(null);
   const { contentResource, altAsLabel } = props;
 
@@ -36,14 +37,15 @@ const ContentResource: React.FC = (props) => {
      */
     if (!id.includes("m3u8")) return;
 
-    console.log(id);
-
     // Bind hls.js package to our <video /> element and then load the media source
     const hls = new Hls();
-    hls.attachMedia(mediaRef.current);
-    hls.on(Hls.Events.MEDIA_ATTACHED, function () {
-      hls.loadSource(id as string);
-    });
+
+    if (mediaRef.current) {
+      hls.attachMedia(mediaRef.current);
+      hls.on(Hls.Events.MEDIA_ATTACHED, function () {
+        hls.loadSource(id as string);
+      });
+    }
 
     // Handle errors
     hls.on(Hls.Events.ERROR, function (event, data) {
@@ -83,16 +85,22 @@ const ContentResource: React.FC = (props) => {
   const playLoop = () => {
     if (!mediaRef.current) return;
 
-    let time = 0;
-    if (!id.split("#t=")) time = duration * 0.1;
-    if (id.split("#t=").pop().split(","))
-      time = id.split("#t=").pop().split(",")[0];
+    let startTime = 0;
+    let loopTime = 30;
 
-    const media = mediaRef.current;
-    media.currentTime = time;
+    if (duration) loopTime = duration;
+    if (!id.split("#t=") && duration) startTime = duration * 0.1;
+
+    if (id.split("#t=").pop()) {
+      const fragment = id.split("#t=").pop();
+      if (fragment) startTime = parseInt(fragment.split(",")[0]);
+    }
+
+    const media: HTMLVideoElement = mediaRef.current;
+    media.currentTime = startTime;
     media.play();
 
-    setTimeout(() => playLoop(), duration * 1000);
+    setTimeout(() => playLoop(), loopTime * 1000);
   };
 
   switch (type) {
