@@ -45888,14 +45888,12 @@
           as: "video",
           css: { width, height },
           key: id,
-          ref: mediaRef,
           loop: true,
           muted: true,
-          onPause: playLoop
-        }, /* @__PURE__ */ import_react10.default.createElement("source", {
-          src: id,
-          type: format
-        }));
+          onPause: playLoop,
+          ref: mediaRef,
+          src: id
+        });
       default:
         console.warn(`Resource type: ${type} is not valid or not yet supported in Nectar.`);
         return /* @__PURE__ */ import_react10.default.createElement(import_react10.default.Fragment, null);
@@ -45909,7 +45907,8 @@
     const remove = ["thumbnail"];
     const attributes = html_element_default(props, remove);
     return /* @__PURE__ */ import_react11.default.createElement(import_react11.default.Fragment, null, thumbnail && thumbnail.map((contentResource) => /* @__PURE__ */ import_react11.default.createElement(ContentResources_default, __spreadValues({
-      contentResource
+      contentResource,
+      key: contentResource.id
     }, attributes))));
   };
   var Thumbnail_default = Thumbnail;
