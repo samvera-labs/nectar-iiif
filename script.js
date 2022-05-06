@@ -45822,12 +45822,13 @@
         return;
       if (!id.includes("m3u8"))
         return;
-      console.log(id);
       const hls = new import_hls.default();
-      hls.attachMedia(mediaRef.current);
-      hls.on(import_hls.default.Events.MEDIA_ATTACHED, function() {
-        hls.loadSource(id);
-      });
+      if (mediaRef.current) {
+        hls.attachMedia(mediaRef.current);
+        hls.on(import_hls.default.Events.MEDIA_ATTACHED, function() {
+          hls.loadSource(id);
+        });
+      }
       hls.on(import_hls.default.Events.ERROR, function(event, data) {
         if (data.fatal) {
           switch (data.type) {
@@ -45856,15 +45857,21 @@
     const playLoop = () => {
       if (!mediaRef.current)
         return;
-      let time = 0;
-      if (!id.split("#t="))
-        time = duration * 0.1;
-      if (id.split("#t=").pop().split(","))
-        time = id.split("#t=").pop().split(",")[0];
+      let startTime = 0;
+      let loopTime = 30;
+      if (duration)
+        loopTime = duration;
+      if (!id.split("#t=") && duration)
+        startTime = duration * 0.1;
+      if (id.split("#t=").pop()) {
+        const fragment = id.split("#t=").pop();
+        if (fragment)
+          startTime = parseInt(fragment.split(",")[0]);
+      }
       const media = mediaRef.current;
-      media.currentTime = time;
+      media.currentTime = startTime;
       media.play();
-      setTimeout(() => playLoop(), duration * 1e3);
+      setTimeout(() => playLoop(), loopTime * 1e3);
     };
     switch (type) {
       case "Image":
