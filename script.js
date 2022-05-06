@@ -46012,7 +46012,7 @@
       label: "Milk Pond"
     },
     {
-      url: "https://raw.githubusercontent.com/samvera-labs/nectar-iiif/main/public/fixtures/manifest/rfta.json",
+      url: "https://raw.githubusercontent.com/samvera-labs/nectar-iiif/main/public/fixtures/manifest/the-takeover.json",
       label: "The Takover"
     },
     {

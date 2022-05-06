@@ -167,8 +167,8 @@
     {
       "id": "https://digital.lib.utk.edu/collections/islandora/object/rfta%3A10/datastream/MP4#t=200,230",
       "type": "Video",
-      "width": 640,
-      "height": 360,
+      "width": 300,
+      "height": 300,
       "duration": 30,
       "format": "video/mp4"
     }
