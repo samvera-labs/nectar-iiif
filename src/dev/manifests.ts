@@ -1,11 +1,11 @@
 export const manifests = [
   {
-    url: "http://127.0.0.1:8080/fixtures/manifest/the-takeover.json",
-    label: "The Takover",
-  },
-  {
     url: "https://iiif.harvardartmuseums.org/manifests/object/307976",
     label: "Milk Pond",
+  },
+  {
+    url: "http://127.0.0.1:8080/fixtures/manifest/rfta.json",
+    label: "The Takover",
   },
   {
     url: "https://acw5dcf49d.execute-api.us-east-1.amazonaws.com/dev/items/iiif-image-manifest-1",
@@ -22,6 +22,10 @@ export const manifests = [
   {
     url: "https://iiif.io/api/cookbook/recipe/0006-text-language/manifest.json",
     label: "Whistler's Mother",
+  },
+  {
+    url: "http://127.0.0.1:8080/fixtures/manifest/the-takeover.json",
+    label: "Interview with Paul Wellborn, 2019-10-13",
   },
   {
     url: "https://figgy.princeton.edu/concern/scanned_resources/678fb869-c5de-4e5a-a1b7-2cd71ff663ec/manifest",
