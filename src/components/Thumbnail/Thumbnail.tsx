@@ -18,6 +18,7 @@ const Thumbnail: React.FC<NectarThumbnail> = (props) => {
         thumbnail.map((contentResource) => (
           <ContentResource
             contentResource={contentResource as NectarExternalWebResource}
+            key={contentResource.id}
             {...attributes}
           />
         ))}
