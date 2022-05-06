@@ -1,0 +1,681 @@
+{
+  "@context": ["https://iiif.io/api/presentation/3/context.json"],
+  "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10",
+  "type": "Manifest",
+  "label": {
+    "en": ["Interview with Paul Wellborn, 2019-10-13"]
+  },
+  "summary": {
+    "en": [
+      "Interview with Paul Wellborn, owner of Ely's Mill in Gatlinburg. Wellborn recounts his efforts during the fire to help direct traffic out of the town. He also discusses the following days and weeks dealing with city and federal responders to the crisis. This is a representative quote from the interview: \"The smoke got so bad, he was having to look at the lines to see where to go. He was looking at the line in the road on that backhoe to get out of there.\""
+    ]
+  },
+  "metadata": [
+    {
+      "label": {
+        "en": ["Date"]
+      },
+      "value": {
+        "en": ["2019-10-13"]
+      }
+    },
+    {
+      "label": {
+        "en": ["Format"]
+      },
+      "value": {
+        "en": ["motion pictures (visual works)"]
+      }
+    },
+    {
+      "label": {
+        "en": ["Extent"]
+      },
+      "value": {
+        "en": ["00:38:18"]
+      }
+    },
+    {
+      "label": {
+        "en": ["Subject"]
+      },
+      "value": {
+        "en": [
+          "Emergency management",
+          "Evacuation of civilians",
+          "Tourism",
+          "Wildfires"
+        ]
+      }
+    },
+    {
+      "label": {
+        "en": ["Narrator Role"]
+      },
+      "value": {
+        "en": ["Business owners and staff"]
+      }
+    },
+    {
+      "label": {
+        "en": ["Place"]
+      },
+      "value": {
+        "en": [
+          "Great Smoky Mountains National Park",
+          "Ely's Mill",
+          "Low Gap Road"
+        ]
+      }
+    },
+    {
+      "label": {
+        "en": ["Description"]
+      },
+      "value": {
+        "en": [
+          "Interview with Paul Wellborn, owner of Ely's Mill in Gatlinburg. Wellborn recounts his efforts during the fire to help direct traffic out of the town. He also discusses the following days and weeks dealing with city and federal responders to the crisis. This is a representative quote from the interview: \"The smoke got so bad, he was having to look at the lines to see where to go. He was looking at the line in the road on that backhoe to get out of there.\""
+        ]
+      }
+    },
+    {
+      "label": {
+        "en": ["Browse"]
+      },
+      "value": {
+        "en": ["Emergency Management"]
+      }
+    },
+    {
+      "label": {
+        "en": ["Language"]
+      },
+      "value": {
+        "en": ["English"]
+      }
+    },
+    {
+      "label": {
+        "en": ["Interviewee"]
+      },
+      "value": {
+        "en": ["Wellborn, Paul"]
+      }
+    },
+    {
+      "label": {
+        "en": ["Interviewer"]
+      },
+      "value": {
+        "en": ["Kaufman, Casey"]
+      }
+    }
+  ],
+  "rights": "http://creativecommons.org/licenses/by/4.0/rdf",
+  "requiredStatement": {
+    "label": {
+      "en": ["Provided by"]
+    },
+    "value": {
+      "en": ["University of Tennessee, Knoxville. Libraries"]
+    }
+  },
+  "provider": [
+    {
+      "id": "https://www.lib.utk.edu/about/",
+      "type": "Agent",
+      "label": {
+        "en": ["University of Tennessee, Knoxville. Libraries"]
+      },
+      "homepage": [
+        {
+          "id": "https://www.lib.utk.edu/",
+          "type": "Text",
+          "label": {
+            "en": ["University of Tennessee Libraries Homepage"]
+          },
+          "format": "text/html"
+        }
+      ],
+      "logo": [
+        {
+          "id": "https://utkdigitalinitiatives.github.io/iiif-level-0/ut_libraries_centered/full/full/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg",
+          "width": 200,
+          "height": 200
+        }
+      ]
+    }
+  ],
+  "thumbnail": [
+    {
+      "id": "https://digital.lib.utk.edu/iiif/2/collections~islandora~object~rfta%3A10~datastream~TN/full/max/0/default.jpg",
+      "width": 400,
+      "height": 400,
+      "service": [
+        {
+          "@id": "https://digital.lib.utk.edu/iiif/2/collections~islandora~object~rfta%3A10~datastream~TN",
+          "@type": "http://iiif.io/api/image/2/context.json",
+          "@profile": "http://iiif.io/api/image/2/level2.json"
+        }
+      ],
+      "duration": 2298,
+      "type": "Image",
+      "format": "image/jpeg"
+    },
+    {
+      "id": "https://digital.lib.utk.edu/collections/islandora/object/rfta%3A10/datastream/MP4#t=200,230",
+      "type": "Video",
+      "width": 640,
+      "height": 360,
+      "duration": 30,
+      "format": "video/mp4"
+    }
+  ],
+  "items": [
+    {
+      "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/canvas/0",
+      "type": "Canvas",
+      "label": {
+        "none": ["Interview with Paul Wellborn, 2019-10-13"]
+      },
+      "thumbnail": [
+        {
+          "id": "https://digital.lib.utk.edu/iiif/2/collections~islandora~object~rfta%3A10~datastream~TN/full/max/0/default.jpg",
+          "width": 400,
+          "height": 400,
+          "service": [
+            {
+              "@id": "https://digital.lib.utk.edu/iiif/2/collections~islandora~object~rfta%3A10~datastream~TN",
+              "@type": "http://iiif.io/api/image/2/context.json",
+              "@profile": "http://iiif.io/api/image/2/level2.json"
+            }
+          ],
+          "duration": 2298,
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "height": 640,
+      "width": 360,
+      "duration": 2298,
+      "items": [
+        {
+          "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/canvas/0/page/rfta%3A10",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/canvas/0/page/rfta%3A10/626fd8b2c70df",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://digital.lib.utk.edu/collections/islandora/object/rfta%3A10/datastream/MP4",
+                "type": "Video",
+                "width": 640,
+                "height": 360,
+                "duration": 2298,
+                "format": "video/mp4"
+              },
+              "target": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/canvas/0"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/canvas/0/page/annotation/rfta%3A10",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/canvas/0/page/annotation/rfta%3A10/626fd8b30334a",
+              "type": "Annotation",
+              "motivation": "supplementing",
+              "body": {
+                "id": "https://digital.lib.utk.edu/collections/islandora/object/rfta%3A10/datastream/TRANSCRIPT",
+                "type": "Text",
+                "format": "text/vtt",
+                "label": {
+                  "en": ["Captions in English"]
+                },
+                "language": "en"
+              },
+              "target": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/canvas/0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "id": "https://digital.lib.utk.edu/collections/islandora/object/rfta%3A10/datastream/MODS",
+      "type": "Dataset",
+      "label": {
+        "en": ["Bibliographic Description in MODS"]
+      },
+      "format": "application/xml",
+      "profile": "http://www.loc.gov/standards/mods/v3/mods-3-5.xsd"
+    }
+  ],
+  "partOf": [
+    {
+      "id": "https://digital.lib.utk.edu/assemble/collection/collections/rfta",
+      "type": "Collection"
+    }
+  ],
+  "homepage": [
+    {
+      "id": "https://rfta.lib.utk.edu/interviews/object/paul-wellborn-2019-10-13",
+      "label": {
+        "en": ["Interview with Paul Wellborn, 2019-10-13"]
+      },
+      "type": "Text",
+      "format": "text/html"
+    }
+  ],
+  "structures": [
+    {
+      "type": "Range",
+      "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/range/interview_questions",
+      "label": {
+        "en": ["Interview Questions"]
+      },
+      "items": [
+        {
+          "type": "Range",
+          "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/range/interview_questions/0",
+          "label": {
+            "en": ["Can you tell us about your life in Gatlinburg?"]
+          },
+          "items": [
+            {
+              "type": "Canvas",
+              "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/canvas#t=00:00:53,00:01:47"
+            }
+          ]
+        },
+        {
+          "type": "Range",
+          "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/range/interview_questions/2",
+          "label": {
+            "en": ["Can you tell us about Ely's Mill?"]
+          },
+          "items": [
+            {
+              "type": "Canvas",
+              "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/canvas#t=00:01:47,00:02:53"
+            }
+          ]
+        },
+        {
+          "type": "Range",
+          "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/range/interview_questions/4",
+          "label": {
+            "en": ["Can you tell us about your current life in Gatlinburg?"]
+          },
+          "items": [
+            {
+              "type": "Canvas",
+              "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/canvas#t=00:02:53,00:05:00"
+            }
+          ]
+        },
+        {
+          "type": "Range",
+          "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/range/interview_questions/5",
+          "label": {
+            "en": ["When did you retire from working for the city?"]
+          },
+          "items": [
+            {
+              "type": "Canvas",
+              "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/canvas#t=00:05:00,00:05:30"
+            }
+          ]
+        },
+        {
+          "type": "Range",
+          "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/range/interview_questions/6",
+          "label": {
+            "en": ["Can you tell us about the days leading up to the fire?"]
+          },
+          "items": [
+            {
+              "type": "Canvas",
+              "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/canvas#t=00:05:30,00:07:54"
+            }
+          ]
+        },
+        {
+          "type": "Range",
+          "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/range/interview_questions/7",
+          "label": {
+            "en": ["Had you heard anything about needing to evacuate?"]
+          },
+          "items": [
+            {
+              "type": "Canvas",
+              "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/canvas#t=00:07:54,00:09:55"
+            }
+          ]
+        },
+        {
+          "type": "Range",
+          "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/range/interview_questions/8",
+          "label": {
+            "en": [
+              "Are most of the people trying to evacuate locals or tourists?"
+            ]
+          },
+          "items": [
+            {
+              "type": "Canvas",
+              "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/canvas#t=00:09:55,00:10:59"
+            }
+          ]
+        },
+        {
+          "type": "Range",
+          "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/range/interview_questions/9",
+          "label": {
+            "en": [
+              "What was the general feeling of the people evacuating that night?"
+            ]
+          },
+          "items": [
+            {
+              "type": "Canvas",
+              "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/canvas#t=00:10:59,00:11:17"
+            }
+          ]
+        },
+        {
+          "type": "Range",
+          "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/range/interview_questions/10",
+          "label": {
+            "en": ["What were you feeling that night?"]
+          },
+          "items": [
+            {
+              "type": "Canvas",
+              "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/canvas#t=00:11:17,00:12:51"
+            }
+          ]
+        },
+        {
+          "type": "Range",
+          "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/range/interview_questions/11",
+          "label": {
+            "en": ["Were there other people helping in the evacuation?"]
+          },
+          "items": [
+            {
+              "type": "Canvas",
+              "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/canvas#t=00:12:51,00:13:40"
+            }
+          ]
+        },
+        {
+          "type": "Range",
+          "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/range/interview_questions/12",
+          "label": {
+            "en": ["Were you able to communicate with your phone at the time?"]
+          },
+          "items": [
+            {
+              "type": "Canvas",
+              "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/canvas#t=00:13:40,00:14:34"
+            }
+          ]
+        },
+        {
+          "type": "Range",
+          "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/range/interview_questions/13",
+          "label": {
+            "en": ["What was it like at Rocky Top Sports World that night?"]
+          },
+          "items": [
+            {
+              "type": "Canvas",
+              "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/canvas#t=00:14:34,00:20:10"
+            }
+          ]
+        },
+        {
+          "type": "Range",
+          "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/range/interview_questions/14",
+          "label": {
+            "en": [
+              "Could you talk about the fire department using Ely's Mill as a staging area?\n"
+            ]
+          },
+          "items": [
+            {
+              "type": "Canvas",
+              "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/canvas#t=00:20:10,00:22:14"
+            }
+          ]
+        },
+        {
+          "type": "Range",
+          "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/range/interview_questions/15",
+          "label": {
+            "en": [
+              "The Department of Homeland Security were looking for bodies?"
+            ]
+          },
+          "items": [
+            {
+              "type": "Canvas",
+              "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/canvas#t=00:22:14,00:23:13"
+            }
+          ]
+        },
+        {
+          "type": "Range",
+          "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/range/interview_questions/16",
+          "label": {
+            "en": ["How would you assess the recovery efforts?"]
+          },
+          "items": [
+            {
+              "type": "Canvas",
+              "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/canvas#t=00:23:13,00:25:23"
+            }
+          ]
+        },
+        {
+          "type": "Range",
+          "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/range/interview_questions/17",
+          "label": {
+            "en": ["How did you feel about all the agencies coming into town?"]
+          },
+          "items": [
+            {
+              "type": "Canvas",
+              "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/canvas#t=00:25:23,00:27:42"
+            }
+          ]
+        },
+        {
+          "type": "Range",
+          "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/range/interview_questions/18",
+          "label": {
+            "en": [
+              "How do you think the fire has shaped the community in these three years?"
+            ]
+          },
+          "items": [
+            {
+              "type": "Canvas",
+              "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/canvas#t=00:27:42,00:30:14"
+            }
+          ]
+        },
+        {
+          "type": "Range",
+          "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/range/interview_questions/19",
+          "label": {
+            "en": [
+              "Is there anything you would like to add about how the fire affected Gatlinburg?"
+            ]
+          },
+          "items": [
+            {
+              "type": "Canvas",
+              "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/canvas#t=00:30:14,00:31:11"
+            }
+          ]
+        },
+        {
+          "type": "Range",
+          "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/range/interview_questions/20",
+          "label": {
+            "en": [
+              "Do the people who come in now have any sense of what happened three years ago?"
+            ]
+          },
+          "items": [
+            {
+              "type": "Canvas",
+              "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/canvas#t=00:31:11,00:32:15"
+            }
+          ]
+        },
+        {
+          "type": "Range",
+          "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/range/interview_questions/21",
+          "label": {
+            "en": [
+              "You feel like there are more deaths than what was reported?"
+            ]
+          },
+          "items": [
+            {
+              "type": "Canvas",
+              "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/canvas#t=00:32:15,00:32:56"
+            }
+          ]
+        },
+        {
+          "type": "Range",
+          "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/range/interview_questions/22",
+          "label": {
+            "en": [
+              "Have you made any provisions if this happens again? Is the city better prepared?"
+            ]
+          },
+          "items": [
+            {
+              "type": "Canvas",
+              "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/canvas#t=00:32:56,00:33:35"
+            }
+          ]
+        },
+        {
+          "type": "Range",
+          "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/range/interview_questions/23",
+          "label": {
+            "en": [
+              "Was there anything surprising or good that came out of the fire?"
+            ]
+          },
+          "items": [
+            {
+              "type": "Canvas",
+              "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/canvas#t=00:33:35,00:35:10"
+            }
+          ]
+        },
+        {
+          "type": "Range",
+          "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/range/interview_questions/24",
+          "label": {
+            "en": ["Did you see any of the rebuilding in the city?"]
+          },
+          "items": [
+            {
+              "type": "Canvas",
+              "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/canvas#t=00:35:10,00:35:37"
+            }
+          ]
+        },
+        {
+          "type": "Range",
+          "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/range/interview_questions/25",
+          "label": {
+            "en": ["Did you see any of the rebuilding in the city?"]
+          },
+          "items": [
+            {
+              "type": "Canvas",
+              "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/canvas#t=00:35:37,00:36:26"
+            }
+          ]
+        },
+        {
+          "type": "Range",
+          "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/range/interview_questions/26",
+          "label": {
+            "en": ["Would you have moved if you had lost the mill?"]
+          },
+          "items": [
+            {
+              "type": "Canvas",
+              "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/canvas#t=00:36:26,00:37:26"
+            }
+          ]
+        },
+        {
+          "type": "Range",
+          "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/range/interview_questions/27",
+          "label": {
+            "en": ["Is there anything else that you would like to add?"]
+          },
+          "items": [
+            {
+              "type": "Canvas",
+              "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/canvas#t=00:37:26,00:38:18"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Range",
+      "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/range/places_mentioned",
+      "label": {
+        "en": ["Places Mentioned"]
+      },
+      "items": [
+        {
+          "type": "Range",
+          "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/range/places_mentioned/1",
+          "label": {
+            "en": ["Ely's Mill"]
+          },
+          "items": [
+            {
+              "type": "Canvas",
+              "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/canvas#t=00:00:58,00:09:44"
+            }
+          ]
+        },
+        {
+          "type": "Range",
+          "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/range/places_mentioned/3",
+          "label": {
+            "en": ["Low Gap Road"]
+          },
+          "items": [
+            {
+              "type": "Canvas",
+              "id": "https://digital.lib.utk.edu/assemble/manifest/rfta/10/canvas#t=00:09:44,00:12:52"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
