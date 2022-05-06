@@ -123,13 +123,12 @@ const ContentResource: React.FC<NectarContentResource> = (props) => {
           as="video"
           css={{ width: width, height: height }}
           key={id}
-          ref={mediaRef}
           loop
           muted
           onPause={playLoop}
-        >
-          <source src={id} type={format} />
-        </StyledResource>
+          ref={mediaRef}
+          src={id}
+        />
       );
 
     default:
