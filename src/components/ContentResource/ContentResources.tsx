@@ -122,6 +122,7 @@ const ContentResource: React.FC<NectarContentResource> = (props) => {
         <StyledResource
           as="video"
           css={{ width: width, height: height }}
+          disablePictureInPicture
           key={id}
           loop
           muted
