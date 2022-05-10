@@ -45887,6 +45887,7 @@
         return /* @__PURE__ */ import_react10.default.createElement(StyledResource, {
           as: "video",
           css: { width, height },
+          disablePictureInPicture: true,
           key: id,
           loop: true,
           muted: true,
