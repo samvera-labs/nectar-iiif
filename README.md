@@ -6,6 +6,19 @@ React.js UI component library of IIIF Presentation API 3.0 property fluent primi
 
 ---
 
+## Documentation
+
+- [Installation](#installation)
+- [Basic Usage](#basic-usage)
+- [Primitives](#primitives)
+  - [Label](#label)
+  - [Summary](#summary)
+  - [Required Statement](#required-statement)
+  - [Metadata](#metadata)
+  - [SeeAlso](#seealso)
+
+---
+
 <h2 id="installation">Installation</h2>
 
 Install the component from your command line using `npm install`,
@@ -68,7 +81,7 @@ The value of `lang` will couple with [InternationalString](https://github.com/II
 | Prop    | Type                                                                  | Default | Required           |
 | ------- | --------------------------------------------------------------------- | ------- | ------------------ |
 | `as`    | ` span`, `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `p`, `label`, `dt`, `dd` | `span`  | --                 |
-| `label` | `InternationalString`                                                 | --      | :white_check_mark: |
+| `label` | [See IIIF](https://iiif.io/api/presentation/3.0/#label)               | --      | :white_check_mark: |
 
 #### Usage
 
@@ -84,10 +97,10 @@ return <Label label={manifest.label} as="h1" lang="en" />;
 
 #### Reference
 
-| Prop      | Type                                             | Default | Required           |
-| --------- | ------------------------------------------------ | ------- | ------------------ |
-| `as`      | ` span`, `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `p` | `span`  | --                 |
-| `summary` | `InternationalString`                            | --      | :white_check_mark: |
+| Prop      | Type                                                      | Default | Required           |
+| --------- | --------------------------------------------------------- | ------- | ------------------ |
+| `as`      | ` span`, `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `p`          | `span`  | --                 |
+| `summary` | [See IIIF](https://iiif.io/api/presentation/3.0/#summary) | --      | :white_check_mark: |
 
 #### Usage
 
@@ -139,4 +152,22 @@ return (
     <figure>...</figure>
   </Homepage>
 );
+```
+
+### SeeAlso
+
+#### Reference
+
+| Prop      | Type                                                      | Default | Required           |
+| --------- | --------------------------------------------------------- | ------- | ------------------ |
+| `as`      | ` ol`, `ul`                                               | `ul`    | --                 |
+
+| `seeAlso` | [See IIIF](https://iiif.io/api/presentation/3.0/#seealso) | --      | :white_check_mark: |
+
+```jsx
+import { SeeAlso } from "@samvera/nectar-iiif";
+```
+
+```jsx
+return <SeeAlso seeAlso={manifest.seeAlso} as="li" />;
 ```

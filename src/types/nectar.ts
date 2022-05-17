@@ -25,6 +25,7 @@ export interface NectarExternalWebResource {
   duration?: number;
   width?: number;
   height?: number;
+  profle?: string;
 }
 
 export interface NectarHomepage extends NectarPrimitive {
@@ -59,14 +60,18 @@ export interface NectarRequiredStatement extends NectarPrimitive {
   requiredStatement: MetadataItem;
 }
 
-export interface NectarThumbnail extends NectarPrimitive {
-  altAsLabel?: InternationalString;
-  thumbnail: IIIFExternalWebResource[];
+export interface NectarSeeAlso extends NectarPrimitive {
+  as?: "ol" | "ul";
+  seeAlso: NectarExternalWebResource[];
 }
 
 export interface NectarSummary extends NectarPrimitive {
   as?: "span" | "p" | "label" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   summary: InternationalString;
+}
+export interface NectarThumbnail extends NectarPrimitive {
+  altAsLabel?: InternationalString;
+  thumbnail: IIIFExternalWebResource[];
 }
 
 export interface NectarValue extends NectarPrimitive {
