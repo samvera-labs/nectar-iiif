@@ -161,7 +161,6 @@ return (
 | Prop      | Type                                                      | Default | Required           |
 | --------- | --------------------------------------------------------- | ------- | ------------------ |
 | `as`      | ` ol`, `ul`                                               | `ul`    | --                 |
-
 | `seeAlso` | [See IIIF](https://iiif.io/api/presentation/3.0/#seealso) | --      | :white_check_mark: |
 
 ```jsx
