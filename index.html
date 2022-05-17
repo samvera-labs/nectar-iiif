@@ -13,6 +13,21 @@
 <p>React.js UI component library of IIIF Presentation API 3.0 property fluent primitives.</p>
 <p><a href="https://samvera-labs.github.io/nectar-iiif"><strong>Demo</strong></a></p>
 <hr>
+<h2>Documentation</h2>
+<ul>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#basic-usage">Basic Usage</a></li>
+<li><a href="#primitives">Primitives</a>
+<ul>
+<li><a href="#label">Label</a></li>
+<li><a href="#summary">Summary</a></li>
+<li><a href="#required-statement">Required Statement</a></li>
+<li><a href="#metadata">Metadata</a></li>
+<li><a href="#seealso">SeeAlso</a></li>
+</ul>
+</li>
+</ul>
+<hr>
 <h2 id="installation">Installation</h2>
 <p>Install the component from your command line using <code>npm install</code>,</p>
 <pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #EEFFFF">npm install @samvera/nectar-iiif</span></span>
@@ -102,7 +117,7 @@
 </tr>
 <tr>
 <td><code>label</code></td>
-<td><code>InternationalString</code></td>
+<td><a href="https://iiif.io/api/presentation/3.0/#label">See IIIF</a></td>
 <td>--</td>
 <td>:white_check_mark:</td>
 </tr>
@@ -133,7 +148,7 @@
 </tr>
 <tr>
 <td><code>summary</code></td>
-<td><code>InternationalString</code></td>
+<td><a href="https://iiif.io/api/presentation/3.0/#summary">See IIIF</a></td>
 <td>--</td>
 <td>:white_check_mark:</td>
 </tr>
@@ -166,6 +181,31 @@
 <span class="line"><span style="color: #EEFFFF">    </span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">figure</span><span style="color: #89DDFF">&gt;</span><span style="color: #EEFFFF">...</span><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">figure</span><span style="color: #89DDFF">&gt;</span></span>
 <span class="line"><span style="color: #EEFFFF">  </span><span style="color: #89DDFF">&lt;/</span><span style="color: #FFCB6B">Homepage</span><span style="color: #89DDFF">&gt;</span></span>
 <span class="line"><span style="color: #EEFFFF">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span></code></pre>
+<h3>SeeAlso</h3>
+<h4>Reference</h4>
+<table>
+<thead>
+<tr>
+<th>Prop</th>
+<th>Type</th>
+<th>Default</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>as</code></td>
+<td><code> ol</code>, <code>ul</code></td>
+<td><code>ul</code></td>
+<td>--</td>
+</tr>
+</tbody>
+</table>
+<p>| <code>seeAlso</code> | <a href="https://iiif.io/api/presentation/3.0/#seealso">See IIIF</a> | --      | :white_check_mark: |</p>
+<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #EEFFFF">SeeAlso</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">@samvera/nectar-iiif</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span></code></pre>
+<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF; font-style: italic">return</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">SeeAlso</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">seeAlso</span><span style="color: #89DDFF">={</span><span style="color: #EEFFFF">manifest</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">seeAlso</span><span style="color: #89DDFF">} </span><span style="color: #C792EA">as</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">li</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF"> /&gt;;</span></span>
 <span class="line"></span></code></pre>
 </div>
       <script src="./script.js"></script>
