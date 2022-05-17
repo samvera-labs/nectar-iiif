@@ -7,6 +7,7 @@ import {
   Label,
   Metadata,
   RequiredStatement,
+  SeeAlso,
   Summary,
   Thumbnail,
 } from "./index";
@@ -41,7 +42,7 @@ const Wrapper = () => {
   const handleLanguage = (e) =>
     setLanguage(e.target.value !== "--" ? e.target.value : undefined);
 
-  const { label, summary, metadata, requiredStatement } = manifest;
+  const { label, metadata, requiredStatement, seeAlso, summary } = manifest;
 
   return (
     <>
@@ -52,6 +53,7 @@ const Wrapper = () => {
         <Metadata metadata={metadata} lang={lang} />
         <RequiredStatement requiredStatement={requiredStatement} lang={lang} />
         {thumbnail && <Thumbnail thumbnail={thumbnail} alt="random" />}
+        <SeeAlso seeAlso={seeAlso} lang={lang} />
       </div>
       <DynamicUrl url={url} setUrl={setUrl} handleLanguage={handleLanguage} />
     </>
