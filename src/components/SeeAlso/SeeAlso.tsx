@@ -20,7 +20,6 @@ const SeeAlso: React.FC<NectarSeeAlso> = (props) => {
     <StyledWrapper as={as}>
       {seeAlso &&
         seeAlso.map((resource) => {
-          console.log(resource);
           const label = useGetLabel(resource.label, attributes.lang) as string;
           return (
             <StyledSeeAlso key={resource.id}>

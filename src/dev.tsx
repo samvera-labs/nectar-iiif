@@ -1,6 +1,6 @@
 import React, { StrictMode, useEffect, useState } from "react";
 import { Vault } from "@iiif/vault";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import { ManifestNormalized } from "@iiif/presentation-3";
 import {
   Homepage,
@@ -62,9 +62,11 @@ const Wrapper = () => {
   );
 };
 
-ReactDOM.render(
+const container = document.getElementById("root");
+const root = createRoot(container);
+
+root.render(
   <StrictMode>
     <Wrapper />
-  </StrictMode>,
-  document.getElementById("root")
+  </StrictMode>
 );
