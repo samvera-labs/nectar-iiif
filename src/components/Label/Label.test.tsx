@@ -12,16 +12,6 @@ const multipleValueLabel = {
   none: ["the", "color", "of", "honey"],
 };
 
-const htmlWithinLabel = {
-  none: [
-    `<a href="https://en.wikipedia.org/wiki/Honey"><strong>&mdash;Honey&mdash;</strong></a>`,
-  ],
-};
-
-const disallowedHtmlWithinLabel = {
-  none: [`<div style="color: gold;">the color of honey</a>`],
-};
-
 describe("label primitive", () => {
   /**
    * test internationalization and element assignment
@@ -69,24 +59,5 @@ describe("label primitive", () => {
     const el = getByRole("heading", { level: 5 });
     expect(el).toBeInTheDocument();
     expect(el).toHaveTextContent("the, color, of, honey");
-  });
-
-  /**
-   * test rendering of html
-   */
-  it("Renders 3.0 HTML within a label", async () => {
-    const { getByRole } = render(<Label label={htmlWithinLabel} />);
-    const el = getByRole("link");
-    expect(el.getAttribute("href")).toBe("https://en.wikipedia.org/wiki/Honey");
-    expect(el).toContainHTML("<strong>—Honey—</strong>");
-  });
-
-  /**
-   * test sanitization of html
-   */
-  it("Renders 3.0 HTML within a label", async () => {
-    const { getByText } = render(<Label label={disallowedHtmlWithinLabel} />);
-    const el = getByText("the color of honey");
-    expect(el).toContainHTML("the color of honey");
   });
 });

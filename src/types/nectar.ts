@@ -50,6 +50,11 @@ export interface NectarLabel extends NectarPrimitive {
   label: InternationalString;
 }
 
+export interface NectarMarkup extends NectarPrimitive {
+  as?: "span" | "p" | "label" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "dd";
+  markup?: InternationalString;
+}
+
 export interface NectarMetadata extends NectarPrimitive {
   as?: "dl";
   metadata: MetadataItem[];
@@ -69,6 +74,7 @@ export interface NectarSummary extends NectarPrimitive {
   as?: "span" | "p" | "label" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   summary: InternationalString;
 }
+
 export interface NectarThumbnail extends NectarPrimitive {
   altAsLabel?: InternationalString;
   thumbnail: IIIFExternalWebResource[];
