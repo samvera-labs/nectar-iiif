@@ -19,7 +19,22 @@ function sanitizeAttributes(props: any, remove: string[]) {
 
 function sanitizeHTML(html: string) {
   return DOMPurify.sanitize(html, {
-    ALLOWED_TAGS: ["b", "i", "strong", "em", "a"],
+    ALLOWED_TAGS: [
+      "a",
+      "b",
+      "br",
+      "em",
+      "i",
+      "img",
+      "p",
+      "small",
+      "span",
+      "strong",
+      "sub",
+      "sup",
+    ],
+    ALLOWED_ATTR: ["href", "src", "alt"],
+    ALLOW_UNKNOWN_PROTOCOLS: false,
   });
 }
 
