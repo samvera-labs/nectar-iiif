@@ -2,7 +2,7 @@ import React from "react";
 import { styled } from "stitches";
 import { useGetLabel } from "hooks/useGetLabel";
 import { NectarLabel } from "types/nectar";
-import sanitizeAttributes from "services/html-element";
+import { sanitizeAttributes } from "services/html-element";
 
 const StyledLabel = styled("span", {});
 
@@ -17,7 +17,7 @@ const Label: React.FC<NectarLabel> = (props) => {
 
   return (
     <StyledLabel as={as} {...attributes}>
-      {useGetLabel(label, attributes.lang as string)}
+      {useGetLabel(label, attributes.lang as string) as string}
     </StyledLabel>
   );
 };

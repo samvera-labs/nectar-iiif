@@ -1,3 +1,9 @@
+import DOMPurify from "dompurify";
+
+function createMarkup(html: string) {
+  return { __html: sanitizeHTML(html) };
+}
+
 function sanitizeAttributes(props: any, remove: string[]) {
   const entries = Object.keys(props).filter((key) =>
     !remove.includes(key) ? key : null
@@ -11,4 +17,25 @@ function sanitizeAttributes(props: any, remove: string[]) {
   return attributes as React.HTMLAttributes<HTMLElement>;
 }
 
-export default sanitizeAttributes;
+function sanitizeHTML(html: string) {
+  return DOMPurify.sanitize(html, {
+    ALLOWED_ATTR: ["href", "src", "alt"],
+    ALLOWED_TAGS: [
+      "a",
+      "b",
+      "br",
+      "em",
+      "i",
+      "img",
+      "p",
+      "small",
+      "span",
+      "strong",
+      "sub",
+      "sup",
+    ],
+    ALLOW_UNKNOWN_PROTOCOLS: false,
+  });
+}
+
+export { createMarkup, sanitizeAttributes, sanitizeHTML };

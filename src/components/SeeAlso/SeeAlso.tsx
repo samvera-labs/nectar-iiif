@@ -2,7 +2,7 @@ import React from "react";
 import { styled } from "stitches";
 import { useGetLabel } from "hooks/useGetLabel";
 import { NectarSeeAlso } from "types/nectar";
-import sanitizeAttributes from "services/html-element";
+import { sanitizeAttributes } from "services/html-element";
 
 const StyledSeeAlso = styled("li", {});
 const StyledWrapper = styled("ul", {});
