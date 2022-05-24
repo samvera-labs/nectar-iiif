@@ -19,6 +19,7 @@ function sanitizeAttributes(props: any, remove: string[]) {
 
 function sanitizeHTML(html: string) {
   return DOMPurify.sanitize(html, {
+    ALLOWED_ATTR: ["href", "src", "alt"],
     ALLOWED_TAGS: [
       "a",
       "b",
@@ -33,7 +34,6 @@ function sanitizeHTML(html: string) {
       "sub",
       "sup",
     ],
-    ALLOWED_ATTR: ["href", "src", "alt"],
     ALLOW_UNKNOWN_PROTOCOLS: false,
   });
 }
