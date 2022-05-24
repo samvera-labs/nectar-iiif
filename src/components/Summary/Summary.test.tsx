@@ -16,7 +16,7 @@ describe("summary primitive", () => {
   /**
    * test rendering of html in summary
    */
-  it("Renders 3.0 HTML within a label", async () => {
+  it("Test rendering of html in summary", async () => {
     const { getByRole } = render(<Summary summary={htmlWithinLabel} />);
     const el = getByRole("link");
     expect(el.getAttribute("href")).toBe("https://en.wikipedia.org/wiki/Honey");
@@ -26,7 +26,7 @@ describe("summary primitive", () => {
   /**
    * test sanitization of html in summary
    */
-  it("Renders 3.0 HTML within markup", async () => {
+  it("Test sanitization of html in summary", async () => {
     const { getByText } = render(
       <Summary summary={disallowedHtmlWithinLabel} />
     );

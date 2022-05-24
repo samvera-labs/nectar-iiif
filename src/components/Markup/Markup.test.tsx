@@ -16,7 +16,7 @@ describe("markup and sanitization", () => {
   /**
    * test rendering of html
    */
-  it("Renders 3.0 HTML within a label", async () => {
+  it("Tests rendering of HTML for markup.", async () => {
     const { getByRole } = render(<Markup markup={htmlWithinLabel} />);
     const el = getByRole("link");
     expect(el.getAttribute("href")).toBe("https://en.wikipedia.org/wiki/Honey");
@@ -26,7 +26,7 @@ describe("markup and sanitization", () => {
   /**
    * test sanitization of html
    */
-  it("Renders 3.0 HTML within markup", async () => {
+  it("Tests sanitizations of HTML within for markup.", async () => {
     const { getByText } = render(<Markup markup={disallowedHtmlWithinLabel} />);
     const el = getByText("the color of honey");
     expect(el).toContainHTML("the color of honey");

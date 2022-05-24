@@ -26,7 +26,7 @@ describe("metadata primitive (item)", () => {
   /**
    * test rendering of html in metadata value
    */
-  it("Renders 3.0 HTML within a label", async () => {
+  it("Test rendering of html in metadata value", async () => {
     const { getByRole } = render(<Item item={htmlWithinMetadataItem} />);
     const el = getByRole("link");
     expect(el.getAttribute("href")).toBe("https://en.wikipedia.org/wiki/Honey");
@@ -36,7 +36,7 @@ describe("metadata primitive (item)", () => {
   /**
    * test rendering not rendering HTML markup for label
    */
-  it("Renders 3.0 HTML within a label", async () => {
+  it("Test rendering not rendering HTML markup for label", async () => {
     render(<Item item={htmlWithinLabel} />);
     const el = screen.queryByText("Type");
     expect(el).toBeNull;
