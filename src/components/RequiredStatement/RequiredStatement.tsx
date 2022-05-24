@@ -2,7 +2,7 @@ import React from "react";
 import { styled } from "stitches";
 import MetadataItem from "components/Metadata/Item";
 import { NectarRequiredStatement } from "types/nectar";
-import sanitizeAttributes from "services/html-element";
+import { sanitizeAttributes } from "services/html-element";
 
 const StyledRequiredStatement = styled("dl", {});
 

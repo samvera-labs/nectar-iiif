@@ -33,6 +33,7 @@
     "@iiif/vault": "^0.9.17",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.1",
+    "@types/dompurify": "^2.3.3",
     "@types/jest": "^27.4.1",
     "@types/react": "^18.0.5",
     "@types/react-dom": "^18.0.1",
@@ -51,6 +52,7 @@
   },
   "dependencies": {
     "@stitches/react": "^1.2.7",
+    "dompurify": "^2.3.8",
     "hls.js": "^1.1.5",
     "react": "^16.8  || ^17.0 || ^18.0",
     "react-dom": "^16.8  || ^17.0 || ^18.0"
