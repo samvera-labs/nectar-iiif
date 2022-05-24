@@ -46603,6 +46603,7 @@
   }
   function sanitizeHTML(html) {
     return import_dompurify.default.sanitize(html, {
+      ALLOWED_ATTR: ["href", "src", "alt"],
       ALLOWED_TAGS: [
         "a",
         "b",
@@ -46617,7 +46618,6 @@
         "sub",
         "sup"
       ],
-      ALLOWED_ATTR: ["href", "src", "alt"],
       ALLOW_UNKNOWN_PROTOCOLS: false
     });
   }
