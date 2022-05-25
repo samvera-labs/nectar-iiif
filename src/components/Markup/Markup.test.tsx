@@ -4,6 +4,12 @@ import Markup from "./Markup";
 
 const htmlWithinLabel = {
   none: [
+    `<a href="https://en.wikipedia.org/wiki/Honey"><b>&mdash;Honey&mdash;</b></a>`,
+  ],
+};
+
+const strongWithinLabel = {
+  none: [
     `<a href="https://en.wikipedia.org/wiki/Honey"><strong>&mdash;Honey&mdash;</strong></a>`,
   ],
 };
@@ -20,7 +26,17 @@ describe("markup and sanitization", () => {
     const { getByRole } = render(<Markup markup={htmlWithinLabel} />);
     const el = getByRole("link");
     expect(el.getAttribute("href")).toBe("https://en.wikipedia.org/wiki/Honey");
-    expect(el).toContainHTML("<strong>—Honey—</strong>");
+    expect(el).toContainHTML("<b>—Honey—</b>");
+  });
+
+  /**
+   * test rendering of strong
+   */
+  it("Tests that strong does not render for markup.", async () => {
+    const { getByRole } = render(<Markup markup={strongWithinLabel} />);
+    const el = getByRole("link");
+    expect(el.getAttribute("href")).toBe("https://en.wikipedia.org/wiki/Honey");
+    expect(el).toContainHTML("—Honey—");
   });
 
   /**
