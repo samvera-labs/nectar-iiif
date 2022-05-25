@@ -4,6 +4,12 @@ import Summary from "./Summary";
 
 const htmlWithinLabel = {
   none: [
+    `<a href="https://en.wikipedia.org/wiki/Honey"><b>&mdash;Honey&mdash;</b></a>`,
+  ],
+};
+
+const strongWithinSummary = {
+  none: [
     `<a href="https://en.wikipedia.org/wiki/Honey"><strong>&mdash;Honey&mdash;</strong></a>`,
   ],
 };
@@ -20,7 +26,17 @@ describe("summary primitive", () => {
     const { getByRole } = render(<Summary summary={htmlWithinLabel} />);
     const el = getByRole("link");
     expect(el.getAttribute("href")).toBe("https://en.wikipedia.org/wiki/Honey");
-    expect(el).toContainHTML("<strong>—Honey—</strong>");
+    expect(el).toContainHTML("<b>—Honey—</b>");
+  });
+
+  /**
+   * test that strong does not render in summary
+   */
+  it("Test that strong does not render in summary", async () => {
+    const { getByRole } = render(<Summary summary={strongWithinSummary} />);
+    const el = getByRole("link");
+    expect(el.getAttribute("href")).toBe("https://en.wikipedia.org/wiki/Honey");
+    expect(el).toContainHTML("—Honey—");
   });
 
   /**
