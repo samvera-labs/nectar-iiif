@@ -46608,13 +46608,11 @@
         "a",
         "b",
         "br",
-        "em",
         "i",
         "img",
         "p",
         "small",
         "span",
-        "strong",
         "sub",
         "sup"
       ],
