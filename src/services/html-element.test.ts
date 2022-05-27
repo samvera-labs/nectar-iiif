@@ -1,15 +1,47 @@
 import { sanitizeHTML } from "services/html-element";
 
 describe("sanitizeHTML method", () => {
-  it("allowed http protocols.", () => {
-    const allowedHttp = `<a href="http://wikipedia.org/Honey">Honey</a>`;
-    const clean = sanitizeHTML(allowedHttp);
+  it("allows http protocols.", () => {
+    const html = `<a href="http://wikipedia.org/Honey">Honey</a>`;
+    const clean = sanitizeHTML(html);
     expect(clean).toBe('<a href="http://wikipedia.org/Honey">Honey</a>');
   });
 
+  it("allows b and removes strong.", () => {
+    const html = `The <strong>color</strong> of <b>honey</b>`;
+    const clean = sanitizeHTML(html);
+    expect(clean).toBe("The color of <b>honey</b>");
+  });
+
+  it("allows i and removes em.", () => {
+    const html = `The <em>color</em> of <i>honey</i>`;
+    const clean = sanitizeHTML(html);
+    expect(clean).toBe("The color of <i>honey</i>");
+  });
+
+  it("allows alt and src while removing width.", () => {
+    const html = `<img src="https://foo.bar/honey.jpg" alt="A jar of honey" width="200">`;
+    const clean = sanitizeHTML(html);
+    expect(clean).toBe(
+      '<img src="https://foo.bar/honey.jpg" alt="A jar of honey" />'
+    );
+  });
+
+  it("cleans disallowed tags and retains allowed", () => {
+    const html = `<header><blockquote><b>Honey</b><cite>-Pooh</cite></blockquote</header>`;
+    const clean = sanitizeHTML(html);
+    expect(clean).toBe("<b>Honey</b>-Pooh");
+  });
+
+  it("cleans script", () => {
+    const html = `<script>somethingDirty();</script>`;
+    const clean = sanitizeHTML(html);
+    expect(clean).toBe("");
+  });
+
   it("cleans ftp protocols.", () => {
-    const disallowedFtp = `<a href="ftp://0.0.0.0/foo">Bar</a>`;
-    const clean = sanitizeHTML(disallowedFtp);
+    const html = `<a href="ftp://0.0.0.0/foo">Bar</a>`;
+    const clean = sanitizeHTML(html);
     expect(clean).toBe("<a>Bar</a>");
   });
 });
