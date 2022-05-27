@@ -33,7 +33,6 @@ function sanitizeHTML(html: string) {
     ],
     allowedAttributes: {
       a: ["href"],
-
       img: ["alt", "src"],
     },
   });
