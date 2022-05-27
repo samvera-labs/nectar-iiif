@@ -1,4 +1,4 @@
-import DOMPurify from "dompurify";
+import DOMPurify from "isomorphic-dompurify";
 
 function createMarkup(html: string) {
   return { __html: sanitizeHTML(html) };
