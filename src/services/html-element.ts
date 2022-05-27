@@ -19,6 +19,11 @@ function sanitizeAttributes(props: any, remove: string[]) {
 
 function sanitizeHTML(html: string) {
   return sanitizeHtml(html, {
+    allowedAttributes: {
+      a: ["href"],
+      img: ["alt", "src"],
+    },
+    allowedSchemes: ["http", "https", "mailto"],
     allowedTags: [
       "a",
       "b",
@@ -31,10 +36,6 @@ function sanitizeHTML(html: string) {
       "sub",
       "sup",
     ],
-    allowedAttributes: {
-      a: ["href"],
-      img: ["alt", "src"],
-    },
   });
 }
 
