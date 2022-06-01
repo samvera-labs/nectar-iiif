@@ -2,7 +2,7 @@
 
 React.js UI component library of IIIF Presentation API 3.0 property fluent primitives.
 
-[**Demo**](https://samvera-labs.github.io/nectar-iiif)
+[**Demo**](https://samvera-labs.github.io/nectar-iiif) | [**Code**](https://github.com/samvera-labs/nectar-iiif)
 
 ---
 
