@@ -4,9 +4,9 @@
   "description": "",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
+  "types": "dist/src/index.d.ts",
   "scripts": {
-    "build": "npm run clean && node build.js&& tsc --emitDeclarationOnly --outDir dist && rm -rf dist/tsconfig.tsbuildinfo dist/index.cjs.js.map dist/index.esm.js.map",
+    "build": "npm run clean && node build.js&& tsc --emitDeclarationOnly --outDir dist",
     "build:static": "NODE_ENV=static OUT_DIR=static node build-static.js",
     "clean": "rimraf dist",
     "dev": "NODE_ENV=development node serve.js",

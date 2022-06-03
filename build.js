@@ -10,7 +10,7 @@ const shared = {
   external: Object.keys(dependencies),
   logLevel: "info",
   minify: true,
-  sourcemap: false,
+  sourcemap: true,
 };
 
 build({
