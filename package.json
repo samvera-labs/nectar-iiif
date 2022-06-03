@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
-  "types": "dist/src/index.d.ts",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "npm run clean && node build.js&& tsc --emitDeclarationOnly --outDir dist",
     "build:static": "NODE_ENV=static OUT_DIR=static node build-static.js",

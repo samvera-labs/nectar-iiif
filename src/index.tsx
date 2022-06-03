@@ -1,5 +1,5 @@
 import Homepage from "components/Homepage/Homepage";
-import Label from "components/Label/Label";
+import Label from "@/components/Label/Label";
 import Metadata from "components/Metadata/Metadata";
 import RequiredStatement from "components/RequiredStatement/RequiredStatement";
 import SeeAlso from "components/SeeAlso/SeeAlso";
