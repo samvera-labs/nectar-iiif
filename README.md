@@ -12,10 +12,12 @@ React.js UI component library of IIIF Presentation API 3.0 property fluent primi
 - [Basic Usage](#basic-usage)
 - [Primitives](#primitives)
   - [Label](#label)
-  - [Summary](#summary)
-  - [Required Statement](#required-statement)
+  - [Homepage](#homepage)
   - [Metadata](#metadata)
+  - [RequiredStatement](#required-statement)
   - [SeeAlso](#seealso)
+  - [Summary](#summary)
+  - [Thumbnail](#thumbnail)
 
 ---
 
@@ -81,7 +83,7 @@ The value of `lang` will couple with [InternationalString](https://github.com/II
 | Prop    | Type                                                                  | Default | Required           |
 | ------- | --------------------------------------------------------------------- | ------- | ------------------ |
 | `as`    | ` span`, `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `p`, `label`, `dt`, `dd` | `span`  | --                 |
-| `label` | [See IIIF](https://iiif.io/api/presentation/3.0/#label)               | --      | :white_check_mark: |
+| `label` | [See IIIF](https://iiif.io/api/presentation/3.0/#label)               | --      | **Yes**            |
 
 #### Usage
 
@@ -91,45 +93,6 @@ import { Label } from "@samvera/nectar-iiif";
 
 ```jsx
 return <Label label={manifest.label} as="h1" lang="en" />;
-```
-
-### Summary
-
-#### Reference
-
-| Prop      | Type                                                      | Default | Required           |
-| --------- | --------------------------------------------------------- | ------- | ------------------ |
-| `as`      | ` span`, `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `p`          | `span`  | --                 |
-| `summary` | [See IIIF](https://iiif.io/api/presentation/3.0/#summary) | --      | :white_check_mark: |
-
-#### Usage
-
-```jsx
-import { Summary } from "@samvera/nectar-iiif";
-```
-
-```jsx
-return <Summary summary={manifest.summary} as="p" />;
-```
-
-### Metadata
-
-```jsx
-import { Metadata } from "@samvera/nectar-iiif";
-```
-
-```jsx
-return <Metadata metadata={manifest.metadata} />;
-```
-
-### Required Statement
-
-```jsx
-import { RequiredStatement } from "@samvera/nectar-iiif";
-```
-
-```jsx
-return <RequiredStatement requiredStatement={manifest.requiredStatement} />;
 ```
 
 ### Homepage
@@ -154,6 +117,26 @@ return (
 );
 ```
 
+### Metadata
+
+```jsx
+import { Metadata } from "@samvera/nectar-iiif";
+```
+
+```jsx
+return <Metadata metadata={manifest.metadata} />;
+```
+
+### RequiredStatement
+
+```jsx
+import { RequiredStatement } from "@samvera/nectar-iiif";
+```
+
+```jsx
+return <RequiredStatement requiredStatement={manifest.requiredStatement} />;
+```
+
 ### SeeAlso
 
 #### Reference
@@ -161,7 +144,7 @@ return (
 | Prop      | Type                                                      | Default | Required           |
 | --------- | --------------------------------------------------------- | ------- | ------------------ |
 | `as`      | ` ol`, `ul`                                               | `ul`    | --                 |
-| `seeAlso` | [See IIIF](https://iiif.io/api/presentation/3.0/#seealso) | --      | :white_check_mark: |
+| `seeAlso` | [See IIIF](https://iiif.io/api/presentation/3.0/#seealso) | --      | **Yes**            |
 
 ```jsx
 import { SeeAlso } from "@samvera/nectar-iiif";
@@ -169,4 +152,39 @@ import { SeeAlso } from "@samvera/nectar-iiif";
 
 ```jsx
 return <SeeAlso seeAlso={manifest.seeAlso} as="li" />;
+```
+
+### Summary
+
+#### Reference
+
+| Prop      | Type                                                      | Default | Required           |
+| --------- | --------------------------------------------------------- | ------- | ------------------ |
+| `as`      | ` span`, `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `p`          | `span`  | --                 |
+| `summary` | [See IIIF](https://iiif.io/api/presentation/3.0/#summary) | --      | **Yes**            |
+
+#### Usage
+
+```jsx
+import { Summary } from "@samvera/nectar-iiif";
+```
+
+```jsx
+return <Summary summary={manifest.summary} as="p" />;
+```
+
+### Thumbnail
+
+#### Reference
+
+| Prop      | Type                                                          | Default | Required           |
+| --------- | ------------------------------------------------------------- | ------- | ------------------ |
+| `thumbnail` | [See IIIF](https://iiif.io/api/presentation/3.0/#thumbnail) | --      | **Yes**            |
+
+```jsx
+import { Thumbnail } from "@samvera/nectar-iiif";
+```
+
+```jsx
+return <Thumbnail thumbnail={manifest.thumbnail} altAsLabel={manifest.label} />;
 ```
