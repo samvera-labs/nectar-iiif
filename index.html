@@ -22,12 +22,14 @@
 <li><a href="#label">Label</a></li>
 <li><a href="#homepage">Homepage</a></li>
 <li><a href="#metadata">Metadata</a></li>
-<li><a href="#required-statement">RequiredStatement</a></li>
+<li><a href="#requiredstatement">RequiredStatement</a></li>
 <li><a href="#seealso">SeeAlso</a></li>
 <li><a href="#summary">Summary</a></li>
 <li><a href="#thumbnail">Thumbnail</a></li>
 </ul>
 </li>
+<li><a href="#attributes">Attributes</a></li>
+<li><a href="#language-internationalization">Language</a></li>
 </ul>
 <hr>
 <h2 id="installation">Installation</h2>
@@ -43,7 +45,7 @@
 <pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #EEFFFF">Label</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #EEFFFF">Summary</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">@samvera/nectar-iiif</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
 <span class="line"></span></code></pre>
 <pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #545454; font-style: italic">/**</span></span>
-<span class="line"><span style="color: #545454; font-style: italic"> * Some logic may be required to fetch the IIIF Manifest.</span></span>
+<span class="line"><span style="color: #545454; font-style: italic"> * Some logic may be required to retrieve the IIIF Manifest.</span></span>
 <span class="line"><span style="color: #545454; font-style: italic"> */</span></span>
 <span class="line"><span style="color: #C792EA">const</span><span style="color: #EEFFFF"> manifest </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{...};</span></span>
 <span class="line"></span>
@@ -56,49 +58,26 @@
 <span class="line"></span></code></pre>
 <hr>
 <h2>Primitives</h2>
-<p>All primitives accept HTMLElement attributes.</p>
-<table>
-<thead>
-<tr>
-<th>Prop</th>
-<th>Type</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>className</code></td>
-<td><code>string</code>, <code>undefined</code></td>
-<td><code>undefined</code></td>
-</tr>
-<tr>
-<td><code>style</code></td>
-<td><code>CSSProperties</code>, <code>undefined</code></td>
-<td><code>undefined</code></td>
-</tr>
-<tr>
-<td><code>lang</code></td>
-<td><code>string</code>, <code>undefined</code></td>
-<td><code>undefined</code></td>
-</tr>
-<tr>
-<td><code>title</code></td>
-<td><code>string</code>, <code>undefined</code></td>
-<td><code>undefined</code></td>
-</tr>
-<tr>
-<td><code>data-*</code></td>
-<td><code>string</code>, <code>undefined</code></td>
-<td><code>undefined</code></td>
-</tr>
-<tr>
-<td><code>aria-*</code></td>
-<td><code>AriaAttributes</code>, <code>undefined</code></td>
-<td><code>undefined</code></td>
-</tr>
-</tbody>
-</table>
-<p>The value of <code>lang</code> will couple with <a href="https://github.com/IIIF-Commons/presentation-3-types/blob/main/iiif/descriptive.d.ts#L6-L8">InternationalString</a> props to output the denoted <code>label</code>, <code>value</code>, <code>summary</code> entries. If lang is undefined, entries will default to the first entry in the array index.</p>
+<p>Primitives aim to cover most of the noted <a href="https://iiif.io/api/presentation/3.0/#31-descriptive-properties">Descriptive</a> and <a href="https://iiif.io/api/presentation/3.0/#31-descriptive-properties">Linking</a> properties noted in the IIIF Presentation API 3.0 specification. Some of these, specifically PartOf and Provider may have a more complex component structure.</p>
+<p>Completed (initial release) and proposed primitives include:</p>
+<p><strong>Descriptive Properties</strong></p>
+<ul>
+<li>[x] Label</li>
+<li>[x] Metadata</li>
+<li>[x] Summary</li>
+<li>[x] RequiredStatement</li>
+<li>[ ] Rights</li>
+<li>[ ] Provider</li>
+<li>[x] Thumbnail</li>
+</ul>
+<p><strong>Linking Properties</strong></p>
+<ul>
+<li>[x] Homepage</li>
+<li>[ ] Logo</li>
+<li>[ ] Rendering</li>
+<li>[x] SeeAlso</li>
+<li>[ ] PartOf</li>
+</ul>
 <h3>Label</h3>
 <h4>Reference</h4>
 <table>
@@ -215,6 +194,8 @@
 <pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF; font-style: italic">return</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">Summary</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">summary</span><span style="color: #89DDFF">={</span><span style="color: #EEFFFF">manifest</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">summary</span><span style="color: #89DDFF">} </span><span style="color: #C792EA">as</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">p</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF"> /&gt;;</span></span>
 <span class="line"></span></code></pre>
 <h3>Thumbnail</h3>
+<p>Thumbnails are rendered to a relative HTML <code>&lt;img&gt;</code> or <code>&lt;video&gt;</code> element dependendent on the type of the resource in the thumbnail entry. Currently, only &quot;V</p>
+<img width="300" alt="image" src="https://user-images.githubusercontent.com/7376450/172479540-c996919d-8043-4f65-bfbf-0f7ff9d52b0d.png">
 <h4>Reference</h4>
 <table>
 <thead>
@@ -238,6 +219,51 @@
 <span class="line"></span></code></pre>
 <pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF; font-style: italic">return</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">Thumbnail</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">thumbnail</span><span style="color: #89DDFF">={</span><span style="color: #EEFFFF">manifest</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">thumbnail</span><span style="color: #89DDFF">} </span><span style="color: #C792EA">altAsLabel</span><span style="color: #89DDFF">={</span><span style="color: #EEFFFF">manifest</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">label</span><span style="color: #89DDFF">} /&gt;;</span></span>
 <span class="line"></span></code></pre>
+<h2>Attributes</h2>
+<p>All primitives accept common HTMLElement attributes.</p>
+<table>
+<thead>
+<tr>
+<th>Prop</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>className</code></td>
+<td><code>string</code>, <code>undefined</code></td>
+<td><code>undefined</code></td>
+</tr>
+<tr>
+<td><code>style</code></td>
+<td><code>CSSProperties</code>, <code>undefined</code></td>
+<td><code>undefined</code></td>
+</tr>
+<tr>
+<td><code>lang</code></td>
+<td><code>string</code>, <code>undefined</code></td>
+<td><code>undefined</code></td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td><code>string</code>, <code>undefined</code></td>
+<td><code>undefined</code></td>
+</tr>
+<tr>
+<td><code>data-*</code></td>
+<td><code>string</code>, <code>undefined</code></td>
+<td><code>undefined</code></td>
+</tr>
+<tr>
+<td><code>aria-*</code></td>
+<td><code>AriaAttributes</code>, <code>undefined</code></td>
+<td><code>undefined</code></td>
+</tr>
+</tbody>
+</table>
+<h2>Language (Internationalization)</h2>
+<p>The value of <code>lang</code> will couple with <a href="https://github.com/IIIF-Commons/presentation-3-types/blob/main/iiif/descriptive.d.ts#L6-L8">InternationalString</a> props to output the denoted <code>label</code>, <code>value</code>, <code>summary</code> entries. If <code>lang</code> is undefined, entries will default to the first entry in the array index.</p>
 </div>
       <script src="./script.js"></script>
     </body>
