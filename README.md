@@ -86,6 +86,8 @@ Completed (initial release) and proposed primitives include:
  - [x] SeeAlso
  - [ ] PartOf
 
+----
+
 ### Label
 
 #### Reference
@@ -93,7 +95,7 @@ Completed (initial release) and proposed primitives include:
 | Prop    | Type                                                                  | Default | Required           |
 | ------- | --------------------------------------------------------------------- | ------- | ------------------ |
 | `as`    | ` span`, `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `p`, `label`, `dt`, `dd` | `span`  | --                 |
-| `label` | [See IIIF](https://iiif.io/api/presentation/3.0/#label)               | --      | **Yes**            |
+| `label` | [label](https://iiif.io/api/presentation/3.0/#label)                  | --      | **Yes**            |
 
 #### Usage
 
@@ -104,6 +106,8 @@ import { Label } from "@samvera/nectar-iiif";
 ```jsx
 return <Label label={manifest.label} as="h1" lang="en" />;
 ```
+
+----
 
 ### Homepage
 
@@ -127,6 +131,8 @@ return (
 );
 ```
 
+----
+
 ### Metadata
 
 ```jsx
@@ -136,6 +142,8 @@ import { Metadata } from "@samvera/nectar-iiif";
 ```jsx
 return <Metadata metadata={manifest.metadata} />;
 ```
+
+----
 
 ### RequiredStatement
 
@@ -147,6 +155,8 @@ import { RequiredStatement } from "@samvera/nectar-iiif";
 return <RequiredStatement requiredStatement={manifest.requiredStatement} />;
 ```
 
+----
+
 ### SeeAlso
 
 #### Reference
@@ -154,7 +164,7 @@ return <RequiredStatement requiredStatement={manifest.requiredStatement} />;
 | Prop      | Type                                                      | Default | Required           |
 | --------- | --------------------------------------------------------- | ------- | ------------------ |
 | `as`      | ` ol`, `ul`                                               | `ul`    | --                 |
-| `seeAlso` | [See IIIF](https://iiif.io/api/presentation/3.0/#seealso) | --      | **Yes**            |
+| `seeAlso` | [seeAlso](https://iiif.io/api/presentation/3.0/#seealso)  | --      | **Yes**            |
 
 ```jsx
 import { SeeAlso } from "@samvera/nectar-iiif";
@@ -164,6 +174,8 @@ import { SeeAlso } from "@samvera/nectar-iiif";
 return <SeeAlso seeAlso={manifest.seeAlso} as="li" />;
 ```
 
+----
+
 ### Summary
 
 #### Reference
@@ -171,7 +183,7 @@ return <SeeAlso seeAlso={manifest.seeAlso} as="li" />;
 | Prop      | Type                                                      | Default | Required           |
 | --------- | --------------------------------------------------------- | ------- | ------------------ |
 | `as`      | ` span`, `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `p`          | `span`  | --                 |
-| `summary` | [See IIIF](https://iiif.io/api/presentation/3.0/#summary) | --      | **Yes**            |
+| `summary` | [summary](https://iiif.io/api/presentation/3.0/#summary)  | --      | **Yes**            |
 
 #### Usage
 
@@ -183,17 +195,20 @@ import { Summary } from "@samvera/nectar-iiif";
 return <Summary summary={manifest.summary} as="p" />;
 ```
 
+----
+
 ### Thumbnail
 
-Thumbnails are rendered to a relative HTML `<img>` or `<video>` element dependendent on the type of the resource in the thumbnail entry. Currently, only "V
+Thumbnails are rendered to a relative HTML `<img>` or `<video>` element dependendent on the type of the resource in the thumbnail entry. Currently, only `type` **Image** and **Video** are supported.
 
-<img width="300" alt="image" src="https://user-images.githubusercontent.com/7376450/172479540-c996919d-8043-4f65-bfbf-0f7ff9d52b0d.png">
+<img width="300" alt="image" src="https://github.com/mathewjordan/fet/blob/main/nectar-thumb-trimmed.gif?raw=true">
 
 #### Reference
 
-| Prop      | Type                                                          | Default | Required           |
-| --------- | ------------------------------------------------------------- | ------- | ------------------ |
-| `thumbnail` | [See IIIF](https://iiif.io/api/presentation/3.0/#thumbnail) | --      | **Yes**            |
+| Prop      | Type                                                           | Default | Required           |
+| --------- | -------------------------------------------------------------- | ------- | ------------------ |
+| `thumbnail` | [thumbnail](https://iiif.io/api/presentation/3.0/#thumbnail) | --      | **Yes**            |
+| `altAsLabel`| [label](https://iiif.io/api/presentation/3.0/#label)         | --      | --                 |
 
 ```jsx
 import { Thumbnail } from "@samvera/nectar-iiif";
