@@ -14,10 +14,12 @@ React.js UI component library of IIIF Presentation API 3.0 property fluent primi
   - [Label](#label)
   - [Homepage](#homepage)
   - [Metadata](#metadata)
-  - [RequiredStatement](#required-statement)
+  - [RequiredStatement](#requiredstatement)
   - [SeeAlso](#seealso)
   - [Summary](#summary)
   - [Thumbnail](#thumbnail)
+- [Attributes](#attributes)
+- [Language](#language-internationalization)
 
 ---
 
@@ -47,7 +49,7 @@ import { Label, Summary } from "@samvera/nectar-iiif";
 
 ```jsx
 /**
- * Some logic may be required to fetch the IIIF Manifest.
+ * Some logic may be required to retrieve the IIIF Manifest.
  */
 const manifest = {...};
 
@@ -63,18 +65,26 @@ return (
 
 ## Primitives
 
-All primitives accept HTMLElement attributes.
+Primitives aim to cover most of the noted [Descriptive](https://iiif.io/api/presentation/3.0/#31-descriptive-properties) and [Linking](https://iiif.io/api/presentation/3.0/#31-descriptive-properties) properties noted in the IIIF Presentation API 3.0 specification. Some of these, specifically PartOf and Provider may have a more complex component structure.
 
-| Prop        | Type                          | Default     |
-| ----------- | ----------------------------- | ----------- |
-| `className` | `string`, `undefined`         | `undefined` |
-| `style`     | `CSSProperties`, `undefined`  | `undefined` |
-| `lang`      | `string`, `undefined`         | `undefined` |
-| `title`     | `string`, `undefined`         | `undefined` |
-| `data-*`    | `string`, `undefined`         | `undefined` |
-| `aria-*`    | `AriaAttributes`, `undefined` | `undefined` |
+Completed (initial release) and proposed primitives include:
 
-The value of `lang` will couple with [InternationalString](https://github.com/IIIF-Commons/presentation-3-types/blob/main/iiif/descriptive.d.ts#L6-L8) props to output the denoted `label`, `value`, `summary` entries. If lang is undefined, entries will default to the first entry in the array index.
+**Descriptive Properties**
+ - [x] Label
+ - [x] Metadata
+ - [x] Summary
+ - [x] RequiredStatement
+ - [ ] Rights
+ - [ ] Provider
+ - [x] Thumbnail
+
+
+**Linking Properties**
+ - [x] Homepage
+ - [ ] Logo
+ - [ ] Rendering
+ - [x] SeeAlso
+ - [ ] PartOf
 
 ### Label
 
@@ -175,6 +185,10 @@ return <Summary summary={manifest.summary} as="p" />;
 
 ### Thumbnail
 
+Thumbnails are rendered to a relative HTML `<img>` or `<video>` element dependendent on the type of the resource in the thumbnail entry. Currently, only "V
+
+<img width="300" alt="image" src="https://user-images.githubusercontent.com/7376450/172479540-c996919d-8043-4f65-bfbf-0f7ff9d52b0d.png">
+
 #### Reference
 
 | Prop      | Type                                                          | Default | Required           |
@@ -188,3 +202,21 @@ import { Thumbnail } from "@samvera/nectar-iiif";
 ```jsx
 return <Thumbnail thumbnail={manifest.thumbnail} altAsLabel={manifest.label} />;
 ```
+
+## Attributes
+
+All primitives accept common HTMLElement attributes.
+
+| Prop        | Type                          | Default     |
+| ----------- | ----------------------------- | ----------- |
+| `className` | `string`, `undefined`         | `undefined` |
+| `style`     | `CSSProperties`, `undefined`  | `undefined` |
+| `lang`      | `string`, `undefined`         | `undefined` |
+| `title`     | `string`, `undefined`         | `undefined` |
+| `data-*`    | `string`, `undefined`         | `undefined` |
+| `aria-*`    | `AriaAttributes`, `undefined` | `undefined` |
+
+
+## Language (Internationalization)
+
+The value of `lang` will couple with [InternationalString](https://github.com/IIIF-Commons/presentation-3-types/blob/main/iiif/descriptive.d.ts#L6-L8) props to output the denoted `label`, `value`, `summary` entries. If `lang` is undefined, entries will default to the first entry in the array index.
