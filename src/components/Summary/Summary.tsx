@@ -1,7 +1,7 @@
 import React from "react";
-import { NectarSummary } from "types/nectar";
-import { sanitizeAttributes } from "services/html-element";
-import Markup from "components/Markup/Markup";
+import { NectarSummary } from "../../types/nectar";
+import { sanitizeAttributes } from "../../services/html-element";
+import Markup from "../../components/Markup/Markup";
 
 const Summary: React.FC<NectarSummary> = (props) => {
   const { as, summary } = props;
