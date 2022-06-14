@@ -1,8 +1,8 @@
 import React from "react";
-import { styled } from "stitches";
-import { useGetLabel } from "hooks/useGetLabel";
-import { NectarMarkup } from "types/nectar";
-import { createMarkup, sanitizeAttributes } from "services/html-element";
+import { styled } from "../../stitches";
+import { useGetLabel } from "../../hooks/useGetLabel";
+import { NectarMarkup } from "../../types/nectar";
+import { createMarkup, sanitizeAttributes } from "../../services/html-element";
 
 const StyledMarkup = styled("span", {});
 

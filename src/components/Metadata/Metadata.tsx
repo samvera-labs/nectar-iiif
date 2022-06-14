@@ -1,8 +1,8 @@
 import React from "react";
-import { styled } from "stitches";
+import { styled } from "../../stitches";
 import MetadataItem from "./Item";
-import { NectarMetadata } from "types/nectar";
-import { sanitizeAttributes } from "services/html-element";
+import { NectarMetadata } from "../../types/nectar";
+import { sanitizeAttributes } from "../../services/html-element";
 
 const StyledMetadata = styled("dl", {});
 

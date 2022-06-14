@@ -1,5 +1,3 @@
-// Reference: https://github.com/souporserious/bundling-typescript-with-esbuild-for-npm
-
 const { build } = require("esbuild");
 const { dependencies } = require("./package.json");
 

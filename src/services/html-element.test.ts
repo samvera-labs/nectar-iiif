@@ -1,4 +1,4 @@
-import { sanitizeHTML } from "services/html-element";
+import { sanitizeHTML } from "./html-element";
 
 describe("sanitizeHTML method", () => {
   it("allows http protocols.", () => {

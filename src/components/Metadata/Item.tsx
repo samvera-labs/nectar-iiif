@@ -1,7 +1,7 @@
 import React from "react";
-import Label from "components/Label/Label";
-import Value from "components/Value/Value";
-import { NectarMetadataItem } from "types/nectar";
+import Label from "../../components/Label/Label";
+import Value from "../../components/Value/Value";
+import { NectarMetadataItem } from "../../types/nectar";
 
 const MetadataItem: React.FC<NectarMetadataItem> = (props) => {
   const { item, lang } = props;

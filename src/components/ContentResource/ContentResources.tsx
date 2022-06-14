@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from "react";
-import { styled } from "stitches";
+import { styled } from "../../stitches";
 import Hls from "hls.js";
-import { useGetImageResource } from "hooks/useGetImageResource";
-import { sanitizeAttributes } from "services/html-element";
-import { useGetLabel } from "hooks/useGetLabel";
-import { NectarContentResource } from "types/nectar";
+import { useGetImageResource } from "../../hooks/useGetImageResource";
+import { sanitizeAttributes } from "../../services/html-element";
+import { useGetLabel } from "../../hooks/useGetLabel";
+import { NectarContentResource } from "../../types/nectar";
 
 const StyledResource = styled("img", { objectFit: "cover" });
 
