@@ -21,7 +21,16 @@ const ContentResource: React.FC<NectarContentResource> = (props) => {
   const remove = ["contentResource", "altAsLabel"];
   const attributes = sanitizeAttributes(props, remove);
 
-  const { type, id, width = 200, height, format, duration } = contentResource;
+  const {
+    type,
+    id,
+    width = 200,
+    height = 200,
+    format,
+    duration,
+  } = contentResource;
+
+  console.log(contentResource);
 
   useEffect(() => {
     /**
@@ -105,7 +114,7 @@ const ContentResource: React.FC<NectarContentResource> = (props) => {
 
   switch (type) {
     case "Image":
-      const src = useGetImageResource(contentResource);
+      const src = useGetImageResource(contentResource, `${width},${height}`);
       return (
         <StyledResource
           as="img"
