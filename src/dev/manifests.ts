@@ -4,6 +4,10 @@ export const manifests = [
     label: "Milk Pond",
   },
   {
+    url: "https://digital.lib.utk.edu/assemble/manifest/rftaart/7",
+    label: "The Wildfires",
+  },
+  {
     url: "https://raw.githubusercontent.com/samvera-labs/nectar-iiif/main/public/fixtures/manifest/the-takeover.json",
     label: "The Takover",
   },
