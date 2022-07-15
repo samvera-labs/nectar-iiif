@@ -53855,7 +53855,14 @@ and ensure you are accounting for this risk.
       alt = useGetLabel(altAsLabel);
     const remove = ["contentResource", "altAsLabel"];
     const attributes = sanitizeAttributes(props, remove);
-    const { type, id, width = 200, height, format, duration } = contentResource;
+    const {
+      type,
+      id,
+      width = 200,
+      height = 200,
+      format,
+      duration
+    } = contentResource;
     (0, import_react12.useEffect)(() => {
       if (!id && !mediaRef.current)
         return;
@@ -53916,7 +53923,7 @@ and ensure you are accounting for this risk.
     };
     switch (type) {
       case "Image":
-        const src = useGetImageResource(contentResource);
+        const src = useGetImageResource(contentResource, `${width},${height}`);
         return /* @__PURE__ */ import_react12.default.createElement(StyledResource, __spreadValues({
           as: "img",
           alt,
@@ -54058,6 +54065,10 @@ and ensure you are accounting for this risk.
     {
       url: "https://iiif.harvardartmuseums.org/manifests/object/307976",
       label: "Milk Pond"
+    },
+    {
+      url: "https://digital.lib.utk.edu/assemble/manifest/rftaart/7",
+      label: "The Wildfires"
     },
     {
       url: "https://raw.githubusercontent.com/samvera-labs/nectar-iiif/main/public/fixtures/manifest/the-takeover.json",
