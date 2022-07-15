@@ -30,8 +30,6 @@ const ContentResource: React.FC<NectarContentResource> = (props) => {
     duration,
   } = contentResource;
 
-  console.log(contentResource);
-
   useEffect(() => {
     /**
      * Check that IIIF content resource ID exists and
