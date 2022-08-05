@@ -53917,8 +53917,8 @@ and ensure you are accounting for this risk.
           startTime = parseInt(fragment.split(",")[0]);
       }
       const media = mediaRef.current;
+      media.autoplay = true;
       media.currentTime = startTime;
-      media.play();
       setTimeout(() => playLoop(), loopTime * 1e3);
     };
     switch (type) {
