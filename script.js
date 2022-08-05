@@ -53849,7 +53849,7 @@ and ensure you are accounting for this risk.
   var StyledResource = styled("img", { objectFit: "cover" });
   var ContentResource = (props) => {
     const mediaRef = (0, import_react12.useRef)(null);
-    const { contentResource, altAsLabel } = props;
+    const { contentResource, altAsLabel, region = "full" } = props;
     let alt;
     if (altAsLabel)
       alt = useGetLabel(altAsLabel);
@@ -53923,7 +53923,7 @@ and ensure you are accounting for this risk.
     };
     switch (type) {
       case "Image":
-        const src = useGetImageResource(contentResource, `${width},${height}`);
+        const src = useGetImageResource(contentResource, `${width},${height}`, region);
         return /* @__PURE__ */ import_react12.default.createElement(StyledResource, __spreadValues({
           as: "img",
           alt,
@@ -53952,12 +53952,13 @@ and ensure you are accounting for this risk.
 
   // src/components/Thumbnail/Thumbnail.tsx
   var Thumbnail = (props) => {
-    const { thumbnail } = props;
+    const { thumbnail, region } = props;
     const remove = ["thumbnail"];
     const attributes = sanitizeAttributes(props, remove);
     return /* @__PURE__ */ import_react13.default.createElement(import_react13.default.Fragment, null, thumbnail && thumbnail.map((contentResource) => /* @__PURE__ */ import_react13.default.createElement(ContentResources_default, __spreadValues({
       contentResource,
-      key: contentResource.id
+      key: contentResource.id,
+      region
     }, attributes))));
   };
   var Thumbnail_default = Thumbnail;
