@@ -10,7 +10,7 @@ const StyledResource = styled("img", { objectFit: "cover" });
 
 const ContentResource: React.FC<NectarContentResource> = (props) => {
   const mediaRef = useRef(null);
-  const { contentResource, altAsLabel } = props;
+  const { contentResource, altAsLabel, region = "full" } = props;
 
   let alt: string | undefined;
   if (altAsLabel) alt = useGetLabel(altAsLabel) as string;
@@ -112,7 +112,11 @@ const ContentResource: React.FC<NectarContentResource> = (props) => {
 
   switch (type) {
     case "Image":
-      const src = useGetImageResource(contentResource, `${width},${height}`);
+      const src = useGetImageResource(
+        contentResource,
+        `${width},${height}`,
+        region
+      );
       return (
         <StyledResource
           as="img"

@@ -4,7 +4,7 @@ import { sanitizeAttributes } from "../../services/html-element";
 import ContentResource from "../../components/ContentResource/ContentResources";
 
 const Thumbnail: React.FC<NectarThumbnail> = (props) => {
-  const { thumbnail } = props;
+  const { thumbnail, region } = props;
 
   /**
    * Create attributes and remove React props
@@ -19,6 +19,7 @@ const Thumbnail: React.FC<NectarThumbnail> = (props) => {
           <ContentResource
             contentResource={contentResource as NectarExternalWebResource}
             key={contentResource.id}
+            region={region}
             {...attributes}
           />
         ))}

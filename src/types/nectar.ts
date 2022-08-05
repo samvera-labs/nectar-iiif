@@ -14,6 +14,7 @@ export interface NectarMetadataItem extends NectarPrimitive {
 export interface NectarContentResource extends NectarPrimitive {
   altAsLabel?: InternationalString;
   contentResource: NectarExternalWebResource;
+  region?: string;
 }
 
 export interface NectarExternalWebResource {
@@ -77,6 +78,7 @@ export interface NectarSummary extends NectarPrimitive {
 
 export interface NectarThumbnail extends NectarPrimitive {
   altAsLabel?: InternationalString;
+  region?: string;
   thumbnail: IIIFExternalWebResource[];
 }
 
