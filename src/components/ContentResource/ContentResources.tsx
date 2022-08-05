@@ -104,8 +104,8 @@ const ContentResource: React.FC<NectarContentResource> = (props) => {
     }
 
     const media: HTMLVideoElement = mediaRef.current;
+    media.autoplay = true;
     media.currentTime = startTime;
-    media.play();
 
     setTimeout(() => playLoop(), loopTime * 1000);
   };
