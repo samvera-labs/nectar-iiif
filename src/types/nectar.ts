@@ -29,6 +29,12 @@ export interface NectarExternalWebResource {
   profle?: string;
 }
 
+export interface NectarIIIFResource {
+  id: string;
+  type: "Collection" | "Manifest";
+  label?: InternationalString | undefined;
+}
+
 export interface NectarHomepage extends NectarPrimitive {
   children?: ReactNode | ReactNode[];
   homepage: NectarExternalWebResource[];
@@ -63,7 +69,7 @@ export interface NectarMetadata extends NectarPrimitive {
 
 export interface NectarPartOf extends NectarPrimitive {
   as?: "ol" | "ul";
-  partOf: NectarExternalWebResource[];
+  partOf: NectarIIIFResource[];
 }
 
 export interface NectarRequiredStatement extends NectarPrimitive {

@@ -20,7 +20,9 @@ const PartOf: React.FC<NectarPartOf> = (props) => {
     <StyledWrapper as={as}>
       {partOf &&
         partOf.map((resource) => {
-          const label = useGetLabel(resource.label, attributes.lang) as string;
+          const label = resource.label
+            ? (useGetLabel(resource.label, attributes.lang) as string)
+            : undefined;
           return (
             <StyledPartOf key={resource.id}>
               <a href={resource.id} {...attributes}>
