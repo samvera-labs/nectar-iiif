@@ -61,6 +61,11 @@ export interface NectarMetadata extends NectarPrimitive {
   metadata: MetadataItem[];
 }
 
+export interface NectarPartOf extends NectarPrimitive {
+  as?: "ol" | "ul";
+  partOf: NectarExternalWebResource[];
+}
+
 export interface NectarRequiredStatement extends NectarPrimitive {
   as?: "dl";
   requiredStatement: MetadataItem;
