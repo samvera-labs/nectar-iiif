@@ -14,6 +14,7 @@ React.js UI component library of IIIF Presentation API 3.0 property fluent primi
   - [Label](#label)
   - [Homepage](#homepage)
   - [Metadata](#metadata)
+  - [PartOf](#partof)
   - [RequiredStatement](#requiredstatement)
   - [SeeAlso](#seealso)
   - [Summary](#summary)
@@ -65,37 +66,38 @@ return (
 
 ## Primitives
 
-Primitives aim to cover most of the noted [Descriptive](https://iiif.io/api/presentation/3.0/#31-descriptive-properties) and [Linking](https://iiif.io/api/presentation/3.0/#31-descriptive-properties) properties noted in the IIIF Presentation API 3.0 specification. Some of these, specifically PartOf and Provider may have a more complex component structure.
+Primitives aim to cover most of the noted [Descriptive](https://iiif.io/api/presentation/3.0/#31-descriptive-properties) and [Linking](https://iiif.io/api/presentation/3.0/#31-descriptive-properties) properties noted in the IIIF Presentation API 3.0 specification. Some of these, specifically `Provider` may have a more complex component structure.
 
 Completed (initial release) and proposed primitives include:
 
 **Descriptive Properties**
- - [x] Label
- - [x] Metadata
- - [x] Summary
- - [x] RequiredStatement
- - [ ] Rights
- - [ ] Provider
- - [x] Thumbnail
 
+- [x] Label
+- [x] Metadata
+- [x] Summary
+- [x] RequiredStatement
+- [ ] Rights
+- [ ] Provider
+- [x] Thumbnail
 
 **Linking Properties**
- - [x] Homepage
- - [ ] Logo
- - [ ] Rendering
- - [x] SeeAlso
- - [ ] PartOf
 
-----
+- [x] Homepage
+- [ ] Logo
+- [ ] Rendering
+- [x] SeeAlso
+- [x] PartOf
+
+---
 
 ### Label
 
 #### Reference
 
-| Prop    | Type                                                                  | Default | Required           |
-| ------- | --------------------------------------------------------------------- | ------- | ------------------ |
-| `as`    | ` span`, `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `p`, `label`, `dt`, `dd` | `span`  | --                 |
-| `label` | [label](https://iiif.io/api/presentation/3.0/#label)                  | --      | **Yes**            |
+| Prop    | Type                                                                  | Default | Required |
+| ------- | --------------------------------------------------------------------- | ------- | -------- |
+| `as`    | ` span`, `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `p`, `label`, `dt`, `dd` | `span`  | --       |
+| `label` | [label](https://iiif.io/api/presentation/3.0/#label)                  | --      | **Yes**  |
 
 #### Usage
 
@@ -107,7 +109,7 @@ import { Label } from "@samvera/nectar-iiif";
 return <Label label={manifest.label} as="h1" lang="en" />;
 ```
 
-----
+---
 
 ### Homepage
 
@@ -131,7 +133,7 @@ return (
 );
 ```
 
-----
+---
 
 ### Metadata
 
@@ -143,7 +145,7 @@ import { Metadata } from "@samvera/nectar-iiif";
 return <Metadata metadata={manifest.metadata} />;
 ```
 
-----
+---
 
 ### RequiredStatement
 
@@ -155,16 +157,35 @@ import { RequiredStatement } from "@samvera/nectar-iiif";
 return <RequiredStatement requiredStatement={manifest.requiredStatement} />;
 ```
 
-----
+---
+
+### PartOf
+
+#### Reference
+
+| Prop     | Type                                                   | Default | Required |
+| -------- | ------------------------------------------------------ | ------- | -------- |
+| `as`     | ` ol`, `ul`                                            | `ul`    | --       |
+| `partOf` | [partOf](https://iiif.io/api/presentation/3.0/#partOf) | --      | **Yes**  |
+
+```jsx
+import { PartOf } from "@samvera/nectar-iiif";
+```
+
+```jsx
+return <PartOf partOf={manifest.partOf} as="li" />;
+```
+
+---
 
 ### SeeAlso
 
 #### Reference
 
-| Prop      | Type                                                      | Default | Required           |
-| --------- | --------------------------------------------------------- | ------- | ------------------ |
-| `as`      | ` ol`, `ul`                                               | `ul`    | --                 |
-| `seeAlso` | [seeAlso](https://iiif.io/api/presentation/3.0/#seealso)  | --      | **Yes**            |
+| Prop      | Type                                                     | Default | Required |
+| --------- | -------------------------------------------------------- | ------- | -------- |
+| `as`      | ` ol`, `ul`                                              | `ul`    | --       |
+| `seeAlso` | [seeAlso](https://iiif.io/api/presentation/3.0/#seealso) | --      | **Yes**  |
 
 ```jsx
 import { SeeAlso } from "@samvera/nectar-iiif";
@@ -174,16 +195,16 @@ import { SeeAlso } from "@samvera/nectar-iiif";
 return <SeeAlso seeAlso={manifest.seeAlso} as="li" />;
 ```
 
-----
+---
 
 ### Summary
 
 #### Reference
 
-| Prop      | Type                                                      | Default | Required           |
-| --------- | --------------------------------------------------------- | ------- | ------------------ |
-| `as`      | ` span`, `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `p`          | `span`  | --                 |
-| `summary` | [summary](https://iiif.io/api/presentation/3.0/#summary)  | --      | **Yes**            |
+| Prop      | Type                                                     | Default | Required |
+| --------- | -------------------------------------------------------- | ------- | -------- |
+| `as`      | ` span`, `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `p`         | `span`  | --       |
+| `summary` | [summary](https://iiif.io/api/presentation/3.0/#summary) | --      | **Yes**  |
 
 #### Usage
 
@@ -195,7 +216,7 @@ import { Summary } from "@samvera/nectar-iiif";
 return <Summary summary={manifest.summary} as="p" />;
 ```
 
-----
+---
 
 ### Thumbnail
 
@@ -205,10 +226,10 @@ Thumbnails are rendered to a relative HTML `<img>` or `<video>` element dependen
 
 #### Reference
 
-| Prop      | Type                                                           | Default | Required           |
-| --------- | -------------------------------------------------------------- | ------- | ------------------ |
-| `thumbnail` | [thumbnail](https://iiif.io/api/presentation/3.0/#thumbnail) | --      | **Yes**            |
-| `altAsLabel`| [label](https://iiif.io/api/presentation/3.0/#label)         | --      | --                 |
+| Prop         | Type                                                         | Default | Required |
+| ------------ | ------------------------------------------------------------ | ------- | -------- |
+| `thumbnail`  | [thumbnail](https://iiif.io/api/presentation/3.0/#thumbnail) | --      | **Yes**  |
+| `altAsLabel` | [label](https://iiif.io/api/presentation/3.0/#label)         | --      | --       |
 
 ```jsx
 import { Thumbnail } from "@samvera/nectar-iiif";
@@ -230,7 +251,6 @@ All primitives accept common HTMLElement attributes.
 | `title`     | `string`, `undefined`         | `undefined` |
 | `data-*`    | `string`, `undefined`         | `undefined` |
 | `aria-*`    | `AriaAttributes`, `undefined` | `undefined` |
-
 
 ## Language (Internationalization)
 
