@@ -6,6 +6,7 @@ import {
   Homepage,
   Label,
   Metadata,
+  PartOf,
   RequiredStatement,
   SeeAlso,
   Summary,
@@ -16,6 +17,7 @@ import { manifests } from "./dev/manifests";
 
 const Wrapper = () => {
   const defaultUrl: string = manifests[0].url;
+  const [partOf, setPartOf] = useState();
   const [seeAlso, setSeeAlso] = useState();
   const [thumbnail, setThumbnail] = useState();
   const [homepage, setHomepage] = useState();
@@ -32,6 +34,7 @@ const Wrapper = () => {
           setManifest(data);
           setThumbnail(vault.get(data.thumbnail));
           setHomepage(vault.get(data.homepage));
+          setPartOf(vault.get(data.partOf));
           setSeeAlso(vault.get(data.seeAlso));
         })
         .catch((error) => {
@@ -55,6 +58,7 @@ const Wrapper = () => {
         <Metadata metadata={metadata} lang={lang} />
         <RequiredStatement requiredStatement={requiredStatement} lang={lang} />
         {thumbnail && <Thumbnail thumbnail={thumbnail} alt="random" />}
+        <PartOf partOf={partOf} />
         <SeeAlso seeAlso={seeAlso} />
       </div>
       <DynamicUrl url={url} setUrl={setUrl} handleLanguage={handleLanguage} />
