@@ -2457,9 +2457,9 @@
           if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
             __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
           }
-          var React14 = require_react();
+          var React15 = require_react();
           var Scheduler = require_scheduler();
-          var ReactSharedInternals = React14.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React15.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           var suppressWarning = false;
           function setSuppressWarning(newSuppressWarning) {
             {
@@ -3855,7 +3855,7 @@
             {
               if (props.value == null) {
                 if (typeof props.children === "object" && props.children !== null) {
-                  React14.Children.forEach(props.children, function(child) {
+                  React15.Children.forEach(props.children, function(child) {
                     if (child == null) {
                       return;
                     }
@@ -11402,7 +11402,7 @@
             }
           }
           var fakeInternalInstance = {};
-          var emptyRefsObject = new React14.Component().refs;
+          var emptyRefsObject = new React15.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -51339,7 +51339,7 @@ and ensure you are accounting for this risk.
   });
 
   // src/dev.tsx
-  var import_react15 = __toESM(require_react());
+  var import_react16 = __toESM(require_react());
 
   // node_modules/@iiif/parser/dist/esm/index.mjs
   var k = { id: "https://iiif-parser/annotation-page", type: "AnnotationPage", behavior: [], motivation: null, label: null, thumbnail: [], summary: null, requiredStatement: null, metadata: [], rights: null, provider: [], items: [], seeAlso: [], homepage: [], logo: [], rendering: [], service: [] };
@@ -53768,18 +53768,39 @@ and ensure you are accounting for this risk.
   };
   var Metadata_default = Metadata;
 
-  // src/components/RequiredStatement/RequiredStatement.tsx
+  // src/components/PartOf/PartOf.tsx
   var import_react9 = __toESM(require_react());
+  var StyledPartOf = styled("li", {});
+  var StyledWrapper = styled("ul", {});
+  var PartOf = (props) => {
+    const { as, partOf } = props;
+    const remove = ["as", "partOf"];
+    const attributes = sanitizeAttributes(props, remove);
+    return /* @__PURE__ */ import_react9.default.createElement(StyledWrapper, {
+      as
+    }, partOf && partOf.map((resource) => {
+      const label = resource.label ? useGetLabel(resource.label, attributes.lang) : void 0;
+      return /* @__PURE__ */ import_react9.default.createElement(StyledPartOf, {
+        key: resource.id
+      }, /* @__PURE__ */ import_react9.default.createElement("a", __spreadValues({
+        href: resource.id
+      }, attributes), label ? label : resource.id));
+    }));
+  };
+  var PartOf_default = PartOf;
+
+  // src/components/RequiredStatement/RequiredStatement.tsx
+  var import_react10 = __toESM(require_react());
   var StyledRequiredStatement = styled("dl", {});
   var RequiredStatement = (props) => {
     const { as, requiredStatement } = props;
     if (!requiredStatement)
-      return /* @__PURE__ */ import_react9.default.createElement(import_react9.default.Fragment, null);
+      return /* @__PURE__ */ import_react10.default.createElement(import_react10.default.Fragment, null);
     const remove = ["as", "requiredStatement"];
     let attributes = sanitizeAttributes(props, remove);
-    return /* @__PURE__ */ import_react9.default.createElement(StyledRequiredStatement, __spreadValues({
+    return /* @__PURE__ */ import_react10.default.createElement(StyledRequiredStatement, __spreadValues({
       as
-    }, attributes), /* @__PURE__ */ import_react9.default.createElement(Item_default, {
+    }, attributes), /* @__PURE__ */ import_react10.default.createElement(Item_default, {
       item: requiredStatement,
       lang: attributes.lang
     }));
@@ -53787,20 +53808,20 @@ and ensure you are accounting for this risk.
   var RequiredStatement_default = RequiredStatement;
 
   // src/components/SeeAlso/SeeAlso.tsx
-  var import_react10 = __toESM(require_react());
+  var import_react11 = __toESM(require_react());
   var StyledSeeAlso = styled("li", {});
-  var StyledWrapper = styled("ul", {});
+  var StyledWrapper2 = styled("ul", {});
   var SeeAlso = (props) => {
     const { as, seeAlso } = props;
     const remove = ["as", "seeAlso"];
     const attributes = sanitizeAttributes(props, remove);
-    return /* @__PURE__ */ import_react10.default.createElement(StyledWrapper, {
+    return /* @__PURE__ */ import_react11.default.createElement(StyledWrapper2, {
       as
     }, seeAlso && seeAlso.map((resource) => {
       const label = useGetLabel(resource.label, attributes.lang);
-      return /* @__PURE__ */ import_react10.default.createElement(StyledSeeAlso, {
+      return /* @__PURE__ */ import_react11.default.createElement(StyledSeeAlso, {
         key: resource.id
-      }, /* @__PURE__ */ import_react10.default.createElement("a", __spreadValues({
+      }, /* @__PURE__ */ import_react11.default.createElement("a", __spreadValues({
         href: resource.id
       }, attributes), label ? label : resource.id));
     }));
@@ -53808,12 +53829,12 @@ and ensure you are accounting for this risk.
   var SeeAlso_default = SeeAlso;
 
   // src/components/Summary/Summary.tsx
-  var import_react11 = __toESM(require_react());
+  var import_react12 = __toESM(require_react());
   var Summary = (props) => {
     const { as, summary } = props;
     const remove = ["as", "summary"];
     let attributes = sanitizeAttributes(props, remove);
-    return /* @__PURE__ */ import_react11.default.createElement(Markup_default, __spreadValues({
+    return /* @__PURE__ */ import_react12.default.createElement(Markup_default, __spreadValues({
       as,
       markup: summary
     }, attributes));
@@ -53821,10 +53842,10 @@ and ensure you are accounting for this risk.
   var Summary_default = Summary;
 
   // src/components/Thumbnail/Thumbnail.tsx
-  var import_react13 = __toESM(require_react());
+  var import_react14 = __toESM(require_react());
 
   // src/components/ContentResource/ContentResources.tsx
-  var import_react12 = __toESM(require_react());
+  var import_react13 = __toESM(require_react());
   var import_hls = __toESM(require_hls());
 
   // src/hooks/useGetImageResource.ts
@@ -53848,7 +53869,7 @@ and ensure you are accounting for this risk.
   // src/components/ContentResource/ContentResources.tsx
   var StyledResource = styled("img", { objectFit: "cover" });
   var ContentResource = (props) => {
-    const mediaRef = (0, import_react12.useRef)(null);
+    const mediaRef = (0, import_react13.useRef)(null);
     const { contentResource, altAsLabel, region = "full" } = props;
     let alt;
     if (altAsLabel)
@@ -53863,7 +53884,7 @@ and ensure you are accounting for this risk.
       format,
       duration
     } = contentResource;
-    (0, import_react12.useEffect)(() => {
+    (0, import_react13.useEffect)(() => {
       if (!id && !mediaRef.current)
         return;
       if (["Image"].includes(type))
@@ -53901,7 +53922,7 @@ and ensure you are accounting for this risk.
         }
       };
     }, []);
-    (0, import_react12.useEffect)(() => playLoop(), []);
+    (0, import_react13.useEffect)(() => playLoop(), []);
     const playLoop = () => {
       if (!mediaRef.current)
         return;
@@ -53924,7 +53945,7 @@ and ensure you are accounting for this risk.
     switch (type) {
       case "Image":
         const src = useGetImageResource(contentResource, `${width},${height}`, region);
-        return /* @__PURE__ */ import_react12.default.createElement(StyledResource, __spreadValues({
+        return /* @__PURE__ */ import_react13.default.createElement(StyledResource, __spreadValues({
           as: "img",
           alt,
           css: { width, height },
@@ -53932,7 +53953,7 @@ and ensure you are accounting for this risk.
           src
         }, attributes));
       case "Video":
-        return /* @__PURE__ */ import_react12.default.createElement(StyledResource, {
+        return /* @__PURE__ */ import_react13.default.createElement(StyledResource, {
           as: "video",
           css: { width, height },
           disablePictureInPicture: true,
@@ -53945,7 +53966,7 @@ and ensure you are accounting for this risk.
         });
       default:
         console.warn(`Resource type: ${type} is not valid or not yet supported in Nectar.`);
-        return /* @__PURE__ */ import_react12.default.createElement(import_react12.default.Fragment, null);
+        return /* @__PURE__ */ import_react13.default.createElement(import_react13.default.Fragment, null);
     }
   };
   var ContentResources_default = ContentResource;
@@ -53955,7 +53976,7 @@ and ensure you are accounting for this risk.
     const { thumbnail, region } = props;
     const remove = ["thumbnail"];
     const attributes = sanitizeAttributes(props, remove);
-    return /* @__PURE__ */ import_react13.default.createElement(import_react13.default.Fragment, null, thumbnail && thumbnail.map((contentResource) => /* @__PURE__ */ import_react13.default.createElement(ContentResources_default, __spreadValues({
+    return /* @__PURE__ */ import_react14.default.createElement(import_react14.default.Fragment, null, thumbnail && thumbnail.map((contentResource) => /* @__PURE__ */ import_react14.default.createElement(ContentResources_default, __spreadValues({
       contentResource,
       key: contentResource.id,
       region
@@ -53964,7 +53985,7 @@ and ensure you are accounting for this risk.
   var Thumbnail_default = Thumbnail;
 
   // src/dev/DynamicUrl.tsx
-  var import_react14 = __toESM(require_react());
+  var import_react15 = __toESM(require_react());
 
   // src/dev/DynamicUrl.styled.tsx
   var DynamicUrlStyled = styled("section", {
@@ -54107,45 +54128,45 @@ and ensure you are accounting for this risk.
     setUrl,
     handleLanguage
   }) => {
-    const inputRef = (0, import_react14.useRef)(null);
+    const inputRef = (0, import_react15.useRef)(null);
     const handleSubmit = (e2) => {
       var _a;
       e2.preventDefault();
       const target = e2.target;
       setUrl((_a = target.url) == null ? void 0 : _a.value);
     };
-    (0, import_react14.useEffect)(() => {
+    (0, import_react15.useEffect)(() => {
       if (inputRef.current)
         inputRef.current.value = url;
     }, [url]);
-    return /* @__PURE__ */ import_react14.default.createElement(DynamicUrlStyled, null, /* @__PURE__ */ import_react14.default.createElement(ManualForm, {
+    return /* @__PURE__ */ import_react15.default.createElement(DynamicUrlStyled, null, /* @__PURE__ */ import_react15.default.createElement(ManualForm, {
       onSubmit: handleSubmit
-    }, /* @__PURE__ */ import_react14.default.createElement("label", {
+    }, /* @__PURE__ */ import_react15.default.createElement("label", {
       htmlFor: "manual-manifest"
-    }, "Provide a IIIF Manifest"), /* @__PURE__ */ import_react14.default.createElement("div", null, /* @__PURE__ */ import_react14.default.createElement("input", {
+    }, "Provide a IIIF Manifest"), /* @__PURE__ */ import_react15.default.createElement("div", null, /* @__PURE__ */ import_react15.default.createElement("input", {
       type: "text",
       name: "url",
       id: "manual-manifest",
       placeholder: "IIIF Manifest",
       ref: inputRef
-    }), /* @__PURE__ */ import_react14.default.createElement("select", {
+    }), /* @__PURE__ */ import_react15.default.createElement("select", {
       id: "lang-code",
       name: "lang-code",
       onChange: handleLanguage,
       "aria-label": "bcp47 language code"
-    }, /* @__PURE__ */ import_react14.default.createElement("option", null, "Language Code"), /* @__PURE__ */ import_react14.default.createElement("option", {
+    }, /* @__PURE__ */ import_react15.default.createElement("option", null, "Language Code"), /* @__PURE__ */ import_react15.default.createElement("option", {
       value: "none"
-    }, "none"), /* @__PURE__ */ import_react14.default.createElement("option", {
+    }, "none"), /* @__PURE__ */ import_react15.default.createElement("option", {
       value: "en"
-    }, "en"), /* @__PURE__ */ import_react14.default.createElement("option", {
+    }, "en"), /* @__PURE__ */ import_react15.default.createElement("option", {
       value: "fr"
-    }, "fr")), /* @__PURE__ */ import_react14.default.createElement("button", {
+    }, "fr")), /* @__PURE__ */ import_react15.default.createElement("button", {
       type: "submit"
-    }, "View"))), manifests.length > 0 && /* @__PURE__ */ import_react14.default.createElement(Curated, null, manifests.map((obj) => /* @__PURE__ */ import_react14.default.createElement(ButtonForm, {
+    }, "View"))), manifests.length > 0 && /* @__PURE__ */ import_react15.default.createElement(Curated, null, manifests.map((obj) => /* @__PURE__ */ import_react15.default.createElement(ButtonForm, {
       key: obj.label,
       onSubmit: handleSubmit,
       "data-active": url === obj.url ? true : false
-    }, /* @__PURE__ */ import_react14.default.createElement("button", {
+    }, /* @__PURE__ */ import_react15.default.createElement("button", {
       name: "url",
       value: obj.url
     }, obj.label)))));
@@ -54155,50 +54176,54 @@ and ensure you are accounting for this risk.
   // src/dev.tsx
   var Wrapper = () => {
     const defaultUrl = manifests[0].url;
-    const [seeAlso, setSeeAlso] = (0, import_react15.useState)();
-    const [thumbnail, setThumbnail] = (0, import_react15.useState)();
-    const [homepage, setHomepage] = (0, import_react15.useState)();
-    const [manifest, setManifest] = (0, import_react15.useState)();
-    const [lang, setLanguage] = (0, import_react15.useState)();
-    const [url, setUrl] = import_react15.default.useState(defaultUrl);
-    (0, import_react15.useEffect)(() => {
+    const [partOf, setPartOf] = (0, import_react16.useState)();
+    const [seeAlso, setSeeAlso] = (0, import_react16.useState)();
+    const [thumbnail, setThumbnail] = (0, import_react16.useState)();
+    const [homepage, setHomepage] = (0, import_react16.useState)();
+    const [manifest, setManifest] = (0, import_react16.useState)();
+    const [lang, setLanguage] = (0, import_react16.useState)();
+    const [url, setUrl] = import_react16.default.useState(defaultUrl);
+    (0, import_react16.useEffect)(() => {
       const vault = new Vault();
       if (url)
         vault.loadManifest(url).then((data) => {
           setManifest(data);
           setThumbnail(vault.get(data.thumbnail));
           setHomepage(vault.get(data.homepage));
+          setPartOf(vault.get(data.partOf));
           setSeeAlso(vault.get(data.seeAlso));
         }).catch((error) => {
           console.error(`Manifest ${url} failed to load: ${error}`);
         });
     }, [url]);
     if (!manifest)
-      return /* @__PURE__ */ import_react15.default.createElement(import_react15.default.Fragment, null, "Loading...");
+      return /* @__PURE__ */ import_react16.default.createElement(import_react16.default.Fragment, null, "Loading...");
     const handleLanguage = (e2) => setLanguage(e2.target.value !== "--" ? e2.target.value : void 0);
     const { label, metadata, requiredStatement, summary } = manifest;
-    return /* @__PURE__ */ import_react15.default.createElement(import_react15.default.Fragment, null, /* @__PURE__ */ import_react15.default.createElement("div", null, /* @__PURE__ */ import_react15.default.createElement(Label_default, {
+    return /* @__PURE__ */ import_react16.default.createElement(import_react16.default.Fragment, null, /* @__PURE__ */ import_react16.default.createElement("div", null, /* @__PURE__ */ import_react16.default.createElement(Label_default, {
       as: "h3",
       label,
       lang
-    }), /* @__PURE__ */ import_react15.default.createElement(Homepage_default, {
+    }), /* @__PURE__ */ import_react16.default.createElement(Homepage_default, {
       homepage
-    }, "More Details"), /* @__PURE__ */ import_react15.default.createElement(Summary_default, {
+    }, "More Details"), /* @__PURE__ */ import_react16.default.createElement(Summary_default, {
       as: "p",
       summary,
       lang
-    }), /* @__PURE__ */ import_react15.default.createElement(Metadata_default, {
+    }), /* @__PURE__ */ import_react16.default.createElement(Metadata_default, {
       metadata,
       lang
-    }), /* @__PURE__ */ import_react15.default.createElement(RequiredStatement_default, {
+    }), /* @__PURE__ */ import_react16.default.createElement(RequiredStatement_default, {
       requiredStatement,
       lang
-    }), thumbnail && /* @__PURE__ */ import_react15.default.createElement(Thumbnail_default, {
+    }), thumbnail && /* @__PURE__ */ import_react16.default.createElement(Thumbnail_default, {
       thumbnail,
       alt: "random"
-    }), /* @__PURE__ */ import_react15.default.createElement(SeeAlso_default, {
+    }), /* @__PURE__ */ import_react16.default.createElement(PartOf_default, {
+      partOf
+    }), /* @__PURE__ */ import_react16.default.createElement(SeeAlso_default, {
       seeAlso
-    })), /* @__PURE__ */ import_react15.default.createElement(DynamicUrl_default, {
+    })), /* @__PURE__ */ import_react16.default.createElement(DynamicUrl_default, {
       url,
       setUrl,
       handleLanguage
@@ -54206,7 +54231,7 @@ and ensure you are accounting for this risk.
   };
   var container = document.getElementById("root");
   var root = (0, import_client.createRoot)(container);
-  root.render(/* @__PURE__ */ import_react15.default.createElement(import_react15.StrictMode, null, /* @__PURE__ */ import_react15.default.createElement(Wrapper, null)));
+  root.render(/* @__PURE__ */ import_react16.default.createElement(import_react16.StrictMode, null, /* @__PURE__ */ import_react16.default.createElement(Wrapper, null)));
 })();
 /*!
  * is-plain-object <https://github.com/jonschlinkert/is-plain-object>

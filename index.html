@@ -22,6 +22,7 @@
 <li><a href="#label">Label</a></li>
 <li><a href="#homepage">Homepage</a></li>
 <li><a href="#metadata">Metadata</a></li>
+<li><a href="#partof">PartOf</a></li>
 <li><a href="#requiredstatement">RequiredStatement</a></li>
 <li><a href="#seealso">SeeAlso</a></li>
 <li><a href="#summary">Summary</a></li>
@@ -58,7 +59,7 @@
 <span class="line"></span></code></pre>
 <hr>
 <h2>Primitives</h2>
-<p>Primitives aim to cover most of the noted <a href="https://iiif.io/api/presentation/3.0/#31-descriptive-properties">Descriptive</a> and <a href="https://iiif.io/api/presentation/3.0/#31-descriptive-properties">Linking</a> properties noted in the IIIF Presentation API 3.0 specification. Some of these, specifically PartOf and Provider may have a more complex component structure.</p>
+<p>Primitives aim to cover most of the noted <a href="https://iiif.io/api/presentation/3.0/#31-descriptive-properties">Descriptive</a> and <a href="https://iiif.io/api/presentation/3.0/#31-descriptive-properties">Linking</a> properties noted in the IIIF Presentation API 3.0 specification. Some of these, specifically <code>Provider</code> may have a more complex component structure.</p>
 <p>Completed (initial release) and proposed primitives include:</p>
 <p><strong>Descriptive Properties</strong></p>
 <ul>
@@ -76,7 +77,7 @@
 <li>[ ] Logo</li>
 <li>[ ] Rendering</li>
 <li>[x] SeeAlso</li>
-<li>[ ] PartOf</li>
+<li>[x] PartOf</li>
 </ul>
 <hr>
 <h3>Label</h3>
@@ -135,6 +136,37 @@
 <pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #EEFFFF">RequiredStatement</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">@samvera/nectar-iiif</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
 <span class="line"></span></code></pre>
 <pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF; font-style: italic">return</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">RequiredStatement</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">requiredStatement</span><span style="color: #89DDFF">={</span><span style="color: #EEFFFF">manifest</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">requiredStatement</span><span style="color: #89DDFF">} /&gt;;</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h3>PartOf</h3>
+<h4>Reference</h4>
+<table>
+<thead>
+<tr>
+<th>Prop</th>
+<th>Type</th>
+<th>Default</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>as</code></td>
+<td><code> ol</code>, <code>ul</code></td>
+<td><code>ul</code></td>
+<td>--</td>
+</tr>
+<tr>
+<td><code>partOf</code></td>
+<td><a href="https://iiif.io/api/presentation/3.0/#partOf">partOf</a></td>
+<td>--</td>
+<td><strong>Yes</strong></td>
+</tr>
+</tbody>
+</table>
+<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #EEFFFF">PartOf</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">@samvera/nectar-iiif</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span></code></pre>
+<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF; font-style: italic">return</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">PartOf</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">partOf</span><span style="color: #89DDFF">={</span><span style="color: #EEFFFF">manifest</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">partOf</span><span style="color: #89DDFF">} </span><span style="color: #C792EA">as</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">li</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF"> /&gt;;</span></span>
 <span class="line"></span></code></pre>
 <hr>
 <h3>SeeAlso</h3>
