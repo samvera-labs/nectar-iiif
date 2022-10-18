@@ -1,6 +1,6 @@
 import React from "react";
 import { styled } from "../../stitches";
-import { useGetLabel } from "../../hooks/useGetLabel";
+import { getLabelAsString } from "../../services/label-helpers";
 import { NectarLabel } from "../../types/nectar";
 import { sanitizeAttributes } from "../../services/html-element";
 
@@ -17,7 +17,7 @@ const Label: React.FC<NectarLabel> = (props) => {
 
   return (
     <StyledLabel as={as} {...attributes}>
-      {useGetLabel(label, attributes.lang as string) as string}
+      {getLabelAsString(label, attributes.lang as string) as string}
     </StyledLabel>
   );
 };

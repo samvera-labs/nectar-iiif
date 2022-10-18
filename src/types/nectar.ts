@@ -3,12 +3,18 @@ import {
   InternationalString,
   MetadataItem,
 } from "@iiif/presentation-3";
-import React, { ReactNode } from "react";
+import React, { ReactElement, ReactNode } from "react";
 
 export interface NectarPrimitive extends React.HTMLAttributes<HTMLElement> {}
 
+export interface NectarCustomValueContent {
+  matchingLabel: InternationalString;
+  Content: ReactElement;
+}
+
 export interface NectarMetadataItem extends NectarPrimitive {
   item: MetadataItem;
+  customValueContent?: ReactElement;
 }
 
 export interface NectarContentResource extends NectarPrimitive {
@@ -64,6 +70,7 @@ export interface NectarMarkup extends NectarPrimitive {
 
 export interface NectarMetadata extends NectarPrimitive {
   as?: "dl";
+  customValueContent?: NectarCustomValueContent[];
   metadata: MetadataItem[];
 }
 
@@ -96,4 +103,8 @@ export interface NectarThumbnail extends NectarPrimitive {
 export interface NectarValue extends NectarPrimitive {
   as?: "span" | "dd";
   value: InternationalString;
+}
+
+export interface NectarCustomValue extends NectarValue {
+  customValueContent: ReactElement;
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import { styled } from "../../stitches";
-import { useGetLabel } from "../../hooks/useGetLabel";
+import { getLabelAsString } from "../../services/label-helpers";
 import { NectarMarkup } from "../../types/nectar";
 import { createMarkup, sanitizeAttributes } from "../../services/html-element";
 
@@ -18,7 +18,7 @@ const Markup: React.FC<NectarMarkup> = (props) => {
   let attributes = sanitizeAttributes(props, remove);
 
   const html = createMarkup(
-    useGetLabel(markup, attributes.lang as string) as string
+    getLabelAsString(markup, attributes.lang as string) as string
   );
 
   return (
