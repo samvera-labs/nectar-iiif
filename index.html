@@ -127,9 +127,70 @@
 <span class="line"></span></code></pre>
 <hr>
 <h3>Metadata</h3>
+<p>Metadata is rendered am HTML <code>dl</code> with corresponding <code>dt</code> and <code>dd</code> elements for they respective <code>label</code> and <code>value</code> pairs. By default <code>value</code> entries are rendered as a string, with <code>, </code> interspersed to seperate multiple entries. A consuming application using can optionally update the <code>value</code> output for each entry.</p>
+<h4>Reference</h4>
+<table>
+<thead>
+<tr>
+<th>Prop</th>
+<th>Type</th>
+<th>Default</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>as</code></td>
+<td><code>dl</code></td>
+<td><code>dl</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>metadata</code></td>
+<td><a href="https://iiif.io/api/presentation/3.0/#metadata">metadata</a></td>
+<td>--</td>
+<td><strong>Yes</strong></td>
+</tr>
+<tr>
+<td><code>customValueContent</code></td>
+<td>NectarCustomValueContent[]</td>
+<td>--</td>
+<td>--</td>
+</tr>
+</tbody>
+</table>
 <pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #EEFFFF">Metadata</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">@samvera/nectar-iiif</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
 <span class="line"></span></code></pre>
 <pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF; font-style: italic">return</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">Metadata</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">metadata</span><span style="color: #89DDFF">={</span><span style="color: #EEFFFF">manifest</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">metadata</span><span style="color: #89DDFF">} /&gt;;</span></span>
+<span class="line"></span></code></pre>
+<h4>Custom Value Content</h4>
+<p>If a consumign application required rendering specific <code>metadata</code> item <code>values</code> in a custom pattern, the <code>customValueContent</code> prop can be set for the <code>&lt;Metadata&gt;</code> component. The pattern requires <code>matchingLabel</code> as following https://iiif.io/api/presentation/3.0/#label and <code>Content</code> asa ReactElement carrying <code>props</code>. The element set for <code>Content</code> must map <code>props.value</code> to the appropriate code in the custom pattern.</p>
+<p>In the example below, the value of <strong>Pantaloon</strong> with a matching <code>label</code> of <code>{ none: [&quot;Subject&quot;] }</code> would be rendered as <code>&lt;dd&gt;&lt;a href=&quot;https://example.org/?subject=Pantaloon&quot;&gt;Pantaloon&lt;/a&gt;&lt;dd&gt;</code>, while the <code>value</code> entry of <strong>comic masks</strong> would render simply as <code>&lt;dd&gt;comic masks&lt;/dd&gt;</code>.</p>
+<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #C792EA">const</span><span style="color: #EEFFFF"> metadata </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> [</span></span>
+<span class="line"><span style="color: #EEFFFF">  </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #EEFFFF">    </span><span style="color: #F07178">label</span><span style="color: #89DDFF">:</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span><span style="color: #EEFFFF"> </span><span style="color: #F07178">none</span><span style="color: #89DDFF">:</span><span style="color: #EEFFFF"> [</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">Genre</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF">] </span><span style="color: #89DDFF">},</span></span>
+<span class="line"><span style="color: #EEFFFF">    </span><span style="color: #F07178">value</span><span style="color: #89DDFF">:</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span><span style="color: #EEFFFF"> </span><span style="color: #F07178">none</span><span style="color: #89DDFF">:</span><span style="color: #EEFFFF"> [</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">comic masks</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF">] </span><span style="color: #89DDFF">},</span></span>
+<span class="line"><span style="color: #EEFFFF">  </span><span style="color: #89DDFF">},</span></span>
+<span class="line"><span style="color: #EEFFFF">  </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #EEFFFF">    </span><span style="color: #F07178">label</span><span style="color: #89DDFF">:</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span><span style="color: #EEFFFF"> </span><span style="color: #F07178">none</span><span style="color: #89DDFF">:</span><span style="color: #EEFFFF"> [</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">Subject</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF">] </span><span style="color: #89DDFF">},</span></span>
+<span class="line"><span style="color: #EEFFFF">    </span><span style="color: #F07178">value</span><span style="color: #89DDFF">:</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span><span style="color: #EEFFFF"> </span><span style="color: #F07178">none</span><span style="color: #89DDFF">:</span><span style="color: #EEFFFF"> [</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">Pantaloon</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF">] </span><span style="color: #89DDFF">},</span></span>
+<span class="line"><span style="color: #EEFFFF">  </span><span style="color: #89DDFF">},</span></span>
+<span class="line"><span style="color: #EEFFFF">]</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C792EA">const</span><span style="color: #EEFFFF"> CustomValueSubject </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">(</span><span style="color: #EEFFFF">props</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #C792EA">=&gt;</span><span style="color: #EEFFFF"> (</span></span>
+<span class="line"><span style="color: #EEFFFF">  </span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">a</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">href</span><span style="color: #89DDFF">={</span><span style="color: #82AAFF">encodeURI</span><span style="color: #EEFFFF">(</span><span style="color: #89DDFF">`</span><span style="color: #C3E88D">https://example.org/?subject=</span><span style="color: #89DDFF">${</span><span style="color: #EEFFFF">props</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">value</span><span style="color: #89DDFF">}`</span><span style="color: #EEFFFF">)</span><span style="color: #89DDFF">}&gt;</span></span>
+<span class="line"><span style="color: #EEFFFF">    </span><span style="color: #89DDFF">{</span><span style="color: #EEFFFF">props</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">value</span><span style="color: #89DDFF">}</span></span>
+<span class="line"><span style="color: #EEFFFF">  </span><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">a</span><span style="color: #89DDFF">&gt;</span></span>
+<span class="line"><span style="color: #EEFFFF">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C792EA">const</span><span style="color: #EEFFFF"> customValueContent </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> [</span></span>
+<span class="line"><span style="color: #EEFFFF">  </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #EEFFFF">    </span><span style="color: #F07178">matchingLabel</span><span style="color: #89DDFF">:</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span><span style="color: #EEFFFF"> </span><span style="color: #F07178">none</span><span style="color: #89DDFF">:</span><span style="color: #EEFFFF"> [</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">Subject</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF">] </span><span style="color: #89DDFF">},</span></span>
+<span class="line"><span style="color: #EEFFFF">    </span><span style="color: #F07178">Content</span><span style="color: #89DDFF">:</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">CustomValueSubject</span><span style="color: #89DDFF"> /&gt;,</span></span>
+<span class="line"><span style="color: #EEFFFF">  </span><span style="color: #89DDFF">},</span></span>
+<span class="line"><span style="color: #EEFFFF">]</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #89DDFF; font-style: italic">return</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">Metadata</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">metadata</span><span style="color: #89DDFF">={</span><span style="color: #EEFFFF">metadata</span><span style="color: #89DDFF">} </span><span style="color: #C792EA">customValueContent</span><span style="color: #89DDFF">={</span><span style="color: #EEFFFF">customValueContent</span><span style="color: #89DDFF">} /&gt;;</span></span>
 <span class="line"></span></code></pre>
 <hr>
 <h3>RequiredStatement</h3>

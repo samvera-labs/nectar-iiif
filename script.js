@@ -529,7 +529,7 @@
             var newElement = ReactElement(oldElement.type, newKey, oldElement.ref, oldElement._self, oldElement._source, oldElement._owner, oldElement.props);
             return newElement;
           }
-          function cloneElement(element, config, children) {
+          function cloneElement2(element, config, children) {
             if (element === null || element === void 0) {
               throw new Error("React.cloneElement(...): The argument must be a React element, but you passed " + element + ".");
             }
@@ -1570,7 +1570,7 @@
             return validatedFactory;
           }
           function cloneElementWithValidation(element, props, children) {
-            var newElement = cloneElement.apply(this, arguments);
+            var newElement = cloneElement2.apply(this, arguments);
             for (var i2 = 2; i2 < arguments.length; i2++) {
               validateChildKeys(arguments[i2], newElement.type);
             }
@@ -2457,9 +2457,9 @@
           if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
             __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
           }
-          var React15 = require_react();
+          var React16 = require_react();
           var Scheduler = require_scheduler();
-          var ReactSharedInternals = React15.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React16.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           var suppressWarning = false;
           function setSuppressWarning(newSuppressWarning) {
             {
@@ -2508,7 +2508,7 @@
           var HostPortal = 4;
           var HostComponent = 5;
           var HostText = 6;
-          var Fragment = 7;
+          var Fragment2 = 7;
           var Mode = 8;
           var ContextConsumer = 9;
           var ContextProvider = 10;
@@ -3465,7 +3465,7 @@
                 return "DehydratedFragment";
               case ForwardRef:
                 return getWrappedName$1(type, type.render, "ForwardRef");
-              case Fragment:
+              case Fragment2:
                 return "Fragment";
               case HostComponent:
                 return type;
@@ -3855,7 +3855,7 @@
             {
               if (props.value == null) {
                 if (typeof props.children === "object" && props.children !== null) {
-                  React15.Children.forEach(props.children, function(child) {
+                  React16.Children.forEach(props.children, function(child) {
                     if (child == null) {
                       return;
                     }
@@ -11402,7 +11402,7 @@
             }
           }
           var fakeInternalInstance = {};
-          var emptyRefsObject = new React15.Component().refs;
+          var emptyRefsObject = new React16.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -12675,7 +12675,7 @@
               }
             }
             function updateFragment2(returnFiber, current2, fragment, lanes, key) {
-              if (current2 === null || current2.tag !== Fragment) {
+              if (current2 === null || current2.tag !== Fragment2) {
                 var created = createFiberFromFragment(fragment, returnFiber.mode, lanes, key);
                 created.return = returnFiber;
                 return created;
@@ -13083,7 +13083,7 @@
                 if (child.key === key) {
                   var elementType = element.type;
                   if (elementType === REACT_FRAGMENT_TYPE) {
-                    if (child.tag === Fragment) {
+                    if (child.tag === Fragment2) {
                       deleteRemainingChildren(returnFiber, child.sibling);
                       var existing = useFiber(child, element.props.children);
                       existing.return = returnFiber;
@@ -15732,7 +15732,7 @@
               case SimpleMemoComponent:
               case FunctionComponent:
               case ForwardRef:
-              case Fragment:
+              case Fragment2:
               case Mode:
               case Profiler:
               case ContextConsumer:
@@ -17662,7 +17662,7 @@
                 var _resolvedProps2 = workInProgress2.elementType === type ? _unresolvedProps2 : resolveDefaultProps(type, _unresolvedProps2);
                 return updateForwardRef(current2, workInProgress2, type, _resolvedProps2, renderLanes2);
               }
-              case Fragment:
+              case Fragment2:
                 return updateFragment(current2, workInProgress2, renderLanes2);
               case Mode:
                 return updateMode(current2, workInProgress2, renderLanes2);
@@ -21572,7 +21572,7 @@
             return fiber;
           }
           function createFiberFromFragment(elements, mode, lanes, key) {
-            var fiber = createFiber(Fragment, elements, key, mode);
+            var fiber = createFiber(Fragment2, elements, key, mode);
             fiber.lanes = lanes;
             return fiber;
           }
@@ -43796,7 +43796,7 @@ and ensure you are accounting for this risk.
               return BaseSegment;
             });
             __webpack_require__.d(__webpack_exports__, "Fragment", function() {
-              return Fragment;
+              return Fragment2;
             });
             __webpack_require__.d(__webpack_exports__, "Part", function() {
               return Part;
@@ -43898,9 +43898,9 @@ and ensure you are accounting for this risk.
               }]);
               return BaseSegment2;
             }();
-            var Fragment = /* @__PURE__ */ function(_BaseSegment) {
-              _inheritsLoose(Fragment2, _BaseSegment);
-              function Fragment2(type, baseurl) {
+            var Fragment2 = /* @__PURE__ */ function(_BaseSegment) {
+              _inheritsLoose(Fragment3, _BaseSegment);
+              function Fragment3(type, baseurl) {
                 var _this;
                 _this = _BaseSegment.call(this, baseurl) || this;
                 _this._decryptdata = null;
@@ -43932,7 +43932,7 @@ and ensure you are accounting for this risk.
                 _this.type = type;
                 return _this;
               }
-              var _proto2 = Fragment2.prototype;
+              var _proto2 = Fragment3.prototype;
               _proto2.createInitializationVector = function createInitializationVector(segmentNumber) {
                 var uint8View = new Uint8Array(16);
                 for (var i2 = 12; i2 < 16; i2++) {
@@ -43977,7 +43977,7 @@ and ensure you are accounting for this risk.
                 elementaryStreams[ElementaryStreamTypes.VIDEO] = null;
                 elementaryStreams[ElementaryStreamTypes.AUDIOVIDEO] = null;
               };
-              _createClass(Fragment2, [{
+              _createClass(Fragment3, [{
                 key: "decryptdata",
                 get: function get() {
                   if (!this.levelkey && !this._decryptdata) {
@@ -44022,7 +44022,7 @@ and ensure you are accounting for this risk.
                   return false;
                 }
               }]);
-              return Fragment2;
+              return Fragment3;
             }(BaseSegment);
             var Part = /* @__PURE__ */ function(_BaseSegment2) {
               _inheritsLoose(Part2, _BaseSegment2);
@@ -51339,7 +51339,7 @@ and ensure you are accounting for this risk.
   });
 
   // src/dev.tsx
-  var import_react16 = __toESM(require_react());
+  var import_react17 = __toESM(require_react());
 
   // node_modules/@iiif/parser/dist/esm/index.mjs
   var k = { id: "https://iiif-parser/annotation-page", type: "AnnotationPage", behavior: [], motivation: null, label: null, thumbnail: [], summary: null, requiredStatement: null, metadata: [], rights: null, provider: [], items: [], seeAlso: [], homepage: [], logo: [], rendering: [], service: [] };
@@ -53610,9 +53610,8 @@ and ensure you are accounting for this risk.
     prefix: "nectar"
   });
 
-  // src/hooks/useGetLabel.ts
-  var useGetLabel = (label, lang = "none") => {
-    var _a;
+  // src/services/label-helpers.ts
+  var getLabelEntries = (label, lang = "none") => {
     if (!label)
       return null;
     if (typeof label === "string")
@@ -53620,14 +53619,17 @@ and ensure you are accounting for this risk.
     if (!label[lang]) {
       const codes = Object.getOwnPropertyNames(label);
       if (codes.length > 0)
-        return (_a = label[codes[0]]) == null ? void 0 : _a.join(", ");
+        return label[codes[0]];
     }
     if (!label[lang])
       return null;
     if (!Array.isArray(label[lang]))
       return null;
-    const entries = label[lang];
-    return entries.join(", ");
+    return label[lang];
+  };
+  var getLabelAsString = (label, lang = "none") => {
+    const entries = getLabelEntries(label, lang);
+    return Array.isArray(entries) ? entries.join(", ") : entries;
   };
 
   // src/services/html-element.ts
@@ -53672,7 +53674,7 @@ and ensure you are accounting for this risk.
     const remove = ["children", "homepage"];
     const attributes = sanitizeAttributes(props, remove);
     return /* @__PURE__ */ import_react3.default.createElement(import_react3.default.Fragment, null, homepage && homepage.map((resource) => {
-      const label = useGetLabel(resource.label, attributes.lang);
+      const label = getLabelAsString(resource.label, attributes.lang);
       return /* @__PURE__ */ import_react3.default.createElement(StyledHomepage, __spreadValues({
         "aria-label": children ? label : void 0,
         href: resource.id,
@@ -53691,15 +53693,15 @@ and ensure you are accounting for this risk.
     let attributes = sanitizeAttributes(props, remove);
     return /* @__PURE__ */ import_react4.default.createElement(StyledLabel, __spreadValues({
       as
-    }, attributes), useGetLabel(label, attributes.lang));
+    }, attributes), getLabelAsString(label, attributes.lang));
   };
   var Label_default = Label;
 
   // src/components/Metadata/Metadata.tsx
-  var import_react8 = __toESM(require_react());
+  var import_react9 = __toESM(require_react());
 
   // src/components/Metadata/Item.tsx
-  var import_react7 = __toESM(require_react());
+  var import_react8 = __toESM(require_react());
 
   // src/components/Value/Value.tsx
   var import_react6 = __toESM(require_react());
@@ -53713,7 +53715,7 @@ and ensure you are accounting for this risk.
       return /* @__PURE__ */ import_react5.default.createElement(import_react5.default.Fragment, null);
     const remove = ["as", "markup"];
     let attributes = sanitizeAttributes(props, remove);
-    const html = createMarkup(useGetLabel(markup, attributes.lang));
+    const html = createMarkup(getLabelAsString(markup, attributes.lang));
     return /* @__PURE__ */ import_react5.default.createElement(StyledMarkup, __spreadProps(__spreadValues({
       as
     }, attributes), {
@@ -53730,17 +53732,49 @@ and ensure you are accounting for this risk.
   });
   var Value_default = Value;
 
+  // src/components/Value/CustomValue.tsx
+  var import_react7 = __toESM(require_react());
+  var StyledCustomValue = styled("span", {});
+  var CustomValue = ({
+    as = "dd",
+    customValueContent,
+    lang,
+    value
+  }) => {
+    var _a;
+    const entries = (_a = getLabelEntries(value, lang)) == null ? void 0 : _a.map((entry) => {
+      return (0, import_react7.cloneElement)(customValueContent, {
+        value: entry
+      });
+    });
+    return /* @__PURE__ */ import_react7.default.createElement(StyledCustomValue, {
+      as,
+      lang
+    }, entries == null ? void 0 : entries.map((entry, index) => [
+      index > 0 && ", ",
+      /* @__PURE__ */ import_react7.default.createElement(import_react7.Fragment, {
+        key: index
+      }, entry)
+    ]));
+  };
+  var CustomValue_default = CustomValue;
+
   // src/components/Metadata/Item.tsx
   var MetadataItem = (props) => {
-    const { item, lang } = props;
+    const { item, lang, customValueContent } = props;
     const { label, value } = item;
-    return /* @__PURE__ */ import_react7.default.createElement("div", {
+    return /* @__PURE__ */ import_react8.default.createElement("div", {
       role: "group"
-    }, /* @__PURE__ */ import_react7.default.createElement(Label_default, {
+    }, /* @__PURE__ */ import_react8.default.createElement(Label_default, {
       as: "dt",
       label,
       lang
-    }), /* @__PURE__ */ import_react7.default.createElement(Value_default, {
+    }), customValueContent ? /* @__PURE__ */ import_react8.default.createElement(CustomValue_default, {
+      as: "dd",
+      customValueContent,
+      value,
+      lang
+    }) : /* @__PURE__ */ import_react8.default.createElement(Value_default, {
       as: "dd",
       value,
       lang
@@ -53748,41 +53782,57 @@ and ensure you are accounting for this risk.
   };
   var Item_default = MetadataItem;
 
+  // src/services/custom.ts
+  function parseCustomContent(label, valueArray) {
+    const customContent = valueArray.filter((entry) => {
+      const { matchingLabel } = entry;
+      const lang = Object.keys(entry.matchingLabel)[0];
+      const labelPattern = getLabelAsString(matchingLabel, lang);
+      if (getLabelAsString(label, lang) === labelPattern)
+        return true;
+    }).map((entry) => entry.Content);
+    if (!Array.isArray(customContent))
+      return;
+    return customContent[0];
+  }
+
   // src/components/Metadata/Metadata.tsx
   var StyledMetadata = styled("dl", {});
   var Metadata = (props) => {
-    const { as, metadata } = props;
+    const { as, customValueContent, metadata } = props;
     if (!Array.isArray(metadata))
-      return /* @__PURE__ */ import_react8.default.createElement(import_react8.default.Fragment, null);
-    const remove = ["as", "metadata"];
+      return /* @__PURE__ */ import_react9.default.createElement(import_react9.default.Fragment, null);
+    const remove = ["as", "customValueContent", "metadata"];
     let attributes = sanitizeAttributes(props, remove);
-    return /* @__PURE__ */ import_react8.default.createElement(import_react8.default.Fragment, null, metadata.length > 0 && /* @__PURE__ */ import_react8.default.createElement(StyledMetadata, __spreadValues({
+    return /* @__PURE__ */ import_react9.default.createElement(import_react9.default.Fragment, null, metadata.length > 0 && /* @__PURE__ */ import_react9.default.createElement(StyledMetadata, __spreadValues({
       as
     }, attributes), metadata.map((item, index) => {
-      return /* @__PURE__ */ import_react8.default.createElement(Item_default, {
+      const customValue = customValueContent ? parseCustomContent(item.label, customValueContent) : void 0;
+      return /* @__PURE__ */ import_react9.default.createElement(Item_default, {
+        customValueContent: customValue,
         item,
         key: index,
-        lang: attributes.lang
+        lang: attributes == null ? void 0 : attributes.lang
       });
     })));
   };
   var Metadata_default = Metadata;
 
   // src/components/PartOf/PartOf.tsx
-  var import_react9 = __toESM(require_react());
+  var import_react10 = __toESM(require_react());
   var StyledPartOf = styled("li", {});
   var StyledWrapper = styled("ul", {});
   var PartOf = (props) => {
     const { as, partOf } = props;
     const remove = ["as", "partOf"];
     const attributes = sanitizeAttributes(props, remove);
-    return /* @__PURE__ */ import_react9.default.createElement(StyledWrapper, {
+    return /* @__PURE__ */ import_react10.default.createElement(StyledWrapper, {
       as
     }, partOf && partOf.map((resource) => {
-      const label = resource.label ? useGetLabel(resource.label, attributes.lang) : void 0;
-      return /* @__PURE__ */ import_react9.default.createElement(StyledPartOf, {
+      const label = resource.label ? getLabelAsString(resource.label, attributes.lang) : void 0;
+      return /* @__PURE__ */ import_react10.default.createElement(StyledPartOf, {
         key: resource.id
-      }, /* @__PURE__ */ import_react9.default.createElement("a", __spreadValues({
+      }, /* @__PURE__ */ import_react10.default.createElement("a", __spreadValues({
         href: resource.id
       }, attributes), label ? label : resource.id));
     }));
@@ -53790,17 +53840,17 @@ and ensure you are accounting for this risk.
   var PartOf_default = PartOf;
 
   // src/components/RequiredStatement/RequiredStatement.tsx
-  var import_react10 = __toESM(require_react());
+  var import_react11 = __toESM(require_react());
   var StyledRequiredStatement = styled("dl", {});
   var RequiredStatement = (props) => {
     const { as, requiredStatement } = props;
     if (!requiredStatement)
-      return /* @__PURE__ */ import_react10.default.createElement(import_react10.default.Fragment, null);
+      return /* @__PURE__ */ import_react11.default.createElement(import_react11.default.Fragment, null);
     const remove = ["as", "requiredStatement"];
     let attributes = sanitizeAttributes(props, remove);
-    return /* @__PURE__ */ import_react10.default.createElement(StyledRequiredStatement, __spreadValues({
+    return /* @__PURE__ */ import_react11.default.createElement(StyledRequiredStatement, __spreadValues({
       as
-    }, attributes), /* @__PURE__ */ import_react10.default.createElement(Item_default, {
+    }, attributes), /* @__PURE__ */ import_react11.default.createElement(Item_default, {
       item: requiredStatement,
       lang: attributes.lang
     }));
@@ -53808,20 +53858,20 @@ and ensure you are accounting for this risk.
   var RequiredStatement_default = RequiredStatement;
 
   // src/components/SeeAlso/SeeAlso.tsx
-  var import_react11 = __toESM(require_react());
+  var import_react12 = __toESM(require_react());
   var StyledSeeAlso = styled("li", {});
   var StyledWrapper2 = styled("ul", {});
   var SeeAlso = (props) => {
     const { as, seeAlso } = props;
     const remove = ["as", "seeAlso"];
     const attributes = sanitizeAttributes(props, remove);
-    return /* @__PURE__ */ import_react11.default.createElement(StyledWrapper2, {
+    return /* @__PURE__ */ import_react12.default.createElement(StyledWrapper2, {
       as
     }, seeAlso && seeAlso.map((resource) => {
-      const label = useGetLabel(resource.label, attributes.lang);
-      return /* @__PURE__ */ import_react11.default.createElement(StyledSeeAlso, {
+      const label = getLabelAsString(resource.label, attributes.lang);
+      return /* @__PURE__ */ import_react12.default.createElement(StyledSeeAlso, {
         key: resource.id
-      }, /* @__PURE__ */ import_react11.default.createElement("a", __spreadValues({
+      }, /* @__PURE__ */ import_react12.default.createElement("a", __spreadValues({
         href: resource.id
       }, attributes), label ? label : resource.id));
     }));
@@ -53829,12 +53879,12 @@ and ensure you are accounting for this risk.
   var SeeAlso_default = SeeAlso;
 
   // src/components/Summary/Summary.tsx
-  var import_react12 = __toESM(require_react());
+  var import_react13 = __toESM(require_react());
   var Summary = (props) => {
     const { as, summary } = props;
     const remove = ["as", "summary"];
     let attributes = sanitizeAttributes(props, remove);
-    return /* @__PURE__ */ import_react12.default.createElement(Markup_default, __spreadValues({
+    return /* @__PURE__ */ import_react13.default.createElement(Markup_default, __spreadValues({
       as,
       markup: summary
     }, attributes));
@@ -53842,10 +53892,10 @@ and ensure you are accounting for this risk.
   var Summary_default = Summary;
 
   // src/components/Thumbnail/Thumbnail.tsx
-  var import_react14 = __toESM(require_react());
+  var import_react15 = __toESM(require_react());
 
   // src/components/ContentResource/ContentResources.tsx
-  var import_react13 = __toESM(require_react());
+  var import_react14 = __toESM(require_react());
   var import_hls = __toESM(require_hls());
 
   // src/hooks/useGetImageResource.ts
@@ -53869,11 +53919,11 @@ and ensure you are accounting for this risk.
   // src/components/ContentResource/ContentResources.tsx
   var StyledResource = styled("img", { objectFit: "cover" });
   var ContentResource = (props) => {
-    const mediaRef = (0, import_react13.useRef)(null);
+    const mediaRef = (0, import_react14.useRef)(null);
     const { contentResource, altAsLabel, region = "full" } = props;
     let alt;
     if (altAsLabel)
-      alt = useGetLabel(altAsLabel);
+      alt = getLabelAsString(altAsLabel);
     const remove = ["contentResource", "altAsLabel"];
     const attributes = sanitizeAttributes(props, remove);
     const {
@@ -53884,7 +53934,7 @@ and ensure you are accounting for this risk.
       format,
       duration
     } = contentResource;
-    (0, import_react13.useEffect)(() => {
+    (0, import_react14.useEffect)(() => {
       if (!id && !mediaRef.current)
         return;
       if (["Image"].includes(type))
@@ -53922,7 +53972,7 @@ and ensure you are accounting for this risk.
         }
       };
     }, []);
-    (0, import_react13.useEffect)(() => playLoop(), []);
+    (0, import_react14.useEffect)(() => playLoop(), []);
     const playLoop = () => {
       if (!mediaRef.current)
         return;
@@ -53945,7 +53995,7 @@ and ensure you are accounting for this risk.
     switch (type) {
       case "Image":
         const src = useGetImageResource(contentResource, `${width},${height}`, region);
-        return /* @__PURE__ */ import_react13.default.createElement(StyledResource, __spreadValues({
+        return /* @__PURE__ */ import_react14.default.createElement(StyledResource, __spreadValues({
           as: "img",
           alt,
           css: { width, height },
@@ -53953,7 +54003,7 @@ and ensure you are accounting for this risk.
           src
         }, attributes));
       case "Video":
-        return /* @__PURE__ */ import_react13.default.createElement(StyledResource, {
+        return /* @__PURE__ */ import_react14.default.createElement(StyledResource, {
           as: "video",
           css: { width, height },
           disablePictureInPicture: true,
@@ -53966,7 +54016,7 @@ and ensure you are accounting for this risk.
         });
       default:
         console.warn(`Resource type: ${type} is not valid or not yet supported in Nectar.`);
-        return /* @__PURE__ */ import_react13.default.createElement(import_react13.default.Fragment, null);
+        return /* @__PURE__ */ import_react14.default.createElement(import_react14.default.Fragment, null);
     }
   };
   var ContentResources_default = ContentResource;
@@ -53976,7 +54026,7 @@ and ensure you are accounting for this risk.
     const { thumbnail, region } = props;
     const remove = ["thumbnail"];
     const attributes = sanitizeAttributes(props, remove);
-    return /* @__PURE__ */ import_react14.default.createElement(import_react14.default.Fragment, null, thumbnail && thumbnail.map((contentResource) => /* @__PURE__ */ import_react14.default.createElement(ContentResources_default, __spreadValues({
+    return /* @__PURE__ */ import_react15.default.createElement(import_react15.default.Fragment, null, thumbnail && thumbnail.map((contentResource) => /* @__PURE__ */ import_react15.default.createElement(ContentResources_default, __spreadValues({
       contentResource,
       key: contentResource.id,
       region
@@ -53985,7 +54035,7 @@ and ensure you are accounting for this risk.
   var Thumbnail_default = Thumbnail;
 
   // src/dev/DynamicUrl.tsx
-  var import_react15 = __toESM(require_react());
+  var import_react16 = __toESM(require_react());
 
   // src/dev/DynamicUrl.styled.tsx
   var DynamicUrlStyled = styled("section", {
@@ -54085,28 +54135,28 @@ and ensure you are accounting for this risk.
   // src/dev/manifests.ts
   var manifests = [
     {
-      url: "https://iiif.harvardartmuseums.org/manifests/object/307976",
-      label: "Milk Pond"
+      url: "https://acw5dcf49d.execute-api.us-east-1.amazonaws.com/dev/items/iiif-image-manifest-1",
+      label: "Pantalone classico"
+    },
+    {
+      url: "https://manifests.collections.yale.edu/ycba/obj/21168",
+      label: "Greenland Falcon"
     },
     {
       url: "https://digital.lib.utk.edu/assemble/manifest/rftaart/7",
       label: "The Wildfires"
     },
     {
+      url: "https://iiif.harvardartmuseums.org/manifests/object/307976",
+      label: "Milk Pond"
+    },
+    {
       url: "https://raw.githubusercontent.com/samvera-labs/nectar-iiif/main/public/fixtures/manifest/the-takeover.json",
       label: "The Takover"
     },
     {
-      url: "https://acw5dcf49d.execute-api.us-east-1.amazonaws.com/dev/items/iiif-image-manifest-1",
-      label: "Pantalone classico"
-    },
-    {
       url: "https://iiif.bodleian.ox.ac.uk/iiif/manifest/e32a277e-91e2-4a6d-8ba6-cc4bad230410.json",
       label: "Bodleian Library MS. Ind. Inst. Misc. 22"
-    },
-    {
-      url: "https://manifests.collections.yale.edu/ycba/obj/21168",
-      label: "Greenland Falcon"
     },
     {
       url: "https://iiif.io/api/cookbook/recipe/0006-text-language/manifest.json",
@@ -54128,45 +54178,45 @@ and ensure you are accounting for this risk.
     setUrl,
     handleLanguage
   }) => {
-    const inputRef = (0, import_react15.useRef)(null);
+    const inputRef = (0, import_react16.useRef)(null);
     const handleSubmit = (e2) => {
       var _a;
       e2.preventDefault();
       const target = e2.target;
       setUrl((_a = target.url) == null ? void 0 : _a.value);
     };
-    (0, import_react15.useEffect)(() => {
+    (0, import_react16.useEffect)(() => {
       if (inputRef.current)
         inputRef.current.value = url;
     }, [url]);
-    return /* @__PURE__ */ import_react15.default.createElement(DynamicUrlStyled, null, /* @__PURE__ */ import_react15.default.createElement(ManualForm, {
+    return /* @__PURE__ */ import_react16.default.createElement(DynamicUrlStyled, null, /* @__PURE__ */ import_react16.default.createElement(ManualForm, {
       onSubmit: handleSubmit
-    }, /* @__PURE__ */ import_react15.default.createElement("label", {
+    }, /* @__PURE__ */ import_react16.default.createElement("label", {
       htmlFor: "manual-manifest"
-    }, "Provide a IIIF Manifest"), /* @__PURE__ */ import_react15.default.createElement("div", null, /* @__PURE__ */ import_react15.default.createElement("input", {
+    }, "Provide a IIIF Manifest"), /* @__PURE__ */ import_react16.default.createElement("div", null, /* @__PURE__ */ import_react16.default.createElement("input", {
       type: "text",
       name: "url",
       id: "manual-manifest",
       placeholder: "IIIF Manifest",
       ref: inputRef
-    }), /* @__PURE__ */ import_react15.default.createElement("select", {
+    }), /* @__PURE__ */ import_react16.default.createElement("select", {
       id: "lang-code",
       name: "lang-code",
       onChange: handleLanguage,
       "aria-label": "bcp47 language code"
-    }, /* @__PURE__ */ import_react15.default.createElement("option", null, "Language Code"), /* @__PURE__ */ import_react15.default.createElement("option", {
+    }, /* @__PURE__ */ import_react16.default.createElement("option", null, "Language Code"), /* @__PURE__ */ import_react16.default.createElement("option", {
       value: "none"
-    }, "none"), /* @__PURE__ */ import_react15.default.createElement("option", {
+    }, "none"), /* @__PURE__ */ import_react16.default.createElement("option", {
       value: "en"
-    }, "en"), /* @__PURE__ */ import_react15.default.createElement("option", {
+    }, "en"), /* @__PURE__ */ import_react16.default.createElement("option", {
       value: "fr"
-    }, "fr")), /* @__PURE__ */ import_react15.default.createElement("button", {
+    }, "fr")), /* @__PURE__ */ import_react16.default.createElement("button", {
       type: "submit"
-    }, "View"))), manifests.length > 0 && /* @__PURE__ */ import_react15.default.createElement(Curated, null, manifests.map((obj) => /* @__PURE__ */ import_react15.default.createElement(ButtonForm, {
+    }, "View"))), manifests.length > 0 && /* @__PURE__ */ import_react16.default.createElement(Curated, null, manifests.map((obj) => /* @__PURE__ */ import_react16.default.createElement(ButtonForm, {
       key: obj.label,
       onSubmit: handleSubmit,
       "data-active": url === obj.url ? true : false
-    }, /* @__PURE__ */ import_react15.default.createElement("button", {
+    }, /* @__PURE__ */ import_react16.default.createElement("button", {
       name: "url",
       value: obj.url
     }, obj.label)))));
@@ -54176,14 +54226,14 @@ and ensure you are accounting for this risk.
   // src/dev.tsx
   var Wrapper = () => {
     const defaultUrl = manifests[0].url;
-    const [partOf, setPartOf] = (0, import_react16.useState)();
-    const [seeAlso, setSeeAlso] = (0, import_react16.useState)();
-    const [thumbnail, setThumbnail] = (0, import_react16.useState)();
-    const [homepage, setHomepage] = (0, import_react16.useState)();
-    const [manifest, setManifest] = (0, import_react16.useState)();
-    const [lang, setLanguage] = (0, import_react16.useState)();
-    const [url, setUrl] = import_react16.default.useState(defaultUrl);
-    (0, import_react16.useEffect)(() => {
+    const [partOf, setPartOf] = (0, import_react17.useState)();
+    const [seeAlso, setSeeAlso] = (0, import_react17.useState)();
+    const [thumbnail, setThumbnail] = (0, import_react17.useState)();
+    const [homepage, setHomepage] = (0, import_react17.useState)();
+    const [manifest, setManifest] = (0, import_react17.useState)();
+    const [lang, setLanguage] = (0, import_react17.useState)();
+    const [url, setUrl] = (0, import_react17.useState)(defaultUrl);
+    (0, import_react17.useEffect)(() => {
       const vault = new Vault();
       if (url)
         vault.loadManifest(url).then((data) => {
@@ -54197,33 +54247,45 @@ and ensure you are accounting for this risk.
         });
     }, [url]);
     if (!manifest)
-      return /* @__PURE__ */ import_react16.default.createElement(import_react16.default.Fragment, null, "Loading...");
+      return /* @__PURE__ */ import_react17.default.createElement(import_react17.default.Fragment, null, "Loading...");
     const handleLanguage = (e2) => setLanguage(e2.target.value !== "--" ? e2.target.value : void 0);
     const { label, metadata, requiredStatement, summary } = manifest;
-    return /* @__PURE__ */ import_react16.default.createElement(import_react16.default.Fragment, null, /* @__PURE__ */ import_react16.default.createElement("div", null, /* @__PURE__ */ import_react16.default.createElement(Label_default, {
+    const CustomValueDepartment = (props) => /* @__PURE__ */ import_react17.default.createElement("a", {
+      href: encodeURI(`https://example.org/department/${props.value}`)
+    }, /* @__PURE__ */ import_react17.default.createElement("strong", null, props.value));
+    const CustomValueSubject = (props) => /* @__PURE__ */ import_react17.default.createElement("a", {
+      href: encodeURI(`https://example.org/?subject=${props.value}`)
+    }, props.value);
+    const customValueContent = [
+      {
+        matchingLabel: { en: ["Subject"] },
+        Content: /* @__PURE__ */ import_react17.default.createElement(CustomValueSubject, null)
+      }
+    ];
+    return /* @__PURE__ */ import_react17.default.createElement(import_react17.default.Fragment, null, /* @__PURE__ */ import_react17.default.createElement("div", null, label && /* @__PURE__ */ import_react17.default.createElement(Label_default, {
       as: "h3",
       label,
       lang
-    }), /* @__PURE__ */ import_react16.default.createElement(Homepage_default, {
+    }), homepage && /* @__PURE__ */ import_react17.default.createElement(Homepage_default, {
       homepage
-    }, "More Details"), /* @__PURE__ */ import_react16.default.createElement(Summary_default, {
+    }, "More Details"), summary && /* @__PURE__ */ import_react17.default.createElement(Summary_default, {
       as: "p",
       summary,
       lang
-    }), /* @__PURE__ */ import_react16.default.createElement(Metadata_default, {
+    }), metadata && /* @__PURE__ */ import_react17.default.createElement(Metadata_default, {
       metadata,
+      customValueContent,
       lang
-    }), /* @__PURE__ */ import_react16.default.createElement(RequiredStatement_default, {
+    }), requiredStatement && /* @__PURE__ */ import_react17.default.createElement(RequiredStatement_default, {
       requiredStatement,
       lang
-    }), thumbnail && /* @__PURE__ */ import_react16.default.createElement(Thumbnail_default, {
-      thumbnail,
-      alt: "random"
-    }), /* @__PURE__ */ import_react16.default.createElement(PartOf_default, {
+    }), thumbnail && /* @__PURE__ */ import_react17.default.createElement(Thumbnail_default, {
+      thumbnail
+    }), partOf && /* @__PURE__ */ import_react17.default.createElement(PartOf_default, {
       partOf
-    }), /* @__PURE__ */ import_react16.default.createElement(SeeAlso_default, {
+    }), seeAlso && /* @__PURE__ */ import_react17.default.createElement(SeeAlso_default, {
       seeAlso
-    })), /* @__PURE__ */ import_react16.default.createElement(DynamicUrl_default, {
+    })), /* @__PURE__ */ import_react17.default.createElement(DynamicUrl_default, {
       url,
       setUrl,
       handleLanguage
@@ -54231,7 +54293,7 @@ and ensure you are accounting for this risk.
   };
   var container = document.getElementById("root");
   var root = (0, import_client.createRoot)(container);
-  root.render(/* @__PURE__ */ import_react16.default.createElement(import_react16.StrictMode, null, /* @__PURE__ */ import_react16.default.createElement(Wrapper, null)));
+  root.render(/* @__PURE__ */ import_react17.default.createElement(import_react17.StrictMode, null, /* @__PURE__ */ import_react17.default.createElement(Wrapper, null)));
 })();
 /*!
  * is-plain-object <https://github.com/jonschlinkert/is-plain-object>
