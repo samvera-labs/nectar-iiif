@@ -14,16 +14,21 @@ import {
 } from "./index";
 import DynamicUrl from "./dev/DynamicUrl";
 import { manifests } from "./dev/manifests";
+import {
+  NectarCustomValueContent,
+  NectarExternalWebResource,
+  NectarIIIFResource,
+} from "./types/nectar";
 
 const Wrapper = () => {
   const defaultUrl: string = manifests[0].url;
-  const [partOf, setPartOf] = useState();
-  const [seeAlso, setSeeAlso] = useState();
+  const [partOf, setPartOf] = useState<NectarIIIFResource[]>();
+  const [seeAlso, setSeeAlso] = useState<NectarExternalWebResource[]>();
   const [thumbnail, setThumbnail] = useState();
-  const [homepage, setHomepage] = useState();
+  const [homepage, setHomepage] = useState<NectarExternalWebResource[]>();
   const [manifest, setManifest] = useState<ManifestNormalized>();
-  const [lang, setLanguage] = useState<String | undefined>();
-  const [url, setUrl] = React.useState(defaultUrl);
+  const [lang, setLanguage] = useState<string | undefined>();
+  const [url, setUrl] = useState(defaultUrl);
 
   useEffect(() => {
     const vault = new Vault();
@@ -49,17 +54,47 @@ const Wrapper = () => {
 
   const { label, metadata, requiredStatement, summary } = manifest;
 
+  const CustomValueDepartment = (props) => (
+    <a href={encodeURI(`https://example.org/department/${props.value}`)}>
+      <strong>{props.value}</strong>
+    </a>
+  );
+
+  const CustomValueSubject = (props) => (
+    <a href={encodeURI(`https://example.org/?subject=${props.value}`)}>
+      {props.value}
+    </a>
+  );
+
+  const customValueContent: NectarCustomValueContent[] = [
+    {
+      matchingLabel: { en: ["Subject"] },
+      Content: <CustomValueSubject />,
+    },
+  ];
+
   return (
     <>
       <div>
-        <Label as="h3" label={label} lang={lang} />
-        <Homepage homepage={homepage}>More Details</Homepage>
-        <Summary as="p" summary={summary} lang={lang} />
-        <Metadata metadata={metadata} lang={lang} />
-        <RequiredStatement requiredStatement={requiredStatement} lang={lang} />
-        {thumbnail && <Thumbnail thumbnail={thumbnail} alt="random" />}
-        <PartOf partOf={partOf} />
-        <SeeAlso seeAlso={seeAlso} />
+        {label && <Label as="h3" label={label} lang={lang} />}
+        {homepage && <Homepage homepage={homepage}>More Details</Homepage>}
+        {summary && <Summary as="p" summary={summary} lang={lang} />}
+        {metadata && (
+          <Metadata
+            metadata={metadata}
+            customValueContent={customValueContent}
+            lang={lang}
+          />
+        )}
+        {requiredStatement && (
+          <RequiredStatement
+            requiredStatement={requiredStatement}
+            lang={lang}
+          />
+        )}
+        {thumbnail && <Thumbnail thumbnail={thumbnail} />}
+        {partOf && <PartOf partOf={partOf} />}
+        {seeAlso && <SeeAlso seeAlso={seeAlso} />}
       </div>
       <DynamicUrl url={url} setUrl={setUrl} handleLanguage={handleLanguage} />
     </>

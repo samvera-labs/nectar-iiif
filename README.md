@@ -137,12 +137,56 @@ return (
 
 ### Metadata
 
+Metadata is rendered am HTML `dl` with corresponding `dt` and `dd` elements for they respective `label` and `value` pairs. By default `value` entries are rendered as a string, with `, ` interspersed to seperate multiple entries. A consuming application using can optionally update the `value` output for each entry.
+
+#### Reference
+
+| Prop                 | Type                                                       | Default | Required |
+| -------------------- | ---------------------------------------------------------- | ------- | -------- |
+| `as`                 | `dl`                                                       | `dl`    |          |
+| `metadata`           | [metadata](https://iiif.io/api/presentation/3.0/#metadata) | --      | **Yes**  |
+| `customValueContent` | NectarCustomValueContent[]                                 | --      | --       |
+
 ```jsx
 import { Metadata } from "@samvera/nectar-iiif";
 ```
 
 ```jsx
 return <Metadata metadata={manifest.metadata} />;
+```
+
+#### Custom Value Content
+
+If a consumign application required rendering specific `metadata` item `values` in a custom pattern, the `customValueContent` prop can be set for the `<Metadata>` component. The pattern requires `matchingLabel` as following https://iiif.io/api/presentation/3.0/#label and `Content` asa ReactElement carrying `props`. The element set for `Content` must map `props.value` to the appropriate code in the custom pattern.
+
+In the example below, the value of **Pantaloon** with a matching `label` of `{ none: ["Subject"] }` would be rendered as `<dd><a href="https://example.org/?subject=Pantaloon">Pantaloon</a><dd>`, while the `value` entry of **comic masks** would render simply as `<dd>comic masks</dd>`.
+
+```jsx
+const metadata = [
+  {
+    label: { none: ["Genre"] },
+    value: { none: ["comic masks"] },
+  },
+  {
+    label: { none: ["Subject"] },
+    value: { none: ["Pantaloon"] },
+  },
+];
+
+const CustomValueSubject = (props) => (
+  <a href={encodeURI(`https://example.org/?subject=${props.value}`)}>
+    {props.value}
+  </a>
+);
+
+const customValueContent = [
+  {
+    matchingLabel: { none: ["Subject"] },
+    Content: <CustomValueSubject />,
+  },
+];
+
+return <Metadata metadata={metadata} customValueContent={customValueContent} />;
 ```
 
 ---

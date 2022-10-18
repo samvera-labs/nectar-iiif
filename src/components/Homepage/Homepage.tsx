@@ -1,6 +1,6 @@
 import React from "react";
 import { styled } from "../../stitches";
-import { useGetLabel } from "../../hooks/useGetLabel";
+import { getLabelAsString } from "../../services/label-helpers";
 import { NectarHomepage } from "../../types/nectar";
 import { sanitizeAttributes } from "../../services/html-element";
 
@@ -19,7 +19,10 @@ const Homepage: React.FC<NectarHomepage> = (props) => {
     <>
       {homepage &&
         homepage.map((resource) => {
-          const label = useGetLabel(resource.label, attributes.lang) as string;
+          const label = getLabelAsString(
+            resource.label,
+            attributes.lang
+          ) as string;
           return (
             <StyledHomepage
               aria-label={children ? label : undefined}

@@ -1,6 +1,6 @@
 import React from "react";
 import { styled } from "../../stitches";
-import { useGetLabel } from "../../hooks/useGetLabel";
+import { getLabelAsString } from "../../services/label-helpers";
 import { NectarPartOf } from "../../types/nectar";
 import { sanitizeAttributes } from "../../services/html-element";
 
@@ -21,7 +21,7 @@ const PartOf: React.FC<NectarPartOf> = (props) => {
       {partOf &&
         partOf.map((resource) => {
           const label = resource.label
-            ? (useGetLabel(resource.label, attributes.lang) as string)
+            ? (getLabelAsString(resource.label, attributes.lang) as string)
             : undefined;
           return (
             <StyledPartOf key={resource.id}>

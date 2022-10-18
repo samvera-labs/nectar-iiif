@@ -1,6 +1,6 @@
 import { InternationalString } from "@iiif/presentation-3";
 
-export const useGetLabel = (
+export const getLabelEntries = (
   label: InternationalString,
   lang: string = "none"
 ) => {
@@ -20,7 +20,7 @@ export const useGetLabel = (
    */
   if (!label[lang]) {
     const codes: Array<string> = Object.getOwnPropertyNames(label);
-    if (codes.length > 0) return label[codes[0]]?.join(", ");
+    if (codes.length > 0) return label[codes[0]];
   }
 
   /*
@@ -29,7 +29,13 @@ export const useGetLabel = (
   if (!label[lang]) return null;
   if (!Array.isArray(label[lang])) return null;
 
-  const entries = label[lang] as string[];
+  return label[lang] as string[];
+};
 
-  return entries.join(", ");
+export const getLabelAsString = (
+  label: InternationalString,
+  lang: string = "none"
+) => {
+  const entries = getLabelEntries(label, lang);
+  return Array.isArray(entries) ? entries.join(", ") : entries;
 };

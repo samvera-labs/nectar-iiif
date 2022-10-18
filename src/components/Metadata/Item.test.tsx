@@ -1,13 +1,12 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import Item from "./Item";
+import { customValueContent } from "../../fixtures/custom";
 
 const htmlWithinMetadataItem = {
   label: { none: ["Type"] },
   value: {
-    none: [
-      `<a href="https://en.wikipedia.org/wiki/Honey"><b>Honey</b></a>`,
-    ],
+    none: [`<a href="https://en.wikipedia.org/wiki/Honey"><b>Honey</b></a>`],
   },
 };
 
@@ -22,9 +21,16 @@ const strongWithinMetadataItem = {
 
 const htmlWithinLabel = {
   label: {
-    none: [
-      `<a href="https://en.wikipedia.org/wiki/Type"><b>Type</b></a>`,
-    ],
+    none: [`<a href="https://en.wikipedia.org/wiki/Type"><b>Type</b></a>`],
+  },
+  value: {
+    none: [`Honey`],
+  },
+};
+
+const itemForCustomValue = {
+  label: {
+    none: [`Subject`],
   },
   value: {
     none: [`Honey`],
@@ -59,5 +65,21 @@ describe("metadata primitive (item)", () => {
     render(<Item item={htmlWithinLabel} />);
     const el = screen.queryByText("Type");
     expect(el).toBeNull;
+  });
+
+  /**
+   * Test passing customValueContent
+   */
+  it("Test passing customValueContent", () => {
+    render(
+      <Item
+        item={itemForCustomValue}
+        customValueContent={customValueContent[1].Content}
+      />
+    );
+    const el = screen.queryByRole("link");
+    expect(el).toContainHTML(
+      '<a href="https://example.org/?subject=Honey">Honey</a>'
+    );
   });
 });

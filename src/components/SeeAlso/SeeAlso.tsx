@@ -1,6 +1,6 @@
 import React from "react";
 import { styled } from "../../stitches";
-import { useGetLabel } from "../../hooks/useGetLabel";
+import { getLabelAsString } from "../../services/label-helpers";
 import { NectarSeeAlso } from "../../types/nectar";
 import { sanitizeAttributes } from "../../services/html-element";
 
@@ -20,7 +20,10 @@ const SeeAlso: React.FC<NectarSeeAlso> = (props) => {
     <StyledWrapper as={as}>
       {seeAlso &&
         seeAlso.map((resource) => {
-          const label = useGetLabel(resource.label, attributes.lang) as string;
+          const label = getLabelAsString(
+            resource.label,
+            attributes.lang
+          ) as string;
           return (
             <StyledSeeAlso key={resource.id}>
               <a href={resource.id} {...attributes}>

@@ -3,7 +3,7 @@ import { styled } from "../../stitches";
 import Hls from "hls.js";
 import { useGetImageResource } from "../../hooks/useGetImageResource";
 import { sanitizeAttributes } from "../../services/html-element";
-import { useGetLabel } from "../../hooks/useGetLabel";
+import { getLabelAsString } from "../../services/label-helpers";
 import { NectarContentResource } from "../../types/nectar";
 
 const StyledResource = styled("img", { objectFit: "cover" });
@@ -13,7 +13,7 @@ const ContentResource: React.FC<NectarContentResource> = (props) => {
   const { contentResource, altAsLabel, region = "full" } = props;
 
   let alt: string | undefined;
-  if (altAsLabel) alt = useGetLabel(altAsLabel) as string;
+  if (altAsLabel) alt = getLabelAsString(altAsLabel) as string;
 
   /**
    * Create attributes and remove React props
