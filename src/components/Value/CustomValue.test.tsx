@@ -2,6 +2,7 @@ import React from "react";
 import { render } from "@testing-library/react";
 import CustomValue from "./CustomValue";
 import { CustomValueSubject } from "../../fixtures/custom";
+import { NectarProvider } from "../../context/nectar-context";
 
 const value = {
   none: [`Honey`, "Bee"],
@@ -10,7 +11,12 @@ const value = {
 describe("metadata (CustomValue)", () => {
   it("Test rendering of html in metadata value", () => {
     const { getAllByRole } = render(
-      <CustomValue value={value} customValueContent={<CustomValueSubject />} />
+      <NectarProvider>
+        <CustomValue
+          value={value}
+          customValueContent={<CustomValueSubject />}
+        />
+      </NectarProvider>
     );
 
     const links = getAllByRole("link");

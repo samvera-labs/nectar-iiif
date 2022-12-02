@@ -141,11 +141,12 @@ Metadata is rendered am HTML `dl` with corresponding `dt` and `dd` elements for 
 
 #### Reference
 
-| Prop                 | Type                                                       | Default | Required |
-| -------------------- | ---------------------------------------------------------- | ------- | -------- |
-| `as`                 | `dl`                                                       | `dl`    |          |
-| `metadata`           | [metadata](https://iiif.io/api/presentation/3.0/#metadata) | --      | **Yes**  |
-| `customValueContent` | NectarCustomValueContent[]                                 | --      | --       |
+| Prop                   | Type                                                       | Default | Required |
+| ---------------------- | ---------------------------------------------------------- | ------- | -------- |
+| `as`                   | `dl`                                                       | `dl`    |          |
+| `metadata`             | [metadata](https://iiif.io/api/presentation/3.0/#metadata) | --      | **Yes**  |
+| `customValueContent`   | NectarCustomValueContent[]                                 | --      | --       |
+| `customValueDelimiter` | string?                                                    | `,`     | --       |
 
 ```jsx
 import { Metadata } from "@samvera/nectar-iiif";
@@ -201,6 +202,13 @@ import { RequiredStatement } from "@samvera/nectar-iiif";
 return <RequiredStatement requiredStatement={manifest.requiredStatement} />;
 ```
 
+#### Reference
+
+| Prop                   | Type                                                                         | Default | Required |
+| ---------------------- | ---------------------------------------------------------------------------- | ------- | -------- |
+| `requiredStatement`    | [requiredStatement](https://iiif.io/api/presentation/3.0/#requiredstatement) | --      | **Yes**  |
+| `customValueDelimiter` | string?                                                                      | `,`     | --       |
+
 ---
 
 ### PartOf
@@ -245,10 +253,11 @@ return <SeeAlso seeAlso={manifest.seeAlso} as="li" />;
 
 #### Reference
 
-| Prop      | Type                                                     | Default | Required |
-| --------- | -------------------------------------------------------- | ------- | -------- |
-| `as`      | ` span`, `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `p`         | `span`  | --       |
-| `summary` | [summary](https://iiif.io/api/presentation/3.0/#summary) | --      | **Yes**  |
+| Prop                   | Type                                                     | Default | Required |
+| ---------------------- | -------------------------------------------------------- | ------- | -------- |
+| `as`                   | ` span`, `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `p`         | `span`  | --       |
+| `summary`              | [summary](https://iiif.io/api/presentation/3.0/#summary) | --      | **Yes**  |
+| `customValueDelimiter` | string?                                                  | `,`     | --       |
 
 #### Usage
 

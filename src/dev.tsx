@@ -83,6 +83,7 @@ const Wrapper = () => {
           <Metadata
             metadata={metadata}
             customValueContent={customValueContent}
+            customValueDelimiter="* "
             lang={lang}
           />
         )}
@@ -90,6 +91,7 @@ const Wrapper = () => {
           <RequiredStatement
             requiredStatement={requiredStatement}
             lang={lang}
+            customValueDelimiter="##"
           />
         )}
         {thumbnail && <Thumbnail thumbnail={thumbnail} />}
