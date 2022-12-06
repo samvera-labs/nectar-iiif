@@ -43,14 +43,14 @@
 <hr>
 <h2 id="basic-usage">Basic Usage</h2>
 <p>Add the Nectar component(s) to your <code>jsx</code> or <code>tsx</code> code.</p>
-<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #EEFFFF">Label</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #EEFFFF">Summary</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">@samvera/nectar-iiif</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF">import</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #EEFFFF">Label</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #EEFFFF">Summary</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">from</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">@samvera/nectar-iiif</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
 <span class="line"></span></code></pre>
-<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #545454; font-style: italic">/**</span></span>
-<span class="line"><span style="color: #545454; font-style: italic"> * Some logic may be required to retrieve the IIIF Manifest.</span></span>
-<span class="line"><span style="color: #545454; font-style: italic"> */</span></span>
+<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #545454">/**</span></span>
+<span class="line"><span style="color: #545454"> * Some logic may be required to retrieve the IIIF Manifest.</span></span>
+<span class="line"><span style="color: #545454"> */</span></span>
 <span class="line"><span style="color: #C792EA">const</span><span style="color: #EEFFFF"> manifest </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{...};</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #89DDFF; font-style: italic">return</span><span style="color: #EEFFFF"> (</span></span>
+<span class="line"><span style="color: #89DDFF">return</span><span style="color: #EEFFFF"> (</span></span>
 <span class="line"><span style="color: #EEFFFF">  </span><span style="color: #89DDFF">&lt;&gt;</span></span>
 <span class="line"><span style="color: #EEFFFF">    </span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">Label</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">label</span><span style="color: #89DDFF">={</span><span style="color: #EEFFFF">manifest</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">label</span><span style="color: #89DDFF">} </span><span style="color: #C792EA">as</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">h1</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF"> /&gt;</span></span>
 <span class="line"><span style="color: #EEFFFF">    </span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">Summary</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">summary</span><span style="color: #89DDFF">={</span><span style="color: #EEFFFF">manifest</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">summary</span><span style="color: #89DDFF">} </span><span style="color: #C792EA">as</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">p</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF"> /&gt;</span></span>
@@ -107,19 +107,19 @@
 </tbody>
 </table>
 <h4>Usage</h4>
-<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #EEFFFF">Label</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">@samvera/nectar-iiif</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF">import</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #EEFFFF">Label</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">from</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">@samvera/nectar-iiif</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
 <span class="line"></span></code></pre>
-<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF; font-style: italic">return</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">Label</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">label</span><span style="color: #89DDFF">={</span><span style="color: #EEFFFF">manifest</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">label</span><span style="color: #89DDFF">} </span><span style="color: #C792EA">as</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">h1</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">lang</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">en</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF"> /&gt;;</span></span>
+<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF">return</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">Label</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">label</span><span style="color: #89DDFF">={</span><span style="color: #EEFFFF">manifest</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">label</span><span style="color: #89DDFF">} </span><span style="color: #C792EA">as</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">h1</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">lang</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">en</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF"> /&gt;;</span></span>
 <span class="line"></span></code></pre>
 <hr>
 <h3>Homepage</h3>
-<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #EEFFFF">Homepage</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">@samvera/nectar-iiif</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF">import</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #EEFFFF">Homepage</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">from</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">@samvera/nectar-iiif</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
 <span class="line"></span></code></pre>
 <p>Wrap resource label with homepage id.</p>
-<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF; font-style: italic">return</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">Homepage</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">homepage</span><span style="color: #89DDFF">={</span><span style="color: #EEFFFF">manifest</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">homepage</span><span style="color: #89DDFF">} /&gt;;</span></span>
+<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF">return</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">Homepage</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">homepage</span><span style="color: #89DDFF">={</span><span style="color: #EEFFFF">manifest</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">homepage</span><span style="color: #89DDFF">} /&gt;;</span></span>
 <span class="line"></span></code></pre>
 <p>Wrap React children with homepage id.</p>
-<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF; font-style: italic">return</span><span style="color: #EEFFFF"> (</span></span>
+<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF">return</span><span style="color: #EEFFFF"> (</span></span>
 <span class="line"><span style="color: #EEFFFF">  </span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">Homepage</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">homepage</span><span style="color: #89DDFF">={</span><span style="color: #EEFFFF">manifest</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">homepage</span><span style="color: #89DDFF">}&gt;</span></span>
 <span class="line"><span style="color: #EEFFFF">    </span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">figure</span><span style="color: #89DDFF">&gt;</span><span style="color: #EEFFFF">...</span><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">figure</span><span style="color: #89DDFF">&gt;</span></span>
 <span class="line"><span style="color: #EEFFFF">  </span><span style="color: #89DDFF">&lt;/</span><span style="color: #FFCB6B">Homepage</span><span style="color: #89DDFF">&gt;</span></span>
@@ -157,11 +157,17 @@
 <td>--</td>
 <td>--</td>
 </tr>
+<tr>
+<td><code>customValueDelimiter</code></td>
+<td>string?</td>
+<td><code>,</code></td>
+<td>--</td>
+</tr>
 </tbody>
 </table>
-<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #EEFFFF">Metadata</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">@samvera/nectar-iiif</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF">import</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #EEFFFF">Metadata</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">from</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">@samvera/nectar-iiif</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
 <span class="line"></span></code></pre>
-<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF; font-style: italic">return</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">Metadata</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">metadata</span><span style="color: #89DDFF">={</span><span style="color: #EEFFFF">manifest</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">metadata</span><span style="color: #89DDFF">} /&gt;;</span></span>
+<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF">return</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">Metadata</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">metadata</span><span style="color: #89DDFF">={</span><span style="color: #EEFFFF">manifest</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">metadata</span><span style="color: #89DDFF">} /&gt;;</span></span>
 <span class="line"></span></code></pre>
 <h4>Custom Value Content</h4>
 <p>If a consumign application required rendering specific <code>metadata</code> item <code>values</code> in a custom pattern, the <code>customValueContent</code> prop can be set for the <code>&lt;Metadata&gt;</code> component. The pattern requires <code>matchingLabel</code> as following https://iiif.io/api/presentation/3.0/#label and <code>Content</code> asa ReactElement carrying <code>props</code>. The element set for <code>Content</code> must map <code>props.value</code> to the appropriate code in the custom pattern.</p>
@@ -190,14 +196,39 @@
 <span class="line"><span style="color: #EEFFFF">  </span><span style="color: #89DDFF">},</span></span>
 <span class="line"><span style="color: #EEFFFF">]</span><span style="color: #89DDFF">;</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #89DDFF; font-style: italic">return</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">Metadata</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">metadata</span><span style="color: #89DDFF">={</span><span style="color: #EEFFFF">metadata</span><span style="color: #89DDFF">} </span><span style="color: #C792EA">customValueContent</span><span style="color: #89DDFF">={</span><span style="color: #EEFFFF">customValueContent</span><span style="color: #89DDFF">} /&gt;;</span></span>
+<span class="line"><span style="color: #89DDFF">return</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">Metadata</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">metadata</span><span style="color: #89DDFF">={</span><span style="color: #EEFFFF">metadata</span><span style="color: #89DDFF">} </span><span style="color: #C792EA">customValueContent</span><span style="color: #89DDFF">={</span><span style="color: #EEFFFF">customValueContent</span><span style="color: #89DDFF">} /&gt;;</span></span>
 <span class="line"></span></code></pre>
 <hr>
 <h3>RequiredStatement</h3>
-<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #EEFFFF">RequiredStatement</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">@samvera/nectar-iiif</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF">import</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #EEFFFF">RequiredStatement</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">from</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">@samvera/nectar-iiif</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
 <span class="line"></span></code></pre>
-<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF; font-style: italic">return</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">RequiredStatement</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">requiredStatement</span><span style="color: #89DDFF">={</span><span style="color: #EEFFFF">manifest</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">requiredStatement</span><span style="color: #89DDFF">} /&gt;;</span></span>
+<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF">return</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">RequiredStatement</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">requiredStatement</span><span style="color: #89DDFF">={</span><span style="color: #EEFFFF">manifest</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">requiredStatement</span><span style="color: #89DDFF">} /&gt;;</span></span>
 <span class="line"></span></code></pre>
+<h4>Reference</h4>
+<table>
+<thead>
+<tr>
+<th>Prop</th>
+<th>Type</th>
+<th>Default</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>requiredStatement</code></td>
+<td><a href="https://iiif.io/api/presentation/3.0/#requiredstatement">requiredStatement</a></td>
+<td>--</td>
+<td><strong>Yes</strong></td>
+</tr>
+<tr>
+<td><code>customValueDelimiter</code></td>
+<td>string?</td>
+<td><code>,</code></td>
+<td>--</td>
+</tr>
+</tbody>
+</table>
 <hr>
 <h3>PartOf</h3>
 <h4>Reference</h4>
@@ -225,9 +256,9 @@
 </tr>
 </tbody>
 </table>
-<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #EEFFFF">PartOf</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">@samvera/nectar-iiif</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF">import</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #EEFFFF">PartOf</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">from</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">@samvera/nectar-iiif</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
 <span class="line"></span></code></pre>
-<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF; font-style: italic">return</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">PartOf</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">partOf</span><span style="color: #89DDFF">={</span><span style="color: #EEFFFF">manifest</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">partOf</span><span style="color: #89DDFF">} </span><span style="color: #C792EA">as</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">li</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF"> /&gt;;</span></span>
+<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF">return</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">PartOf</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">partOf</span><span style="color: #89DDFF">={</span><span style="color: #EEFFFF">manifest</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">partOf</span><span style="color: #89DDFF">} </span><span style="color: #C792EA">as</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">li</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF"> /&gt;;</span></span>
 <span class="line"></span></code></pre>
 <hr>
 <h3>SeeAlso</h3>
@@ -256,9 +287,9 @@
 </tr>
 </tbody>
 </table>
-<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #EEFFFF">SeeAlso</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">@samvera/nectar-iiif</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF">import</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #EEFFFF">SeeAlso</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">from</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">@samvera/nectar-iiif</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
 <span class="line"></span></code></pre>
-<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF; font-style: italic">return</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">SeeAlso</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">seeAlso</span><span style="color: #89DDFF">={</span><span style="color: #EEFFFF">manifest</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">seeAlso</span><span style="color: #89DDFF">} </span><span style="color: #C792EA">as</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">li</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF"> /&gt;;</span></span>
+<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF">return</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">SeeAlso</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">seeAlso</span><span style="color: #89DDFF">={</span><span style="color: #EEFFFF">manifest</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">seeAlso</span><span style="color: #89DDFF">} </span><span style="color: #C792EA">as</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">li</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF"> /&gt;;</span></span>
 <span class="line"></span></code></pre>
 <hr>
 <h3>Summary</h3>
@@ -285,12 +316,18 @@
 <td>--</td>
 <td><strong>Yes</strong></td>
 </tr>
+<tr>
+<td><code>customValueDelimiter</code></td>
+<td>string?</td>
+<td><code>,</code></td>
+<td>--</td>
+</tr>
 </tbody>
 </table>
 <h4>Usage</h4>
-<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #EEFFFF">Summary</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">@samvera/nectar-iiif</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF">import</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #EEFFFF">Summary</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">from</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">@samvera/nectar-iiif</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
 <span class="line"></span></code></pre>
-<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF; font-style: italic">return</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">Summary</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">summary</span><span style="color: #89DDFF">={</span><span style="color: #EEFFFF">manifest</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">summary</span><span style="color: #89DDFF">} </span><span style="color: #C792EA">as</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">p</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF"> /&gt;;</span></span>
+<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF">return</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">Summary</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">summary</span><span style="color: #89DDFF">={</span><span style="color: #EEFFFF">manifest</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">summary</span><span style="color: #89DDFF">} </span><span style="color: #C792EA">as</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">p</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF"> /&gt;;</span></span>
 <span class="line"></span></code></pre>
 <hr>
 <h3>Thumbnail</h3>
@@ -321,9 +358,9 @@
 </tr>
 </tbody>
 </table>
-<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #EEFFFF">Thumbnail</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">@samvera/nectar-iiif</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF">import</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #EEFFFF">Thumbnail</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">from</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">@samvera/nectar-iiif</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
 <span class="line"></span></code></pre>
-<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF; font-style: italic">return</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">Thumbnail</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">thumbnail</span><span style="color: #89DDFF">={</span><span style="color: #EEFFFF">manifest</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">thumbnail</span><span style="color: #89DDFF">} </span><span style="color: #C792EA">altAsLabel</span><span style="color: #89DDFF">={</span><span style="color: #EEFFFF">manifest</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">label</span><span style="color: #89DDFF">} /&gt;;</span></span>
+<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF">return</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">Thumbnail</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">thumbnail</span><span style="color: #89DDFF">={</span><span style="color: #EEFFFF">manifest</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">thumbnail</span><span style="color: #89DDFF">} </span><span style="color: #C792EA">altAsLabel</span><span style="color: #89DDFF">={</span><span style="color: #EEFFFF">manifest</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">label</span><span style="color: #89DDFF">} /&gt;;</span></span>
 <span class="line"></span></code></pre>
 <h2>Attributes</h2>
 <p>All primitives accept common HTMLElement attributes.</p>
