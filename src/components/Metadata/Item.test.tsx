@@ -1,6 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import Item from "./Item";
+import { NectarProvider } from "../../context/nectar-context";
 import { customValueContent } from "../../fixtures/custom";
 
 const htmlWithinMetadataItem = {
@@ -38,11 +39,16 @@ const itemForCustomValue = {
 };
 
 describe("metadata primitive (item)", () => {
+  function withProvider(Component: React.ReactNode) {
+    return <NectarProvider>{Component}</NectarProvider>;
+  }
   /**
    * test rendering of html in metadata value
    */
   it("Test rendering of html in metadata value", async () => {
-    const { getByRole } = render(<Item item={htmlWithinMetadataItem} />);
+    const { getByRole } = render(
+      withProvider(<Item item={htmlWithinMetadataItem} />)
+    );
     const el = getByRole("link");
     expect(el.getAttribute("href")).toBe("https://en.wikipedia.org/wiki/Honey");
     expect(el).toContainHTML("<b>Honey</b>");
@@ -52,7 +58,9 @@ describe("metadata primitive (item)", () => {
    * test that strong does not render in metadata value
    */
   it("Test that strong does not render in metadata value", async () => {
-    const { getByRole } = render(<Item item={strongWithinMetadataItem} />);
+    const { getByRole } = render(
+      withProvider(<Item item={strongWithinMetadataItem} />)
+    );
     const el = getByRole("link");
     expect(el.getAttribute("href")).toBe("https://en.wikipedia.org/wiki/Honey");
     expect(el).toContainHTML("Honey");
@@ -62,7 +70,7 @@ describe("metadata primitive (item)", () => {
    * test rendering not rendering HTML markup for label
    */
   it("Test rendering not rendering HTML markup for label", async () => {
-    render(<Item item={htmlWithinLabel} />);
+    render(withProvider(<Item item={htmlWithinLabel} />));
     const el = screen.queryByText("Type");
     expect(el).toBeNull;
   });
@@ -72,10 +80,12 @@ describe("metadata primitive (item)", () => {
    */
   it("Test passing customValueContent", () => {
     render(
-      <Item
-        item={itemForCustomValue}
-        customValueContent={customValueContent[1].Content}
-      />
+      withProvider(
+        <Item
+          item={itemForCustomValue}
+          customValueContent={customValueContent[1].Content}
+        />
+      )
     );
     const el = screen.queryByRole("link");
     expect(el).toContainHTML(

@@ -15,6 +15,7 @@ export interface NectarCustomValueContent {
 export interface NectarMetadataItem extends NectarPrimitive {
   item: MetadataItem;
   customValueContent?: ReactElement;
+  customValueDelimiter?: string;
 }
 
 export interface NectarContentResource extends NectarPrimitive {
@@ -71,6 +72,7 @@ export interface NectarMarkup extends NectarPrimitive {
 export interface NectarMetadata extends NectarPrimitive {
   as?: "dl";
   customValueContent?: NectarCustomValueContent[];
+  customValueDelimiter?: string;
   metadata: MetadataItem[];
 }
 
@@ -81,6 +83,7 @@ export interface NectarPartOf extends NectarPrimitive {
 
 export interface NectarRequiredStatement extends NectarPrimitive {
   as?: "dl";
+  customValueDelimiter?: string;
   requiredStatement: MetadataItem;
 }
 
@@ -91,6 +94,7 @@ export interface NectarSeeAlso extends NectarPrimitive {
 
 export interface NectarSummary extends NectarPrimitive {
   as?: "span" | "p" | "label" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  customValueDelimiter?: string;
   summary: InternationalString;
 }
 

@@ -34,8 +34,9 @@ export const getLabelEntries = (
 
 export const getLabelAsString = (
   label: InternationalString,
-  lang: string = "none"
+  lang: string = "none",
+  delimiter: string = ", "
 ) => {
   const entries = getLabelEntries(label, lang);
-  return Array.isArray(entries) ? entries.join(", ") : entries;
+  return Array.isArray(entries) ? entries.join(`${delimiter}`) : entries;
 };
