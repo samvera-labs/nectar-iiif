@@ -56065,9 +56065,11 @@ and ensure you are accounting for this risk.
   // src/components/Metadata/Item.tsx
   var import_jsx_runtime7 = __toESM(require_jsx_runtime());
   var MetadataItem = (props) => {
+    var _a;
     const { item, lang, customValueContent } = props;
     const { label, value } = item;
-    return /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { role: "group", children: [
+    const dataAttribute = (_a = getLabelAsString(label)) == null ? void 0 : _a.replace(" ", "-").toLowerCase();
+    return /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { role: "group", "data-label": dataAttribute, children: [
       /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(Label_default, { as: "dt", label, lang }),
       customValueContent ? /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
         CustomValue_default,
