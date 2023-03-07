@@ -19,11 +19,11 @@ describe("sanitizeHTML method", () => {
     expect(clean).toBe("The color of <i>honey</i>");
   });
 
-  it("allows alt and src while removing width.", () => {
-    const html = `<img src="https://foo.bar/honey.jpg" alt="A jar of honey" width="200">`;
+  it("allows alt, src, width and height while removing anything else.", () => {
+    const html = `<img src="https://foo.bar/honey.jpg" alt="A jar of honey" width="200" height="500" foo="bar">`;
     const clean = sanitizeHTML(html);
     expect(clean).toBe(
-      '<img src="https://foo.bar/honey.jpg" alt="A jar of honey" />'
+      '<img src="https://foo.bar/honey.jpg" alt="A jar of honey" width="200" height="500" />'
     );
   });
 

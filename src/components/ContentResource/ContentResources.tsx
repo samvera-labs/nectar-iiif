@@ -1,9 +1,9 @@
-import React, { useEffect, useRef } from "react";
-import { styled } from "../../stitches";
 import Hls from "hls.js";
+import React, { useEffect, useRef } from "react";
 import { useGetImageResource } from "../../hooks/useGetImageResource";
 import { sanitizeAttributes } from "../../services/html-element";
 import { getLabelAsString } from "../../services/label-helpers";
+import { styled } from "../../stitches";
 import { NectarContentResource } from "../../types/nectar";
 
 const StyledResource = styled("img", { objectFit: "cover" });
@@ -124,6 +124,8 @@ const ContentResource: React.FC<NectarContentResource> = (props) => {
           css={{ width: width, height: height }}
           key={id}
           src={src}
+          width={width}
+          height={height}
           {...attributes}
         />
       );
