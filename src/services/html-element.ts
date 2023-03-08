@@ -21,7 +21,7 @@ function sanitizeHTML(html: string) {
   return sanitizeHtml(html, {
     allowedAttributes: {
       a: ["href"],
-      img: ["alt", "src"],
+      img: ["alt", "src", "height", "width"],
     },
     allowedSchemes: ["http", "https", "mailto"],
     allowedTags: [
