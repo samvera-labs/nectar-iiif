@@ -55928,7 +55928,7 @@ and ensure you are accounting for this risk.
     return (0, import_sanitize_html.default)(html, {
       allowedAttributes: {
         a: ["href"],
-        img: ["alt", "src"]
+        img: ["alt", "src", "height", "width"]
       },
       allowedSchemes: ["http", "https", "mailto"],
       allowedTags: [
@@ -56202,8 +56202,8 @@ and ensure you are accounting for this risk.
   var Summary_default = Summary;
 
   // src/components/ContentResource/ContentResources.tsx
-  var import_react6 = __toESM(require_react());
   var import_hls = __toESM(require_hls());
+  var import_react6 = __toESM(require_react());
 
   // src/hooks/useGetImageResource.ts
   var useGetImageResource = (resource, size = "200,", region = "full") => {
@@ -56317,7 +56317,9 @@ and ensure you are accounting for this risk.
             as: "img",
             alt,
             css: { width, height },
-            src
+            src,
+            width,
+            height
           }, attributes),
           id
         );
