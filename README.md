@@ -1,6 +1,6 @@
 # Nectar IIIF (Deprecated) 
 
-Nectar is now part of Clover IIIF as a **Primitives** component library. See [Clover IIIF **Primitives** documention](https://samvera-labs.github.io).
+Nectar is now part of Clover IIIF as a **Primitives** component library. See [Clover IIIF **Primitives** documention](https://samvera-labs.github.io/clover-iiif).
 
 Formerly: IIIF Presentation API 3.0 property fluent HTML5 primitives library for React.js.
 
